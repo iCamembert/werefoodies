@@ -1,0 +1,349 @@
+@extends('app')
+
+@section('content')
+
+    <!-- WRAPPER -->
+    <div id="wrapper">
+
+        <!-- REVOLUTION SLIDER -->
+        <div class="fullwidthbanner-container roundedcorners">
+            <div class="fullwidthbanner">
+                <ul>
+
+                    <!-- SLIDE  -->
+                    <li data-transition="3dcurtain-vertical" ddata-slotamount="15" data-masterspeed="300" data-delay="9400">
+
+                        <!-- COVER IMAGE -->
+                        <img src="assets/images/demo/revolution_slider/sliderbg.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                        <div class="tp-caption large_bold_grey lfl stl"
+                             data-x="18"
+                             data-y="233"
+                             data-speed="300"
+                             data-start="500"
+                             data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">TODAY's BEST DISHES
+                        </div>
+
+                        <div class="tp-caption large_bold_grey medium_thin_grey lfl stl"
+                             data-x="18"
+                             data-y="200"
+                             data-speed="300"
+                             data-start="800"
+                             data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine">
+                            <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">ORDER THEM NOW</a>
+                        </div>
+
+                        @foreach ($todayDishes as $index => $todayDish)
+                            <div class="tp-caption lft ltb"
+                                 data-x="right" data-hoffset="-20"
+                                 data-y="0"
+                                 data-speed="600"
+                                 data-start="{{ 1100 + 2500* $index }}"
+                                 data-easing="easeOutExpo" data-end="{{ 3100 + 2500* $index }}" data-endspeed="600" data-endeasing="easeInSine">
+                                <a href="{{ action('DishesController@show', array('dishes' => $todayDish, 'isBeingOrdered' => 0)) }}"><img src="{{ asset('userdata/1/dishes/' . $todayDish->id . '/picture_md.jpg') }}" alt="Image 2" style="border-radius: 10px;"></a>
+                            </div>
+
+                            <div class="tp-caption medium_bg_darkblue sft stb"
+                                 data-x="720"
+                                 data-y="200"
+                                 data-speed="300"
+                                 data-start="{{ 1400 + 2500* $index }}"
+                                 data-easing="easeOutExpo" data-end="{{ 3300 + 2500* $index }}" data-endspeed="300" data-endeasing="easeInSine">{{ $todayDish->name }}
+                            </div>
+
+                            <div class="tp-caption medium_bg_orange sfb stb"
+                                 data-x="720"
+                                 data-y="160"
+                                 data-speed="300"
+                                 data-start="{{ 1700 + 2500* $index }}"
+                                 data-easing="easeOutExpo" data-end="{{ 3200 + 2500* $index }}" data-endspeed="300" data-endeasing="easeInSine">{{ $todayDish->price }}
+                            </div>
+                        @endforeach
+
+                    </li>
+
+                    <!-- SLIDE -->
+                    <li data-transition="curtain-2" data-slotamount="5" data-masterspeed="700">
+
+                        <!-- COVER IMAGE -->
+                        <img src="assets/images/demo/revolution_slider/slider7.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+
+                        <div class="tp-caption large_text sft"
+                             data-x="center"
+                             data-y="100"
+                             data-speed="300"
+                             data-start="800"
+                             data-easing="easeOutExpo">CHEFS OF THE WEEK
+                        </div>
+
+                        <div class="tp-caption medium_bold_red medium_light_red sfr"
+                             data-x="center"
+                             data-y="75"
+                             data-speed="300"
+                             data-start="1100"
+                             data-easing="easeOutExpo">
+                            <a href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527" target="_blank">ORDER FRESH DISHES NOW</a>
+                        </div>
+
+                        @foreach ($chefsOfTheWeek as $index => $chefOfTheWeek)
+                            <div class="tp-caption lfb text-center"
+                                 data-x="{{ 270 + 210 * $index }}"
+                                 data-y="200"
+                                 data-speed="900"
+                                 data-start="{{ 1700 + 300 * $index }}"
+                                 data-easing="easeOutBack">
+                                <a class="fsize20" href="{{ action('UsersController@show', array('users' => $chefOfTheWeek)) }}">
+                                    <img class="block hover-scale" src="{{ asset('userdata/' . $chefOfTheWeek->id . '/profile_picture_sm.jpg') }}" width="200" height="200" alt="" style="border-radius: 10px;"/>
+                                    <strong>{{ $chefOfTheWeek->name }}</strong>
+                                </a>
+                            </div>
+                        @endforeach
+
+                    </li>
+
+
+                </ul>
+
+                <div class="tp-bannertimer"></div>
+            </div>
+        </div>
+        <!-- /REVOLUTION SLIDER -->
+
+
+        <section class="container text-center">
+            <h1 class="text-center">
+                <strong>Welcome</strong> to Food4U
+                <span class="subtitle">DISHES MADE BY PEOPLE, FOR PEOPLE!</span>
+            </h1>
+
+            <div class="row white-row">
+                <h4>Where are you now?</h4>
+                <div class="row">
+                    <div class="col-md-4 col-md-offset-4">
+                        <p class="nomargin">Find a chef near you</p>
+
+                        <form method="get" action="#" class="input-group">
+                            <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="Type in your location (e.g. 'Paris, France')" />
+                            <div id="map-canvas"></div>
+                            <span class="input-group-btn">
+                                <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                            </span>
+                        </form>
+                    </div>
+                    <div class="col-md-2 col-md-offset-5">
+                        <a id="advancedSearchButton">Advanced Search</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 col-md-offset-3">
+                        <section id="advancedSearch">
+
+                            <!-- Name Form Input -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {!! Form::label('name', 'By Name:') !!}
+                                        {!! Form::text('name', null, ['class' => 'form-control input-lg']) !!}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Rating Form Input -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {!! Form::label('rating', 'Rating Above:') !!}
+                                        {!! Form::number('rating', null, ['size' => '1', 'class' => 'form-control input-lg']) !!}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Price Form Input -->
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        {!! Form::label('price', 'Price Below:') !!}
+                                        {!! Form::text('price', null, ['pattern' => '^\d*(\.\d{2}$)?', 'size' => '4', 'class' => 'form-control input-lg']) !!}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a id="cancelAdvancedSearchButton">Cancel</a>
+
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+            <p class="lead">Hungry? Come and check out the best dishes cooked by the best chefs in your area.</p>
+        </section>
+
+        <div id="shop">
+
+            <section class="container">
+
+                <div class="row">
+
+                    @foreach ($dishes as $dish)
+                        <div class="col-sm-6 col-md-3"><!-- item -->
+                            <div class="item-box fixed-box">
+                                <figure>
+                                    <a class="item-hover" href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}">
+                                        <span class="overlay color2"></span>
+    										<span class="inner">
+    											<span class="block fa fa-plus fsize20"></span>
+    											<strong>SEE</strong> MORE
+    										</span>
+                                    </a>
+                                    <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 1)) }}" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> ORDER</a>
+                                    <img class="img-responsive" src="{{ asset('userdata/' . $dish->user_id . '/dishes/' . $dish->id . '/' . 'picture_sm.jpg') }}" width="100" height="100" alt="">
+                                </figure>
+                                <div class="item-box-desc">
+                                    <h4>{{ $dish->name }}</h4>
+                                    <small class="styleColor">{{ $dish->price }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+
+                </div>
+
+            </section>
+
+        </div>
+
+        <!-- CALLOUT -->
+        <section class="container">
+
+            <div class="row bs-callout nomargin-bottom">
+                <div class="col-md-8 text-center">
+                    <h3 class="padding20">Subscribe <strong>now</strong> and get the <strong>latest</strong> dish suggestions.</h3>
+                </div>
+                <div class="col-md-4">
+
+                    <p class="nomargin">Type your best E-mail Address</p>
+
+                    <form method="get" action="#" class="input-group">
+                        <input type="text" class="form-control" name="s" id="s" value="" placeholder="E-mail Address" />
+							<span class="input-group-btn">
+								<button class="btn btn-primary"><i class="fa fa-search"></i></button>
+							</span>
+                    </form>
+
+                </div>
+            </div>
+
+        </section>
+        <!-- /CALLOUT -->
+
+    </div>
+    <!-- /WRAPPER -->
+
+    @include('partials._footer')
+
+@endsection
+
+@section('afterScripts')
+    <script>
+        $('#advancedSearch').hide();
+        $('#advancedSearchButton').click(function() {
+            $(this).hide();
+            //$('#profileShow').hide(400);
+            $('#advancedSearch').show(400);
+            $('#cancelAdvancedSearchButton').show();
+        });
+        $('#cancelAdvancedSearchButton').click(function() {
+            $(this).hide();
+            $('#advancedSearch').hide(400);
+            //$('#profileShow').show(400);
+            $('#advancedSearchButton').show();
+        });
+
+        function initialize() {
+  var mapOptions = {
+    center: new google.maps.LatLng(-33.8688, 151.2195),
+    zoom: 13,
+  };
+  var map = new google.maps.Map(document.getElementById('map-canvas'),
+    mapOptions);
+
+  var input = /** @type {HTMLInputElement} */(
+      document.getElementById('pac-input'));
+
+  //var types = document.getElementById('type-selector');
+  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+  //map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+
+  var autocomplete = new google.maps.places.Autocomplete(input,
+    {
+        types: ['(cities)']
+    });
+  autocomplete.bindTo('bounds', map);
+
+  var infowindow = new google.maps.InfoWindow();
+  var marker = new google.maps.Marker({
+    map: map,
+    anchorPoint: new google.maps.Point(0, -29)
+  });
+
+  google.maps.event.addListener(autocomplete, 'place_changed', function() {
+    infowindow.close();
+    marker.setVisible(false);
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
+    }
+
+    // If the place has a geometry, then present it on a map.
+    if (place.geometry.viewport) {
+      map.fitBounds(place.geometry.viewport);
+    } else {
+      map.setCenter(place.geometry.location);
+      map.setZoom(17);  // Why 17? Because it looks good.
+    }
+    marker.setIcon(/** @type {google.maps.Icon} */({
+      url: place.icon,
+      size: new google.maps.Size(71, 71),
+      origin: new google.maps.Point(0, 0),
+      anchor: new google.maps.Point(17, 34),
+      scaledSize: new google.maps.Size(35, 35)
+    }));
+    marker.setPosition(place.geometry.location);
+    marker.setVisible(true);
+
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    infowindow.open(map, marker);
+  });
+
+  // Sets a listener on a radio button to change the filter type on Places
+  // Autocomplete.
+  /*function setupClickListener(id, types) {
+    var radioButton = document.getElementById(id);
+    google.maps.event.addDomListener(radioButton, 'click', function() {
+      autocomplete.setTypes(types);
+    });
+  }
+
+  setupClickListener('changetype-all', []);
+  setupClickListener('changetype-address', ['address']);
+  setupClickListener('changetype-establishment', ['establishment']);
+  setupClickListener('changetype-geocode', ['geocode']);*/
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+@endsection
