@@ -140,53 +140,7 @@
                     </li>
                     <!-- /GLOBAL SEARCH -->
 
-                    <!-- QUICK SHOP CART -->
-                    <li class="quick-cart">
-                        <span class="badge pull-right">3</span>
-
-                        <div class="quick-cart-content">
-
-                            <p><i class="fa fa-warning"></i> You have 3 products on your cart</p>
-
-                            <a class="item" href="shop-product-full-width.html"><!-- item 1 -->
-                                <img class="pull-left" src="assets/images/demo/shop/thumb/1.jpg" width="40" alt="quick cart" />
-                                <div class="inline-block">
-                                    <span class="title">Man shirt XL</span>
-                                    <span class="price">2 &times; $44.00</span>
-                                </div>
-                            </a><!-- /item 1 -->
-
-                            <a class="item" href="shop-product-full-width.html"><!-- item 2 -->
-                                <img class="pull-left" src="assets/images/demo/shop/thumb/2.jpg" width="40" alt="quick cart" />
-                                <div class="inline-block">
-                                    <span class="title">Great Black Shoes For Man and Only Man...</span>
-                                    <span class="price">2 &times; $44.00</span>
-                                </div>
-                            </a><!-- /item 2 -->
-
-                            <a class="item" href="shop-product-full-width.html"><!-- item 3 -->
-                                <img class="pull-left" src="assets/images/demo/shop/thumb/4.jpg" width="40" alt="quick cart" />
-                                <div class="inline-block">
-                                    <span class="title">Pink Lady Perfect Shoes</span>
-                                    <span class="price">1 &times; $67.32</span>
-                                </div>
-                            </a><!-- /item 3 -->
-
-                            <!-- QUICK CART BUTTONS -->
-                            <div class="row cart-footer">
-                                <div class="col-md-6 nopadding-right">
-                                    <a href="shop-cart.html" class="btn btn-primary btn-xs fullwidth">VIEW CART</a>
-                                </div>
-                                <div class="col-md-6 nopadding-left">
-                                    <a href="shop-cc-pay.html" class="btn btn-info btn-xs fullwidth">CHECKOUT</a>
-                                </div>
-                            </div>
-                            <!-- /QUICK CART BUTTONS -->
-
-                        </div>
-
-                    </li>
-                    <!-- /QUICK SHOP CART -->
+                    
 
                 </ul>
             </nav>
