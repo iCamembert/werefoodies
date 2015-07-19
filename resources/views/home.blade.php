@@ -93,7 +93,7 @@
                                  data-start="{{ 1700 + 300 * $index }}"
                                  data-easing="easeOutBack">
                                 <a class="fsize20" href="{{ action('UsersController@show', array('users' => $chefOfTheWeek)) }}">
-                                    <img class="block hover-scale" src="{{ asset('userdata/' . $chefOfTheWeek->id . '/profile_picture_sm.jpg') }}" width="200" height="200" alt="" style="border-radius: 10px;"/>
+                                    <img class="block hover-scale" src="{{ asset('userdata/' . $chefOfTheWeek->id . '/profile_picture_md.jpg') }}" width="200" height="200" alt="" style="border-radius: 10px;"/>
                                     <strong>{{ $chefOfTheWeek->name }}</strong>
                                 </a>
                             </div>
