@@ -200,7 +200,7 @@
     										</span>
                                     </a>
                                     <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 1)) }}" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> ORDER</a>
-                                    <img class="img-responsive" src="{{ asset('userdata/' . $dish->user_id . '/dishes/' . $dish->id . '/' . 'picture_sm.jpg') }}" width="100" height="100" alt="">
+                                    <img class="img-responsive" src="{{ asset('userdata/' . $dish->user_id . '/dishes/' . $dish->id . '/' . 'picture_md.jpg') }}" width="100" height="100" alt="">
                                 </figure>
                                 <div class="item-box-desc">
                                     <h4>{{ $dish->name }}</h4>
