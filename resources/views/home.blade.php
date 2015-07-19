@@ -112,7 +112,7 @@
 
         <section class="container text-center">
             <h1 class="text-center">
-                <strong>Welcome</strong> to We're Foodies
+                <strong>Welcome</strong> to Eat My Things
                 <span class="subtitle">DISHES MADE BY PEOPLE, FOR PEOPLE!</span>
             </h1>
 
