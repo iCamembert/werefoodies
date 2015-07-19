@@ -35,7 +35,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <img class="img-responsive" src="{{ asset('userdata/' . $dish->user_id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" alt="Dish Picture" width="300" height="300" />
-                            <h3>{{ $dish->name }}</h3>
+                            <h3 class="text-center">{{ $dish->name }}</h3>
                         </div>
                         <div class="col-md-9">
                             <ul>

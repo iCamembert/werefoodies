@@ -60,7 +60,10 @@
 
         <div class="row">
             <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $dish->user->id . '/profile_picture_sm.jpg') }}" alt="Chef Picture" width="130" height="130" /></a>
-            <span>{{ $dish->user->name }}</span>
+        </div>
+
+        <div class="row">
+            <h4 class="text-center">{{ $dish->user->name }}</h4>
         </div>
 
         <div class="divider styleColor white"><!-- divider -->
@@ -69,7 +72,7 @@
 
         <div class="row">
             <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $dish->user->id . '/dishes/' . $dish->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" /></a>
-            <span>{{ $dish->name }}</span>
+            <h4 class="text-center">{{ $dish->name }}</h4>
         </div>
 
     </div>

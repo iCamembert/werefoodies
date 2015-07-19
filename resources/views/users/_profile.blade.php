@@ -10,7 +10,7 @@
         <div id="profileShow">
             <div class="col-md-3">
                 <img class="img-responsive" src="{{ asset('userdata/' . $user->id . '/profile_picture_md.jpg') }}" alt="Profile Picture" width="300" height="300" />
-                <h3>{{ $user->name }}</h3>
+                <h3 class="text-center">{{ $user->name }}</h3>
             </div>
             <div class="col-md-9">
                 @if ($user->isMe())
