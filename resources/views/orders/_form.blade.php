@@ -59,7 +59,7 @@
     <div class="col-md-5">
 
         <div class="row">
-            <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $dish->user->id . '/profile_picture_sm.jpg') }}" alt="Chef Picture" width="130" height="130" /></a>
+            <a href="{{ action('UsersController@show', array('users' => $dish->user)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $dish->user->id . '/profile_picture_sm.jpg') }}" alt="Chef Picture" width="130" height="130" /></a>
         </div>
 
         <div class="row">
