@@ -40,7 +40,7 @@
                                  data-speed="600"
                                  data-start="{{ 1100 + 2500* $index }}"
                                  data-easing="easeOutExpo" data-end="{{ 3100 + 2500* $index }}" data-endspeed="600" data-endeasing="easeInSine">
-                                <a href="{{ action('DishesController@show', array('dishes' => $todayDish, 'isBeingOrdered' => 0)) }}"><img src="{{ asset('userdata/1/dishes/' . $todayDish->id . '/picture_md.jpg') }}" alt="Image 2" style="border-radius: 10px;"></a>
+                                <a href="{{ action('DishesController@show', array('dishes' => $todayDish, 'isBeingOrdered' => 0)) }}"><img src="{{ asset('userdata/' . $todayDish->user_id . '/dishes/' . $todayDish->id . '/picture_md.jpg') }}" alt="Image 2" style="border-radius: 10px;"></a>
                             </div>
 
                             <div class="tp-caption medium_bg_darkblue sft stb"
