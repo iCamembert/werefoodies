@@ -164,7 +164,7 @@
         @else
             <h2>{{ $user->name }}'s Dishes</h2>
         @endif
-        <form class="white-row" method="post" action="shop-cc-pay.html">
+        
             <p>
                 @if ($user->isMe())
                     Here's the list of dishes you created.
@@ -218,7 +218,7 @@
                                                     <strong>SEE</strong> MORE
                                                 </span>
                                             </a>
-                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="200" height="200" alt="">
+                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="260" height="260" alt="">
                                         </figure>
                                         <div class="item-box-desc">
                                             <h4>{{ $dish->name }}</h4>
@@ -237,7 +237,7 @@
                                                     <strong>SEE</strong> MORE
                                                 </span>
                                             </a>
-                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="200" height="200" alt="">
+                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="260" height="260" alt="">
                                         </figure>
                                         <div class="item-box-desc">
                                             <h4>{{ $dish->name }}</h4>
@@ -256,7 +256,7 @@
                                                     <strong>SEE</strong> MORE
                                                 </span>
                                             </a>
-                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="200" height="200" alt="">
+                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="260" height="260" alt="">
                                         </figure>
                                         <div class="item-box-desc">
                                             <h4>{{ $dish->name }}</h4>
@@ -276,7 +276,6 @@
     </div>
 </div>
              <!-- /LIST OF DISHES -->
-        </form>
     </div>
 </div>
 
