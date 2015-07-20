@@ -218,7 +218,7 @@
                                                     <strong>SEE</strong> MORE
                                                 </span>
                                             </a>
-                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="260" height="260" alt="">
+                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="200" height="200" alt="">
                                         </figure>
                                         <div class="item-box-desc">
                                             <h4>{{ $dish->name }}</h4>
@@ -237,7 +237,7 @@
                                                     <strong>SEE</strong> MORE
                                                 </span>
                                             </a>
-                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="260" height="260" alt="">
+                                            <img class="img-responsive" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_md.jpg') }}" width="200" height="200" alt="">
                                         </figure>
                                         <div class="item-box-desc">
                                             <h4>{{ $dish->name }}</h4>
