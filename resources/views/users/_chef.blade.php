@@ -190,9 +190,9 @@
             <!-- LIST OF DISHES -->
             <div class="row">
                 
-                    <div class="col-md-12">
+                    
             <section id="portfolio">
-                <div class="container">
+                
 
                     <ul class="nav nav-pills isotope-filter isotope-filter" data-sort-id="isotope-list" data-option-key="filter">
                         <li data-option-value="*" class="active"><a href="#">A La Carte</a></li>
@@ -270,9 +270,9 @@
 
                     </div><!-- /.masonry-container -->
 
-                </div>
+                
             </section>
-        </div>
+        
 
 </div>
              <!-- /LIST OF DISHES -->
