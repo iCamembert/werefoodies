@@ -189,7 +189,7 @@
 
             <!-- LIST OF DISHES -->
             <div class="row">
-                <div class="form-group">
+                
                     <div class="col-md-12">
             <section id="portfolio">
                 <div class="container">
@@ -273,7 +273,7 @@
                 </div>
             </section>
         </div>
-    </div>
+
 </div>
              <!-- /LIST OF DISHES -->
     </div>
