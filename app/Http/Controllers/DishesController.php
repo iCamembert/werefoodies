@@ -123,7 +123,7 @@ class DishesController extends Controller {
 
         $destinationPath = 'userdata/' . Auth::user()->id . '/dishes/' . $dish->id;
         
-        if (!File:exists($destinationPath))
+        if ( ! File::exists($destinationPath))
         {
         	File::makeDirectory($destinationPath, 0777, true);
         }
