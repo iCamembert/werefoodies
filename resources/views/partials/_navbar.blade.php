@@ -157,7 +157,7 @@
                                 <img class="pull-left" src="{{ asset('/userdata/' . $item->dish->user_id . '/dishes/' . $item->dish->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
                                 <div class="inline-block">
                                     <span class="title">{{ $item->name }}</span>
-                                    <span class="price">{{ $item->quantity }} &times; ${{ $item->price }} </span>
+                                    <span class="price">{{ $item->qty }} &times; ${{ $item->dish->price }} </span>
                                 </div>
                             </a>
                             @endforeach
