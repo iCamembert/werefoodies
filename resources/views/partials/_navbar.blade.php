@@ -154,7 +154,7 @@
                                         <img class="pull-left" src="" width="40" alt="Dish Picture" />
                                         <div class="inline-block">
                                             <span class="title"></span>
-                                            <span class="price">{{ $item->qty }} &times; $ </span>
+                                            <span class="price">{{ $item->name }} &times; $ </span>
                                         </div>
                                     </a>
                                 @endforeach
