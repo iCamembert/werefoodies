@@ -150,8 +150,8 @@
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
                                 {{ $content = Cart::content() }}
                                 @foreach ($content as $item)
-                                    <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
-                                        <img class="pull-left" src="{{ asset('/userdata/' . $item->chefId . '/dishes/' . $item->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
+                                    <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->options->dish, 'isBeingOrdered' => 0)) }}">
+                                        <img class="pull-left" src="{{ asset('/userdata/' . $item->options->chefId . '/dishes/' . $item->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
                                         <div class="inline-block">
                                             <span class="title">{{ $item->name }}</span>
                                             <span class="price">{{ $item->qty }} &times; ${{ $item->price }} </span>
