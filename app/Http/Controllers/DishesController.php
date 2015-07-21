@@ -161,13 +161,11 @@ class DishesController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function addToCart()
+	public function addToCart(Dish $dish)
 	{
 		$quantity = Input::get('quantity');
-		$dishId = Input::get('dishId');
-		$dishName = Input::get('dishName');
 
-		Cart::add($dishId, $dishName, $quantity);
+		Cart::add($dish->id, $dish->name, $quantity, $dish->price, []);
 
 		return redirect()->intended()->with('flash_message', 'Your cart has been updated!');
 	}
