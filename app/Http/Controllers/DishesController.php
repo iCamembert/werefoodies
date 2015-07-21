@@ -163,9 +163,9 @@ class DishesController extends Controller {
 	 */
 	public function addToCart()
 	{
-		$quantity = Input::get('quantity');
-		$dishId = Input::get('dishId');
-		$dishName = Input::get('dishName');
+		$quantity = Input::post('quantity');
+		$dishId = Input::post('dishId');
+		$dishName = Input::post('dishName');
 
 		Cart::add($dishId, $dishName, $quantity);
 
