@@ -148,11 +148,10 @@
 
                             @if (Cart::count())
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
-                                @foreach (Cart::content() as $item){{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
-                                        <img class="pull-left" src="" width="40" alt="Dish Picture" />
+                                @foreach (Cart::content() as $item)
                                         <div class="inline-block">
                                             <span class="title">{{ $item->name }}</span>
-                                            <span class="price">{{ $item->qty }} &times; $ </span>
+                                            <span class="price">{{ $item->qty }} &times; ${{ $item->dish->price }} </span>
                                         </div>
                                     </a>
                                 @endforeach
