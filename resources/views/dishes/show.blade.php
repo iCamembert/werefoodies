@@ -62,7 +62,7 @@
                             @else
                                 <div id="dishQuantityBlock" class="row">
                                     <div class="form-group center-block" style="display: flex; align-items: center;">
-                                        {!! Form::open(['route' => '/add-to-cart']) !!}
+                                        {!! Form::open(['url' => '/add-to-cart']) !!}
                                             <input type="hidden" name="dishId" value="{{ $dish->id }}">
                                             <input type="hidden" name="dishName" value="{{ $dish->name }}">
                                             <div class="col-md-3">
