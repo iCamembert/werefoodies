@@ -162,7 +162,7 @@ class DishesController extends Controller {
 	 */
 	public function addToCart(Dish $dish)
 	{
-		$quantity = Request::Input('quantity');
+		$quantity = Input::get('quantity');
 
 		Cart::add($dish->id, $dish->name, 2);
 
