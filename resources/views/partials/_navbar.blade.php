@@ -151,7 +151,7 @@
                                 {{ $content = Cart::content() }}
                                 @foreach ($content as $item)
                                     <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
-                                        <img class="pull-left" src="{{ asset('/userdata/' . $item->dish->user_id . '/dishes/' . $item->dish->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
+                                        <img class="pull-left" src="{{ asset('/userdata/' . $item->dish['user_id'] . '/dishes/' . $item->dish['id'] . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
                                         <div class="inline-block">
                                             <span class="title">{{ $item->name }}</span>
                                             <span class="price">{{ $item->qty }} &times; ${{ $item->price }} </span>
