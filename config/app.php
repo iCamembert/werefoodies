@@ -154,7 +154,9 @@ return [
 
         'Bootstrapper\BootstrapperL5ServiceProvider',
 
-        'Intervention\Image\ImageServiceProvider'
+        'Intervention\Image\ImageServiceProvider',
+
+        'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
 
     ),
 
@@ -232,7 +234,8 @@ return [
         'Tabbable'  => 'Bootstrapper\Facades\Tabbable',
         'Table'     => 'Bootstrapper\Facades\Table',
         'Thumbnail' => 'Bootstrapper\Facades\Thumbnail',
-        'Image'     => 'Intervention\Facades\Image'
+        'Image'     => 'Intervention\Facades\Image',
+        'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
 
 	],
 

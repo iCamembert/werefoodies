@@ -60,7 +60,23 @@
                             @if ($dish->isMyDish())
                                 <a href="{{ action('DishesController@edit', array('dishes' => $dish)) }}" class="btn btn-primary">Edit</a>
                             @else
-                                <a class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Order</a>
+                                <div id="dishQuantityBlock" class="row">
+                                    <div class="form-group center-block" style="display: flex; align-items: center;">
+                                        {!! Form::open(['action' => array('DishesController@addToCart', $dish)) !!}
+                                            <div class="col-md-3">
+                                                {!! Form::label('quantity', 'Quantity:') !!}
+                                                {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
+                                            </div>
+                                            <div class="col-md-6">
+                                                <span>Total Price: <strong id="totalPrice"></strong></span>
+                                            </div>
+                                            <div class="col-md-6">
+                                                {!! Form::submit('Add', ['class' => 'btn btn-primary form control']) !!}
+                                            </div>
+                                        {!! Form::close() !!}
+                                    </div>
+                                </div>
+                                <a id="addToCartButton" class="btn btn-primary">Add to Cart</a>
                             @endif
                         </div>
                     </div>
@@ -106,6 +122,13 @@
 
 @section('afterScripts')
     <script>
+
+        $('#dishQuantityBlock').hide();
+        $('#addToCartButton').click(function() {
+            $(this).hide();
+            $('#dishQuantityBlock').show(400);
+        });
+
         var price = {{ $dish->price }};
         $('#totalPrice').html($('#quantity').val() * price);
 
