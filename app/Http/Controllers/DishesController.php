@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Input;
 use Intervention\Image\Facades\Image;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Request;
 
 class DishesController extends Controller {
@@ -164,9 +165,9 @@ class DishesController extends Controller {
 	{
 		$quantity = Input::get('quantity');
 
-		Cart::add($dish->id, $dish->name, 2);
+		Cart::add($dish->id, $dish->name, $quantity);
 
-		return redirect()->intended()->with('flash_message', 'Your cart has been updated!');
+		return redirect()->back()->with('flash_message', 'Your cart has been updated!');
 	}
 
 }
