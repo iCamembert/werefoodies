@@ -30,7 +30,7 @@
                 @include('partials._flash')
 
                 <h2>About this dish</h2>
-                <form class="white-row" method="post" action="#">
+                
 
                     <div class="row">
                         <div class="col-md-3">
@@ -82,7 +82,7 @@
                             @endif
                         </div>
                     </div>
-                </form>
+               
 
                 <div class="divider styleColor"><!-- divider -->
                     <i class="fa fa-chevron-down"></i>
