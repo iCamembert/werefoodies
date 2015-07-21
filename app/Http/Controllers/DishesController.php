@@ -167,9 +167,7 @@ class DishesController extends Controller {
 
 		Cart::add($dish->id, $dish->name, $quantity);
 
-		dd($quantity);
-
-		return redirect('/my-account');
+		return redirect()->intended()->with('flash_message', 'Your cart has been updated!');
 	}
 
 }
