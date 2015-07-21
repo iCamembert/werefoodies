@@ -148,9 +148,9 @@
 
                             @if (Cart::count())
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
-                                @foreach (Cart::content() as $item)
+                                @foreach (Cart::content() as $row)
                                     
-                                            <span class="title">{{ $item->name }}</span>
+                                            <span class="title">{{ $row->qty }}</span>
                                       
                                 @endforeach
                             @else
