@@ -146,9 +146,16 @@
 
                         <div class="quick-cart-content">
 
-                            @if (Cart::count() > 0)
+                            @if (Cart::count())
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
-
+                                @foreach (Cart::content() as $item){{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
+                                        <img class="pull-left" src="" width="40" alt="Dish Picture" />
+                                        <div class="inline-block">
+                                            <span class="title">{{ $item->name }}</span>
+                                            <span class="price">{{ $item->qty }} &times; $ </span>
+                                        </div>
+                                    </a>
+                                @endforeach
                             @else
                                 <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
                             @endif
