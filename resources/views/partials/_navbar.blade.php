@@ -146,7 +146,7 @@
 
                         <div class="quick-cart-content">
 
-                            <p><i class="fa fa-warning"></i> You have {{ Cart::count() }} products on your cart</p>
+                            <p><i class="fa fa-warning"></i> You have {{ dd(Cart::count()) }} products on your cart</p>
 
                             <a class="item" href="shop-product-full-width.html"><!-- item 1 -->
                                 <img class="pull-left" src="assets/images/demo/shop/thumb/1.jpg" width="40" alt="quick cart" />
