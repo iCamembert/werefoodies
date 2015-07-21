@@ -63,6 +63,7 @@
                                 <div id="dishQuantityBlock" class="row">
                                     <div class="form-group center-block" style="display: flex; align-items: center;">
                                         {!! Form::open(['method' => 'GET', 'action' => array('DishesController@addToCart', $dish)]) !!}
+                                            {!! csrf_field() !!}
                                             <div class="col-md-3">
                                                 {!! Form::label('quantity', 'Quantity:') !!}
                                                 {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
