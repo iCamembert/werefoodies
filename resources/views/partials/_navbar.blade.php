@@ -148,15 +148,7 @@
 
                             @if (Cart::count())
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
-                                @foreach (Cart::content() as $item)
-                                <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
-                                <img class="pull-left" src="{{ asset('/userdata/' . $item->dish->user_id . '/dishes/' . $item->dish->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
-                                <div class="inline-block">
-                                    <span class="title">{{ $item->name }}</span>
-                                    <span class="price">{{ $item->qty }} &times; ${{ $item->dish->price }} </span>
-                                </div>
-                            </a>
-                            @endforeach
+                                
                             @else
                                 <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
                             @endif
