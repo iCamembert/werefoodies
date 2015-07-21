@@ -165,7 +165,7 @@ class DishesController extends Controller {
 	{
 		$quantity = Input::get('quantity');
 
-		Cart::add($dish->id, $dish->name, $quantity, $dish->price, array('chefId' => '1'));
+		Cart::add($dish->id, $dish->name, $quantity, $dish->price, array('size' => '1'));
 
 		return redirect()->back()->with('flash_message', 'Your cart has been updated!');
 	}
