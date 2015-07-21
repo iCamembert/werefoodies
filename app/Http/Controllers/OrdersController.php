@@ -1,7 +1,6 @@
 <?php namespace App\Http\Controllers;
 
 use App\Order;
-use App\Dish;
 use App\Http\Requests\OrderRequest;
 use Illuminate\Support\Facades\Auth;
 use Request;
@@ -22,18 +21,6 @@ class OrdersController extends Controller {
 	public function index()
 	{
 		//
-	}
-
-	/**
-	 * Add dish to cart.
-	 *
-	 * @return Response
-	 */
-	public addToCart(Dish $dish)
-	{
-		Cart::add('293ad', 'Product 1', 1, 9.99, array('size' => 'large'));
-
-		return redirect()->intended()->with('flash_message', 'Your cart has been updated!');
 	}
 
 	/**
