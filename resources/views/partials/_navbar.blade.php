@@ -146,9 +146,9 @@
 
                         <div class="quick-cart-content">
 
-                            @if (Cart::count())
+                            @if (Cart::count() > 0)
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
-                                
+
                             @else
                                 <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
                             @endif
