@@ -27,7 +27,7 @@ Route::delete('users/{users}', 'UsersController@destroy');
 //Route::get('dishes/{id}', 'DishesController@show');
 //Route::post('dishes', 'DishesController@store');
 //Route::get('dishes/{id}/edit', 'DishesController@edit');
-Route::get('dishes/{dishes}/add-to-cart', 'DishesController@addToCart');
+Route::post('dishes/add-to-cart', 'DishesController@addToCart');
 Route::resource('dishes', 'DishesController');
 //Route::get('dishes/{dishes}/{isBeingOrdered}', 'DishesController@show');
 
