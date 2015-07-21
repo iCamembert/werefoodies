@@ -148,7 +148,7 @@
 
                             @if (Cart::count())
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
-                                {{ $content = Cart::conten() }}
+                                {{ $content = Cart::content() }}
                                 @foreach ($content as $item)
                                     <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
                                         <img class="pull-left" src="{{ asset('/userdata/' . $item->dish->user_id . '/dishes/' . $item->dish->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
