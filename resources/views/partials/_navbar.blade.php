@@ -150,11 +150,7 @@
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
                                 {{ $content = Cart::content() }}
                                 @foreach ($content as $item)
-                                        <div class="inline-block">
-                                            <span class="title">{{ $item->name }}</span>
-                                            <span class="price">{{ $item->qty }} &times; ${{ $item->dish->price }} </span>
-                                        </div>
-                                    </a>
+                                        
                                 @endforeach
                             @else
                                 <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
