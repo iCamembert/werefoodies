@@ -153,7 +153,7 @@
                                     <a class="item" href="">
                                         <img class="pull-left" src="" width="40" alt="Dish Picture" />
                                         <div class="inline-block">
-                                            <span class="title"></span>
+                                            <span class="title">{{ $item->name }}</span>
                                             <span class="price">{{ $item->qty }} &times; $ </span>
                                         </div>
                                     </a>
