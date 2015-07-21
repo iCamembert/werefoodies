@@ -146,31 +146,21 @@
 
                         <div class="quick-cart-content">
 
-                            <p><i class="fa fa-warning"></i> You have {{ Cart::count() }} products on your cart</p>
+                            @if (Cart::count())
+                                <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
+                            @else
+                                <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
+                            @endif
 
-                            <a class="item" href="shop-product-full-width.html"><!-- item 1 -->
-                                <img class="pull-left" src="assets/images/demo/shop/thumb/1.jpg" width="40" alt="quick cart" />
+                            @foreach (Cart::content() as $item)
+                                <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->dish, 'isBeingOrdered' => 0)) }}">
+                                <img class="pull-left" src="{{ asset('/userdata/' . $item->dish->user_id . '/dishes/' . $item->dish->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
                                 <div class="inline-block">
-                                    <span class="title">Man shirt XL</span>
-                                    <span class="price">2 &times; $44.00</span>
+                                    <span class="title">{{ $item->name }}</span>
+                                    <span class="price">{{ $item->quantity }} &times; ${{ $item->price }} </span>
                                 </div>
-                            </a><!-- /item 1 -->
-
-                            <a class="item" href="shop-product-full-width.html"><!-- item 2 -->
-                                <img class="pull-left" src="assets/images/demo/shop/thumb/2.jpg" width="40" alt="quick cart" />
-                                <div class="inline-block">
-                                    <span class="title">Great Black Shoes For Man and Only Man...</span>
-                                    <span class="price">2 &times; $44.00</span>
-                                </div>
-                            </a><!-- /item 2 -->
-
-                            <a class="item" href="shop-product-full-width.html"><!-- item 3 -->
-                                <img class="pull-left" src="assets/images/demo/shop/thumb/4.jpg" width="40" alt="quick cart" />
-                                <div class="inline-block">
-                                    <span class="title">Pink Lady Perfect Shoes</span>
-                                    <span class="price">1 &times; $67.32</span>
-                                </div>
-                            </a><!-- /item 3 -->
+                            </a>
+                            @endforeach
 
                             <!-- QUICK CART BUTTONS -->
                             <div class="row cart-footer">
