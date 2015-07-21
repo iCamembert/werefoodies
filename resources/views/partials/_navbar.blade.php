@@ -150,11 +150,9 @@
                                 <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
                                 {{ $content = Cart::content() }}
                                 @foreach ($content as $item)
-                                    <a class="item" href="">
-                                        <img class="pull-left" src="" width="40" alt="Dish Picture" />
-                                        <div class="inline-block">
-                                            <span class="title">{{ $item->qty }}</span>
-                                            <span class="price">{{ $item->name }} &times; $ </span>
+                                          <div class="inline-block">
+                                            <span class="title">{{ $item->name }}</span>
+                                            <span class="price">{{ $item->qty }} &times; ${{ $item->price }} </span>
                                         </div>
                                     </a>
                                 @endforeach
