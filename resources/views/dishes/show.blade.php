@@ -62,7 +62,7 @@
                             @else
                                 <div id="dishQuantityBlock" class="row">
                                     <div class="form-group center-block" style="display: flex; align-items: center;">
-                                        {!! Form::open(['action' => array('DishesController@addToCart', $dish)]) !!}
+                                        {!! Form::open(['method' => 'PATCH', action' => array('DishesController@addToCart', $dish)]) !!}
                                             <div class="col-md-3">
                                                 {!! Form::label('quantity', 'Quantity:') !!}
                                                 {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
