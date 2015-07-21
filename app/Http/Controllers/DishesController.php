@@ -169,7 +169,7 @@ class DishesController extends Controller {
 
 		dd($quantity);
 
-		return redirect()->back()->with('flash_message', 'Your cart has been updated!');
+		return redirect('/my-account');
 	}
 
 }
