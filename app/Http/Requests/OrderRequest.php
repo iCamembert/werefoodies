@@ -23,7 +23,6 @@ class OrderRequest extends Request {
 	{
 		return [
             'type_id' => 'required',
-            'quantity' => 'required',
             'served_at' => 'required'
 		];
 	}
