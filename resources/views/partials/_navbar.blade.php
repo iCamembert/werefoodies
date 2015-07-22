@@ -158,20 +158,20 @@
                                         </div>
                                     </a>
                                 @endforeach
+
+                                <!-- QUICK CART BUTTONS -->
+                                <div class="row cart-footer">
+                                    <div class="col-md-6 nopadding-right">
+                                        <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary btn-xs fullwidth">VIEW CART</a>
+                                    </div>
+                                    <div class="col-md-6 nopadding-left">
+                                        <a href="{{ action('OrdersController@create') }}" class="btn btn-info btn-xs fullwidth">CHECKOUT</a>
+                                    </div>
+                                </div>
+                                <!-- /QUICK CART BUTTONS -->
                             @else
                                 <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
                             @endif
-
-                            <!-- QUICK CART BUTTONS -->
-                            <div class="row cart-footer">
-                                <div class="col-md-6 nopadding-right">
-                                    <a href="shop-cart.html" class="btn btn-primary btn-xs fullwidth">VIEW CART</a>
-                                </div>
-                                <div class="col-md-6 nopadding-left">
-                                    <a href="shop-cc-pay.html" class="btn btn-info btn-xs fullwidth">CHECKOUT</a>
-                                </div>
-                            </div>
-                            <!-- /QUICK CART BUTTONS -->
 
                         </div>
 

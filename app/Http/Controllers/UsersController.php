@@ -67,6 +67,7 @@ class UsersController extends Controller {
         $picture = Image::make($request->file('picture'));
 
         $destinationPath = 'userdata/' . Auth::user()->id;
+        
         if ( ! File::exists($destinationPath))
         {
         	File::makeDirectory($destinationPath, 0777, true);

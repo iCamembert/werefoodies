@@ -1,6 +1,6 @@
 <!-- modal body -->
 
-<div class="modal-body container-fluid">
+<!--<div class="modal-body container-fluid">-->
 
     <div class="col-md-7">
 
@@ -40,9 +40,18 @@
             </div>
         </div>
 
+        <!-- Comment Form Input -->
+
+        <!--<div class="row">
+            <div class="form-group">
+                {!! Form::label('comment', 'Comment:') !!}
+                {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
+            </div>
+        </div>-->
+
     </div>
 
-    <div class="col-md-5">
+    <!--<div class="col-md-5">
 
         <div class="row">
             <a href="{{ action('UsersController@show', array('users' => $dish->user)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $dish->user->id . '/profile_picture_sm.jpg') }}" alt="Chef Picture" width="130" height="130" /></a>
@@ -52,8 +61,8 @@
             <h4 class="text-center">{{ $dish->user->name }}</h4>
         </div>
 
-        <div class="divider styleColor white"><!-- divider -->
-            <i class="fa fa-chevron-down"></i>
+        <div class="divider styleColor white">--><!-- divider -->
+            <!--<i class="fa fa-chevron-down"></i>
         </div>
 
         <div class="row">
@@ -61,13 +70,13 @@
             <h4 class="text-center">{{ $dish->name }}</h4>
         </div>
 
-    </div>
+    </div>-->
 
 </div>
 
 <!-- Add/Edit Order Form Input -->
 
-<div class="modal-footer"><!-- modal footer -->
-    <button class="btn btn-default" data-dismiss="modal">Cancel</button>
+<!--<div class="modal-footer">--><!-- modal footer -->
+    <button class="btn btn-default">Back to Cart</button> <!--data-dismiss="modal"-->
     {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary form control']) !!}
-</div><!-- /modal footer -->
+<!--</div>--><!-- /modal footer -->

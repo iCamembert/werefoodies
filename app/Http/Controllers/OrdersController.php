@@ -3,6 +3,7 @@
 use App\Order;
 use App\Http\Requests\OrderRequest;
 use Illuminate\Support\Facades\Auth;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Request;
 
 class OrdersController extends Controller {
@@ -45,6 +46,12 @@ class OrdersController extends Controller {
 
         $order->dish_id = session()->pull('dishId');
         $order->save();
+
+        foreach (Cart::content() as $item)
+        {
+        	$order->dishes()->attach($item->id, $item->qty);
+        }
+        
 
         flash()->success('Your order has been placed!');
 

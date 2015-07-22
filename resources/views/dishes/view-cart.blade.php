@@ -63,7 +63,7 @@
 
 
                             <!-- update cart -->
-                            <a href="#" class="btn_update btn btn-primary btn-md pull-right">Order</a>
+                            <a href="{{ action('OrdersController@create') }}" class="btn_update btn btn-primary btn-md pull-right">Order</a>
                             <!-- /update cart -->
 
                             <div class="clearfix"></div>
