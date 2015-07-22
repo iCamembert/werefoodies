@@ -41,8 +41,12 @@
                             @foreach (Cart::content() as $item)
                                 <!-- cart item -->
                                 <div class="item">
-                                    
-                                    
+                                    <div class="cart_img"><img src="{{ asset('/userdata/' . $item->options->chefId . '/dishes/' . $item->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" /></div>
+                                    <a href="shop-full-width.html" class="product_name">{{ $item->name }}</a>
+                                    <a href="#" class="remove_item">X</a>
+                                    <div class="total_price">$<span>{{ $item->price }}</span></div>
+                                    <div class="qty"><input type="text" value="{{ $item->qty }}" name="qty" maxlength="3" /> x {{ $item->price }}</div>
+                                    <div class="clearfix"></div>
                                 </div>
                                 <!-- /cart item -->
                             @endforeach
@@ -76,11 +80,7 @@
 
     @include('partials._footer')
 
-    @if ($isBeingOrdered == 1 || $isBeingOrdered == 0)
-        @include('orders.create')
-    @elseif ($isBeingOrdered == 2)
-        @include('orders.edit')
-    @endif
+    
 
 @endsection
 
@@ -107,10 +107,6 @@
             $('#totalPrice').html(quantity * price);
         }
 
-        @if ($isBeingOrdered == 1 || $isBeingOrdered == 2)
-            $(document).ready(function() {
-                $('.bs-example-modal-lg').modal();
-            });
-        @endif
+       
     </script>
 @endsection
