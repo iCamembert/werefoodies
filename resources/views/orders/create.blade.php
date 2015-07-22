@@ -61,3 +61,16 @@
     @include('partials._footer')
 
 @endsection
+
+@section('afterScripts')
+    <script>
+
+        $(function () {
+            $('#datetimepicker').datetimepicker({
+                format: 'YYYY-MM-DD HH:mm:00'
+                //daysOfWeekDisabled: [0, 6]
+            });
+        });
+
+    </script>
+@endsection
