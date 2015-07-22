@@ -49,7 +49,7 @@ class OrdersController extends Controller {
 
         foreach (Cart::content() as $item)
         {
-        	$order->dishes()->attach($item->id, $item->qty);
+        	$order->dishes()->attach($item->id, array('quantity' => $item->qty));
         }
         
 
