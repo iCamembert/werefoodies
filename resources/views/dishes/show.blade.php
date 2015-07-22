@@ -120,12 +120,6 @@
 
     @include('partials._footer')
 
-    @if ($isBeingOrdered == 1 || $isBeingOrdered == 0)
-        @include('orders.create')
-    @elseif ($isBeingOrdered == 2)
-        @include('orders.edit')
-    @endif
-
 @endsection
 
 @section('afterScripts')
@@ -151,10 +145,5 @@
             $('#totalPrice').html(quantity * price);
         }
 
-        @if ($isBeingOrdered == 1 || $isBeingOrdered == 2)
-            $(document).ready(function() {
-                $('.bs-example-modal-lg').modal();
-            });
-        @endif
     </script>
 @endsection
