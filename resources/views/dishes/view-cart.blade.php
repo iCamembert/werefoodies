@@ -42,7 +42,7 @@
                                 <!-- cart item -->
                                 <div class="item">
                                     <div class="cart_img"><img src="{{ asset('/userdata/' . $item->options->chefId . '/dishes/' . $item->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" /></div>
-                                    <a href="shop-full-width.html" class="product_name">{{ $item->name }}</a>
+                                    <a href="{{ action('DishesController@show', array('dishes' => $item->options->dish, 'isBeingOrdered' => 0)) }}" class="product_name">{{ $item->name }}</a>
                                     <a href="#" class="remove_item">X</a>
                                     <div class="total_price"><span>{{ $item->price }}</span></div>
                                     <div class="qty"><input type="text" value="{{ $item->qty }}" name="qty" maxlength="3" /> x {{ $item->price }}</div>
