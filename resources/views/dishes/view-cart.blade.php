@@ -84,14 +84,7 @@
 @section('afterScripts')
     <script>
 
-        $('#dishQuantityBlock').hide();
-        $('#addToCartButton').click(function() {
-            $(this).hide();
-            $('#dishQuantityBlock').show(400);
-        });
-
-        var price = {{ $dish->price }};
-        $('#totalPrice').html($('#quantity').val() * price);
+        
 
         $(function () {
             $('#datetimepicker').datetimepicker({
