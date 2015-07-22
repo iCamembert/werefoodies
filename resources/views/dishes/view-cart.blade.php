@@ -42,8 +42,7 @@
                                 <!-- cart item -->
                                 <div class="item">
                                     
-                                    <div class="qty"><input type="text" value="{{ $item->qty }}" name="qty" maxlength="3" /> x {{ $item->price }}</div>
-                                    <div class="clearfix"></div>
+                                    
                                 </div>
                                 <!-- /cart item -->
                             @endforeach
