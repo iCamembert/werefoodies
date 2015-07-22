@@ -90,7 +90,7 @@
             $('#dishQuantityBlock').show(400);
         });
 
-        var price = {{ $dish->price }};
+        var price = ;
         $('#totalPrice').html($('#quantity').val() * price);*/
 
         $(function () {
