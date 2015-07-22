@@ -42,7 +42,7 @@ class Dish extends Model {
 
     public function orders()
     {
-        return $this->hasMany('App\Order');
+        return $this->belongsToMany('App\Order');
     }
 
     public function reviews()

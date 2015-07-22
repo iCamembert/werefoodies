@@ -23,9 +23,9 @@ class Order extends Model {
         return $this->belongsTo('App\User');
     }
 
-    public function dish()
+    public function dishes()
     {
-        return $this->belongsTo('App\Dish');
+        return $this->belongsToMany('App\Dish')->withTimestamps();
     }
 
     public function review()
