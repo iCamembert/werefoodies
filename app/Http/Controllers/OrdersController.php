@@ -5,6 +5,7 @@ use App\Http\Requests\OrderRequest;
 use Illuminate\Support\Facades\Auth;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Request;
+use DB;
 
 class OrdersController extends Controller {
 
@@ -53,7 +54,7 @@ class OrdersController extends Controller {
         }
         
         dd(DB::table('dish_order')->get());
-        
+
         flash()->success('Your order has been placed!');
 
         return redirect()->intended('/my-account')->with('flash_message', 'Your order has been placed!');
