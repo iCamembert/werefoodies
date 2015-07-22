@@ -52,7 +52,8 @@ class OrdersController extends Controller {
         	$order->dishes()->attach($item->id, array('quantity' => $item->qty));
         }
         
-
+        dd(DB::table('dish_order')->get());
+        
         flash()->success('Your order has been placed!');
 
         return redirect()->intended('/my-account')->with('flash_message', 'Your order has been placed!');
