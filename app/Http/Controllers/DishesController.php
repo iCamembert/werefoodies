@@ -170,4 +170,14 @@ class DishesController extends Controller {
 		return redirect()->back()->with('flash_message', 'Your cart has been updated!');
 	}
 
+	/**
+	 * View cart.
+	 *
+	 * @return Response
+	 */
+	public function viewCart()
+	{
+		return view('dishes.view-cart');
+	}
+
 }

@@ -60,25 +60,31 @@
                             @if ($dish->isMyDish())
                                 <a href="{{ action('DishesController@edit', array('dishes' => $dish)) }}" class="btn btn-primary">Edit</a>
                             @else
-                                <div id="dishQuantityBlock" class="row">
-                                    <div class="form-group center-block" style="display: flex; align-items: center;">
-                                        {!! Form::open(['action' => array('DishesController@addToCart', 'dishes' => $dish)]) !!}
-                                            <input type="hidden" name="dishId" value="{{ $dish->id }}">
-                                            <input type="hidden" name="dishName" value="{{ $dish->name }}">
-                                            <div class="col-md-3">
-                                                {!! Form::label('quantity', 'Quantity:') !!}
-                                                {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
-                                            </div>
-                                            <div class="col-md-6">
-                                                <span>Total Price: <strong id="totalPrice"></strong></span>
-                                            </div>
-                                            <div class="col-md-6">
-                                                {!! Form::submit('Add', ['class' => 'btn btn-primary form control']) !!}
-                                            </div>
-                                        {!! Form::close() !!}
+                                @if (Cart::search(array('id' => $dish->id)))
+                                    <div id="dishAlreadyInCart" class="row">
+                                        <strong>This dish is already in your cart!</strong>
+                                        <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary">View Cart</a>
+                                @else
+                                    <div id="dishQuantityBlock" class="row">
+                                        <div class="form-group center-block" style="display: flex; align-items: center;">
+                                            {!! Form::open(['action' => array('DishesController@addToCart', 'dishes' => $dish)]) !!}
+                                                <input type="hidden" name="dishId" value="{{ $dish->id }}">
+                                                <input type="hidden" name="dishName" value="{{ $dish->name }}">
+                                                <div class="col-md-3">
+                                                    {!! Form::label('quantity', 'Quantity:') !!}
+                                                    {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <span>Total Price: <strong id="totalPrice"></strong></span>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    {!! Form::submit('Add', ['class' => 'btn btn-primary form control']) !!}
+                                                </div>
+                                            {!! Form::close() !!}
+                                        </div>
                                     </div>
-                                </div>
-                                <a id="addToCartButton" class="btn btn-primary">Add to Cart</a>
+                                    <a id="addToCartButton" class="btn btn-primary">Add to Cart</a>
+                                @endif
                             @endif
                         </div>
                     </div>

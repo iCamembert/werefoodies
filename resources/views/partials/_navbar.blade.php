@@ -142,7 +142,7 @@
 
                     <!-- QUICK SHOP CART -->
                     <li class="quick-cart">
-                        <span class="badge pull-right">3</span>
+                        <span class="badge pull-right">{{ Cart::count() }}</span>
 
                         <div class="quick-cart-content">
 
@@ -154,7 +154,7 @@
                                         <img class="pull-left" src="{{ asset('/userdata/' . $item->options->chefId . '/dishes/' . $item->id . '/picture_sm.jpg') }}" width="40" alt="Dish Picture" />
                                         <div class="inline-block">
                                             <span class="title">{{ $item->name }}</span>
-                                            <span class="price">{{ $item->qty }} &times; ${{ $item->price }} </span>
+                                            <span class="price">{{ $item->qty }} &times; {{ $item->price }} </span>
                                         </div>
                                     </a>
                                 @endforeach
