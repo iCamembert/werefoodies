@@ -16,9 +16,10 @@ class CreateOrdersTable extends Migration {
 		{
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('dish_id')->unsigned();
-            $table->integer('quantity')->unsigned();
+            $table->decimal('price', 8, 2);
+            $table->string('currency');
             $table->integer('type_id')->unsigned();
+            $table->string('comment');
             $table->integer('status_id')->unsigned();
             $table->timestamps();
             $table->timestamp('served_at');

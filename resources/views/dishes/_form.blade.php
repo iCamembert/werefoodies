@@ -26,7 +26,7 @@
     <div class="col-md-12">
         <div class="form-group">
             {!! Form::label('price', 'Price:') !!}
-            {!! Form::text('price', null, ['pattern' => '^\d*(\.\d{2}$)?', 'size' => '4', 'class' => 'form-control input-lg']) !!}
+            {!! Form::number('price', null, ['pattern' => '^\d*(\.\d{2}$)?', 'step' => '0.1', 'class' => 'form-control input-lg']) !!}
         </div>
     </div>
 </div>

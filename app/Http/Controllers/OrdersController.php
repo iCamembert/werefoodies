@@ -45,15 +45,12 @@ class OrdersController extends Controller {
 	{
         $order = Auth::user()->orders()->create($request->all());
 
-        $order->dish_id = session()->pull('dishId');
-        $order->save();
-
         foreach (Cart::content() as $item)
         {
         	$order->dishes()->attach($item->id, array('quantity' => $item->qty));
         }
-        
-        dd(DB::table('dish_order')->get());
+
+        Cart::destroy();
 
         flash()->success('Your order has been placed!');
 

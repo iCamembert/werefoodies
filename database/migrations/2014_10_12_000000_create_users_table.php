@@ -22,12 +22,16 @@ class CreateUsersTable extends Migration {
             $table->string('address1');
             $table->string('address2');
             $table->string('city');
-            $table->string('province');
+            $table->string('state');
+            $table->string('postal_code');
+            $table->string('country');
+            $table->string('iso_code');
+            $table->string('time_zone');
             $table->string('home_phone');
             $table->string('mobile_phone');
             $table->string('about');
-            $table->string('rating');
-            $table->string('place_id');
+            $table->decimal('rating', 3, 1);
+            $table->string('google_place_id');
 			$table->timestamps();
 		});
 	}

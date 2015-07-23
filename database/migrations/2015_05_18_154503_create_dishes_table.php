@@ -16,7 +16,8 @@ class CreateDishesTable extends Migration {
 		{
 			$table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->string('price', 5);
+            $table->decimal('price', 8, 2);
+            $table->string('currency');
             $table->string('name');
             $table->text('description');
             $table->integer('rating')->unsigned();

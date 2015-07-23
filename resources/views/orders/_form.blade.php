@@ -42,12 +42,12 @@
 
         <!-- Comment Form Input -->
 
-        <!--<div class="row">
+        <div class="row">
             <div class="form-group">
                 {!! Form::label('comment', 'Comment:') !!}
                 {!! Form::textarea('comment', null, ['class' => 'form-control']) !!}
             </div>
-        </div>-->
+        </div>
 
     </div>
 

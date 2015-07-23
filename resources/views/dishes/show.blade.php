@@ -72,7 +72,7 @@
                                                 <input type="hidden" name="dishName" value="{{ $dish->name }}">
                                                 <div class="col-md-3">
                                                     {!! Form::label('quantity', 'Quantity:') !!}
-                                                    {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
+                                                    {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'placeholder' => 1, 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
                                                 </div>
                                                 <div class="col-md-6">
                                                     <span>Total Price: <strong id="totalPrice"></strong></span>
