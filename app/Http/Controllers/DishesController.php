@@ -165,13 +165,13 @@ class DishesController extends Controller {
 	{
 		$quantity = Request::input('quantity');
 
-		if ($dish->user_id == Cart::content()->first()->dish->user_id)
+		if (Cart::count() && $dish->user_id != Cart::content()->first()->dish->user_id)
 		{
-			Cart::add($dish->id, $dish->name, $quantity, $dish->price, ['chefId' => $dish->user_id, 'dish' => $dish]);
-			return redirect()->back()->with('flash_message', 'Your cart has been updated!');
+			return redirect()->back()->with('flash_message', 'You must order dishes from one chef at once!');	
 		}
 		else {
-			return redirect()->back()->with('flash_message', 'You must order dishes from one chef at once!');
+			Cart::add($dish->id, $dish->name, $quantity, $dish->price, ['chefId' => $dish->user_id, 'dish' => $dish]);
+			return redirect()->back()->with('flash_message', 'Your cart has been updated!');
 		}
 		
 	}
