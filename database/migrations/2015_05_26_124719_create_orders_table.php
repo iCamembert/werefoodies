@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use DB;
 
 class CreateOrdersTable extends Migration {
 
@@ -38,8 +39,9 @@ class CreateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('users');
+		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		Schema::drop('orders');
+		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }
