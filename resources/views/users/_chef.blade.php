@@ -31,9 +31,7 @@
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             <ul>
-                                                @foreach ($clientOrder->dishes as $orderedDish)
-                                                    
-                                                @endforeach
+                                                {{ dd($clientOrder->dishes) }}
                                             </ul>
                                         </td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
