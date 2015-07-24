@@ -33,7 +33,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('picture', 'Picture') !!}
+            {!! Form::label('picture', 'Picture:') !!}
             {!! Form::file('picture', ['class' => '', 'onChange' => 'readURL(this)']) !!}
         </div>
     </div>

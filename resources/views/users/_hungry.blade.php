@@ -29,10 +29,10 @@
                                     @if ($order->status_id <> 3)
                                         <tr>
                                             <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('DishesController@show', array('dishes' => $order->dish->id)) }}" title="See Dish">{{ $order->dish->name }}</a></td>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $order->dish->user->id)) }}" title="See Profile">{{ $order->dish->user->name}}</a></td>
-                                            <td class="text-center" style="vertical-align: middle;">{{ $order->quantity }}</td>
-                                            <td class="text-center" style="vertical-align: middle;">{{ $order->quantity * $order->dish->price }}</td>
+                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('DishesController@show', array('dishes' => $order->dish->id)) }}" title="See Dish"></a></td>
+                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $order->dish->user->id)) }}" title="See Profile"></a></td>
+                                            <td class="text-center" style="vertical-align: middle;"></td>
+                                            <td class="text-center" style="vertical-align: middle;"></td>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->served_at }}</td>
                                             <td class="text-center" style="vertical-align: middle;">
                                                 @if ($order->status_id == 0)

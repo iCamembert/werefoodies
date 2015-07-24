@@ -30,10 +30,10 @@
                                     <tr>
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->dish_name }}</td>
+                                        <td class="text-center" style="vertical-align: middle;"></td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->quantity }}</td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->quantity * $clientOrder->dish_price }}</td>
+                                        <td class="text-center" style="vertical-align: middle;"></td>
+                                        <td class="text-center" style="vertical-align: middle;"></td>
                                         <td style="vertical-align: middle;">{{ $clientOrder->served_at }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             @if ($clientOrder->status_id == 0)
@@ -118,7 +118,7 @@
                                     @if ($user->isMe())
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                         <td><a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" /></a></td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $dish->price }}</td>
+                                        <td class="text-center" style="vertical-align: middle;">{{ $dish->currency }} {{ $dish->price }}</td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->name }}</td>
                                         <td><div class="ellipsis" style="height: 100px;">{{ $dish->description }}</div></td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->rating }}%</td>
@@ -130,7 +130,7 @@
                                     @else
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                         <td><a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}"><img class="img-responsive center-block" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dish->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" /></a></td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $dish->price }}</td>
+                                        <td class="text-center" style="vertical-align: middle;">{{ $dish->currency }} {{ $dish->price }}</td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->name }}</td>
                                         <td><div class="ellipsis" style="height: 100px;">{{ $dish->description }}</div></td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->rating }}%</td>
