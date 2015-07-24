@@ -74,7 +74,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function clientReviews()
     {
-        return $this->hasMany('App\Dish', 'user_id')->rightJoin('orders', 'dishes.id', '=', 'orders.dish_id')->rightJoin('reviews', 'orders.id', '=', 'reviews.order_id')->select('reviews.*');
+        return $this->hasMany('App\Dish', 'user_id')->rightJoin('dish_order', 'dishes.id', '=', 'dish_order.dish_id')->rightJoin('orders', 'dish_order.order_id', '=', 'orders.id')->rightJoin('reviews', 'orders.id', '=', 'reviews.order_id')->select('reviews.*');
     }
 
     public function isChef()
