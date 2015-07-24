@@ -31,7 +31,7 @@
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             <ul>
-                                                {{ dd($clientOrder->dishes) }}
+                                                {{ dd($clientOrder) }}
                                             </ul>
                                         </td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
