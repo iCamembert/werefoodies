@@ -29,15 +29,15 @@
                                     @if ($order->status_id <> 3)
                                         <tr>
                                             <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('DishesController@show', array('dishes' => $order->dish->id)) }}" title="See Dish"></a></td>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $order->dish->user->id)) }}" title="See Profile"></a></td>
+                                            <td class="text-center" style="vertical-align: middle;"><a href="action('DishesController@show', array('dishes' => $order->dish->id))" title="See Dish"></a></td>
+                                            <td class="text-center" style="vertical-align: middle;"><a href="action('UsersController@show', array('users' => $order->dish->user->id))" title="See Profile"></a></td>
                                             <td class="text-center" style="vertical-align: middle;"></td>
                                             <td class="text-center" style="vertical-align: middle;"></td>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->served_at }}</td>
                                             <td class="text-center" style="vertical-align: middle;">
                                                 @if ($order->status_id == 0)
                                                     <span class="orange">Pending</span>
-                                                    <a href="{{ action('DishesController@show', array('dishes' => $order->dish, 'isBeingOrdered' => 2, 'order' => $order)) }}"><i class="fa fa-edit" title="Modify Order!"></i></a>
+                                                    <a href="action('DishesController@show', array('dishes' => $order->dish, 'isBeingOrdered' => 2, 'order' => $order))"><i class="fa fa-edit" title="Modify Order!"></i></a>
                                                     <a href="{{ action('OrdersController@cancel', array('orders' => $order)) }}"><i class="fa fa-times" title="Cancel Order!"></i></a>
                                                 @elseif ($order->status_id == 1)
                                                     <span class="green">Accepted</span>
