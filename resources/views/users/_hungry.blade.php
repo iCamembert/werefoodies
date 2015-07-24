@@ -105,8 +105,8 @@
                             @foreach ($user->reviews as $index => $review)
                                 <tr>
                                     <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                    <td class="text-center" style="vertical-align: middle;"><a href="{{ action('DishesController@show', array('dishes' => $review->order->dish->id)) }}" title="See Dish">{{ $review->order->dish->name }}</a></td>
-                                    <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $review->order->dish->user->id)) }}" title="See Profile">{{ $review->order->dish->user->name }}</a></td>
+                                    <td class="text-center" style="vertical-align: middle;"><a href="{{ action('DishesController@show', array('dishes' => $review->order->dish->id)) }}" title="See Dish"></a></td>
+                                    <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $review->order->dish->user->id)) }}" title="See Profile"></a></td>
                                     <td class="text-center" style="vertical-align: middle;">{{ $review->title }}</td>
                                     <td><div class="ellipsis" style="height: 100px;">{{ $review->body }}</div></td>
                                     <td class="text-center" style="vertical-align: middle;">{{ $review->chef_rating }}%</td>
