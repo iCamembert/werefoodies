@@ -33,7 +33,7 @@ class CreateDishOrderTable extends Migration {
 	 */
 	public function down()
 	{
-		//
+		Schema::drop('dish_order');
 	}
 
 }
