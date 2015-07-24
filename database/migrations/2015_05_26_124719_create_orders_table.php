@@ -40,6 +40,7 @@ class CreateOrdersTable extends Migration {
 	{
 		Schema::drop('orders', function(Blueprint $table)
 		{
+			$table->dropForeign('dish_order_order_id_foreign');
 			$table->dropForeign('orders_user_id_foreign');
 		});
 	}
