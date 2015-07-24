@@ -17,9 +17,8 @@
                                 <tr>
                                     <th class="text-center" style="width: 5%;">#</th>
                                     <th class="text-center" style="width: 10%;">Order ID</th>
-                                    <th class="text-center" style="width: 20%;">Dish</th>
+                                    <th class="text-center" style="width: 30%;">Dishes</th>
                                     <th class="text-center" style="width: 10%;">Client's Name</th>
-                                    <th class="text-center" style="width: 10%;">Quantity</th>
                                     <th class="text-center" style="width: 10%;">Total Price</th>
                                     <th class="text-center" style="width: 15%;">Due on</th>
                                     <th class="text-center" style="width: 20%;">Status</th>
@@ -30,22 +29,27 @@
                                     <tr>
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
-                                        <td class="text-center" style="vertical-align: middle;"></td>
+                                        <td class="text-center" style="vertical-align: middle;">
+                                            <ul>
+                                                @foreach ($clientOrder->dishes as $index => $orderedDish)
+                                                    <li>- {{ $orderedDish->name }}: {{ $orderedDish->quantity }}</li>
+                                                @endforeach
+                                            </ul>
+                                        </td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
-                                        <td class="text-center" style="vertical-align: middle;"></td>
                                         <td class="text-center" style="vertical-align: middle;"></td>
                                         <td style="vertical-align: middle;">{{ $clientOrder->served_at }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             @if ($clientOrder->status_id == 0)
-                                                <span class="orange">Pending</span>
+                                                <span class="orange"><strong>Pending</strong></span>
                                                 <a href="{{ action('OrdersController@accept', array('orders' => $clientOrder)) }}"><i class="fa fa-check" title="Accept Order!"></i></a>
                                                 <a href="{{ action('OrdersController@reject', array('orders' => $clientOrder)) }}"><i class="fa fa-times" title="Reject Order!"></i></a>
                                             @elseif ($clientOrder->status_id == 1)
-                                                <span class="green">Accepted</span>
+                                                <span class="green"><strong>Accepted</strong></span>
                                             @elseif ($clientOrder->status_id == 2)
-                                                <span class="red">Rejected</span>
+                                                <span class="red"><strong>Rejected</strong></span>
                                             @elseif ($clientOrder->status_id ==3)
-                                                <span class="blue">Canceled</span>
+                                                <span class="blue"><strong>Canceled</strong></span>
                                             @endif
                                         </td>
                                     </tr>
