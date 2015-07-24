@@ -38,7 +38,6 @@ class CreateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('dish_order');
 		Schema::drop('orders');
 	}
 
