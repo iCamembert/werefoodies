@@ -55,7 +55,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
         //return Order::join('dishes', 'dishes.id', '=', 'orders.dish_id')->where('dishes.user_id', '=', $this->id);
         //return $this->hasManyThrough('App\Order', 'App\Dish', 'user_id', 'dishe_id')->select('id');
-        return $this->hasMany('App\Dish', 'user_id')->rightJoin('orders', 'dishes.id', '=', 'orders.dish_id')->select('orders.*', 'dishes.name as dish_name', 'dishes.price as dish_price');
+        return $this->hasMany('App\Dish', 'user_id')->rightJoin('dish_order', 'dishes.id', '=', 'dish_order.dish_id')->rightJoin('orders', 'dish_order.order_id', '=', 'orders.id')->select('orders.*', 'dishes.name as dish_name', 'dishes.price as dish_price');
     }
 
     public function isRelatedToOrder($orderId)

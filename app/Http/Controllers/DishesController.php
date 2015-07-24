@@ -56,8 +56,12 @@ class DishesController extends Controller {
         $picture = Image::make($request->file('picture'));
 
         $destinationPath = 'userdata/' . Auth::user()->id . '/dishes/' . $dish->id;
-        File::makeDirectory($destinationPath, 0777, true);
-
+        
+        if ( ! File::exists($destinationPath))
+        {
+        	File::makeDirectory($destinationPath, 0777, true);
+        }
+        
         $croppedPicture = $picture->crop((int)$request->input('cropw'), (int)$request->input('croph'), (int)$request->input('cropx'), (int)$request->input('cropy'));
         $croppedPicture->save($destinationPath . '/picture.jpg');
 
