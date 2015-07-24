@@ -38,8 +38,10 @@ class CreateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		$table->dropForeign('orders_user_id_foreign');
-		Schema::drop('orders');
+		Schema::drop('orders', function(Blueprint $table)
+		{
+			$table->dropForeign('orders_user_id_foreign');
+		});
 	}
 
 }
