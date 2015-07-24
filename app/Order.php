@@ -16,7 +16,7 @@ class Order extends Model {
      *
      * @var array
      */
-    protected $fillable = ['dish_id', 'quantity', 'type_id', 'served_at'];
+    protected $fillable = ['price', 'currency', 'type_id', 'comment', 'served_at'];
 
     public function user()
     {

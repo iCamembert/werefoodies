@@ -12,7 +12,7 @@
 <div class="row">
     <div class="form-group">
         {!! Form::label('location', 'Location:') !!}
-        {!! Form::text('location', null, ['id' => 'pac-input', 'class' => 'form-control', 'placeholder' => 'Type in your city']) !!}
+        {!! Form::text('google_place_id', null, ['id' => 'pac-input', 'class' => 'form-control', 'placeholder' => 'Type in your city']) !!}
     </div>
 </div>
 

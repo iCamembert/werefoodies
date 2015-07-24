@@ -17,7 +17,7 @@ class Dish extends Model {
      *
      * @var array
      */
-    protected $fillable = ['price', 'name', 'description', 'rating'];
+    protected $fillable = ['price', 'currency', 'name', 'description', 'rating'];
 
     /*public function setPictureAttribute($picture)
     {
