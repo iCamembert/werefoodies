@@ -2,7 +2,6 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
-use App\Http\Controllers\DB;
 
 class CreateOrdersTable extends Migration {
 
@@ -39,9 +38,9 @@ class CreateOrdersTable extends Migration {
 	 */
 	public function down()
 	{
-		DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+		\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		Schema::drop('orders');
-		DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+		\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }
