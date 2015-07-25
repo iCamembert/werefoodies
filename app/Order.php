@@ -25,7 +25,7 @@ class Order extends Model {
 
     public function dishes()
     {
-        return $this->belongsToMany('App\Dissh')->select('dishees.*', 'dish_order.quantity as quantity');
+        return $this->belongsToMany('App\Dish')->select('dishes.*', 'dish_order.quantity as quantity');
     }
 
     public function review()
