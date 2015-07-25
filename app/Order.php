@@ -23,7 +23,7 @@ class Order extends Model {
         return $this->belongsTo('App\User');
     }
 
-    public function dishess()
+    public function dishes()
     {
         return $this->belongsToMany('App\Dissh')->select('dishees.*', 'dish_order.quantity as quantity');
     }
