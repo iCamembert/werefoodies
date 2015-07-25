@@ -8,7 +8,7 @@ class Tag extends Model {
         'name'
     ];
 
-	public function dishes()
+	public function dishess()
     {
         return $this->belongsToMany('App\Dish');
     }
