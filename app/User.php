@@ -33,7 +33,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
-    public function dishess()
+    public function dishes()
     {
         return $this->hasMany('App\Dish');
     }
