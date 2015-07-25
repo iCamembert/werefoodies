@@ -7,7 +7,7 @@
                     Here's the list of orders placed by Hungries for your dishes!
                 </p>
                 <h5>Orders:</h5>
-                {{ $user->dishes->first()->orders }}
+                {{ $user->dishes->first()->orders->dishes }}
                 <!-- LIST OF ORDERS FROM OTHER USERS -->
                 <div class="row">
                     <div class="form-group">
