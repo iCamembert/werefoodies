@@ -62,7 +62,7 @@ class UsersController extends Controller {
 		   	}
         }
 
-        $clientOrders = $clientOrders->unique('order_id')->sortByDesc('updated_at')->toArray();
+        $clientOrders = $clientOrders->unique('order_id')->sortByDesc('updated_at');
 
         return view('users.edit', compact('user', 'clientOrders'));
 	}
