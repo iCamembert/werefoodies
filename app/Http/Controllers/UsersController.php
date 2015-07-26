@@ -4,6 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
+use App\Order;
 use Illuminate\Support\Facades\Auth;
 use Request;
 use App\Http\Requests\UserRequest;
