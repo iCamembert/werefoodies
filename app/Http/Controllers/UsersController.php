@@ -9,7 +9,6 @@ use Request;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection;
 
 class UsersController extends Controller {
@@ -56,7 +55,7 @@ class UsersController extends Controller {
 
         foreach ($user->dishes as $dish)
         {
-        	$clientOrders->add($dish->orders);
+        	$clientOrders->push($dish->orders);
         }
 
         $clientOrders = $clientOrders->sortByDesc('updated_at')->get();
