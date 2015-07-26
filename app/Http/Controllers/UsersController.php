@@ -55,10 +55,10 @@ class UsersController extends Controller {
 
         foreach ($user->dishes as $dish)
         {
-        	//$clientOrders->push($dish->orders);
+        	$clientOrders->push($dish->orders);
         }
 
-        $clientOrders = $clientOrders->sortByDesc('updated_at')->get();
+        $clientOrders = $clientOrders->sortByDesc('updated_at');
 
         return view('users.edit', compact('user', 'clientOrders'));
 	}
