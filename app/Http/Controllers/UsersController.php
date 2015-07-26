@@ -53,10 +53,11 @@ class UsersController extends Controller {
 	{
         $user = Auth::user();
 
-        $clientOrders = DB::table('orders')
+        $clientOrders = Order::select('orders.*')
         						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
         						->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
-        						->orderBy('orders.updated_at', 'desc');
+        						->orderBy('orders.updated_at', 'desc')
+        						->get();
 
         /*foreach ($user->dishes as $dish)
         {
@@ -66,7 +67,7 @@ class UsersController extends Controller {
 		   	}
         }*/
 
-        dd($clientOrders);
+        //dd($clientOrders);
 
         //$clientOrders = $clientOrders->sortByDesc('updated_at');
 
