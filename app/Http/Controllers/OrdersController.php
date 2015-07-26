@@ -52,6 +52,16 @@ class OrdersController extends Controller {
 
         Cart::destroy();
 
+        $totalPrice = 0;
+
+        foreach ($order->dishes as $orderedDish)
+        {
+        	$totalPrice = $totalPrice + $orderedDish->quantity * $orderedDish->price;
+        }
+
+        $order->price = $totalPrice;
+        $order->save();
+
         flash()->success('Your order has been placed!');
 
         return redirect()->intended('/my-account')->with('flash_message', 'Your order has been placed!');
