@@ -59,7 +59,19 @@ class UsersController extends Controller {
         						->groupBy('orders.id')
         						->orderBy('orders.served_at', 'desc')
         						->get();
+       	
+       	$totalPrices = new Collection();
 
+        foreach ($clientOrders as $clientOrder)
+        {
+        	foreach ($clientOrder->dishes as $orderedDish)
+        	{
+        		$totalPrices->push("totalPrice" => $orderedDish->quantity * $orderedDish->price);
+        	}
+        }
+
+        $clientOrders->merge($totalPrices);
+        
         /*foreach ($user->dishes as $dish)
         {
 		   	foreach ($dish->orders as $order)
