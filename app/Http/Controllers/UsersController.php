@@ -52,17 +52,17 @@ class UsersController extends Controller {
 	{
         $user = Auth::user();
 
-        $clientOrders = new Collection();
+        $clientOrders = $user->dishes()->orders;
 
-        foreach ($user->dishes as $dish)
+        /*foreach ($user->dishes as $dish)
         {
 		   	foreach ($dish->orders as $order)
 		   	{
 		   		$clientOrders->push($order);
 		   	}
-        }
+        }*/
 
-        //dd($clientOrders);
+        dd($clientOrders);
 
         $clientOrders = $clientOrders->unique('user_id')->values()->all();
 
