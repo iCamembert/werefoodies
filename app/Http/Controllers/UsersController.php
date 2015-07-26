@@ -68,7 +68,7 @@ class UsersController extends Controller {
 		   	}
         }*/
 
-        //dd($clientOrders);
+        dd($clientOrders);
 
         //$clientOrders = $clientOrders->sortByDesc('updated_at');
 
