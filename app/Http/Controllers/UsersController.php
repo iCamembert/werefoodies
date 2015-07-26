@@ -56,6 +56,7 @@ class UsersController extends Controller {
         $clientOrders = Order::select('orders.*')
         						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
         						->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
+        						->groupBy('orders.id')
         						->orderBy('orders.updated_at', 'desc')
         						->get();
 
