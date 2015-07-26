@@ -62,9 +62,7 @@ class UsersController extends Controller {
 		   	}
         }
 
-        dd($clientOrders);
-        
-        $clientOrders = $clientOrders->unique('order_id')->values()->all();
+        $clientOrders = $clientOrders->unique('id')->sortByDesc('updated_at')->values()->all();
 
         return view('users.edit', compact('user', 'clientOrders'));
 	}
