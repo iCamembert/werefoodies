@@ -62,6 +62,8 @@ class UsersController extends Controller {
 		   	}
         }
 
+        dd($clientOrders);
+        
         $clientOrders = $clientOrders->unique('order_id')->values()->all();
 
         return view('users.edit', compact('user', 'clientOrders'));
