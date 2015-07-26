@@ -70,7 +70,7 @@ class UsersController extends Controller {
 
         foreach ($clientOrders as $clientOrder)
         {
-        	dd($clientOrder);
+        	dd($clientOrder->price);
         }
         //dd($clientOrders);
 
