@@ -68,10 +68,10 @@ class UsersController extends Controller {
 		   	}
         }*/
 
-        foreach ($clientOrders as $clientOrder)
+        /*foreach ($clientOrders as $clientOrder)
         {
         	dd($clientOrder->price);
-        }
+        }*/
         //dd($clientOrders);
 
         //$clientOrders = $clientOrders->sortByDesc('updated_at');
