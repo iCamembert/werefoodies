@@ -52,7 +52,7 @@ class UsersController extends Controller {
 	{
         $user = Auth::user();
 
-        $clientOrders = $user->dishes()->orders;
+        $clientOrders = $user->dishes->orders;
 
         /*foreach ($user->dishes as $dish)
         {
