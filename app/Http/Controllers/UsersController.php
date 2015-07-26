@@ -54,8 +54,8 @@ class UsersController extends Controller {
         $user = Auth::user();
 
         $clientOrders = DB::table('orders')
-        						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
-        						->leftJoin('dishes', 'dish_order.dish_id', '=', 'dishes.id')
+        						->join('dish_order', 'orders.id', '=', 'dish_order.order_id')
+        						->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
         						->orderBy('orders.updated_at', 'desc')
         						->get();
 
