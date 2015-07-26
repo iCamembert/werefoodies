@@ -58,19 +58,9 @@ class UsersController extends Controller {
         {
 		   	foreach ($dish->orders as $order)
 		   	{
-		   		$clientOrders->push($order);
+		   		$clientOrders->push($order->toArray());
 		   	}
         }
-
-        $collection = collect([
-    		['name' => 'iPhone 6', 'brand' => 'Apple', 'type' => 'phone'],
-    		['name' => 'iPhone 5', 'brand' => 'Apple', 'type' => 'phone'],
-    		['name' => 'Apple Watch', 'brand' => 'Apple', 'type' => 'watch'],
-    		['name' => 'Galaxy S6', 'brand' => 'Samsung', 'type' => 'phone'],
-    		['name' => 'Galaxy Gear', 'brand' => 'Samsung', 'type' => 'watch'],
-		]);
-
-		dd($collection);
 
         //dd($clientOrders->unique('user_id'));
 
