@@ -25,13 +25,15 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach (clientOrders as $index => $clientOrder)
+                                @foreach ($clientOrders as $index => $clientOrder)
                                     <tr>
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             <ul>
-                                                {{ dd($clientOrder) }}
+                                                @foreach ($clientOrder->dishes as $orderedDish)
+                                                    <li>- {{ $orderedDish->name }}: </li>
+                                                @endforeach
                                             </ul>
                                         </td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
