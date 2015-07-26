@@ -37,7 +37,7 @@
                                             </ul>
                                         </td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->price }}</td>
+                                        <td class="text-center" style="vertical-align: middle;"></td>
                                         <td style="vertical-align: middle;">{{ $clientOrder->served_at }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             @if ($clientOrder->status_id == 0)
