@@ -11,6 +11,7 @@ use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Collection;
+use DB;
 
 class UsersController extends Controller {
 
@@ -52,19 +53,23 @@ class UsersController extends Controller {
 	{
         $user = Auth::user();
 
-        $clientOrders = new Collection();
+        $clientOrders = DB::table('orders')
+        						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
+        						->leftJoin('dishes', 'dish_order.dish_id', '=', 'dishes.id')
+        						->orderBy('updated_at', 'desc')
+        						->get();
 
-        foreach ($user->dishes as $dish)
+        /*foreach ($user->dishes as $dish)
         {
 		   	foreach ($dish->orders as $order)
 		   	{
 		   		$clientOrders->push($order->toArray());
 		   	}
-        }
+        }*/
 
-        dd($clientOrders->unique('user_id'));
+        //dd($clientOrders->unique('user_id'));
 
-        $clientOrders = $clientOrders->sortByDesc('updated_at');
+        //$clientOrders = $clientOrders->sortByDesc('updated_at');
 
         return view('users.edit', compact('user', 'clientOrders'));
 	}
