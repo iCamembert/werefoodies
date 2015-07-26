@@ -55,7 +55,7 @@ class UsersController extends Controller {
 
         foreach ($user->dishes as $dish)
         {
-        	$clientOrders->push($dish->orders);
+        	//$clientOrders->push($dish->orders);
         }
 
         $clientOrders = $clientOrders->sortByDesc('updated_at')->get();
