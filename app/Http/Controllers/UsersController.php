@@ -51,14 +51,14 @@ class UsersController extends Controller {
 	{
         $user = Auth::user();
 
-        $clientOrders = new Collection();
+        /*$clientOrders = new Collection();
 
         foreach ($user->dishes as $dish)
         {
         	$clientOrders->push($dish->orders);
-        }
+        }*/
 
-        $clientOrders = $clientOrders->sortByDesc('updated_at');
+        $clientOrders = Order::all()->sortByDesc('updated_at')->get();
 
         return view('users.edit', compact('user', 'clientOrders'));
 	}
