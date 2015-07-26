@@ -63,16 +63,16 @@ class UsersController extends Controller {
         }
 
         $collection = collect([
-    ['name' => 'iPhone 6', 'brand' => 'Apple', 'type' => 'phone'],
-    ['name' => 'iPhone 5', 'brand' => 'Apple', 'type' => 'phone'],
-    ['name' => 'Apple Watch', 'brand' => 'Apple', 'type' => 'watch'],
-    ['name' => 'Galaxy S6', 'brand' => 'Samsung', 'type' => 'phone'],
-    ['name' => 'Galaxy Gear', 'brand' => 'Samsung', 'type' => 'watch'],
-]);
+    		['name' => 'iPhone 6', 'brand' => 'Apple', 'type' => 'phone'],
+    		['name' => 'iPhone 5', 'brand' => 'Apple', 'type' => 'phone'],
+    		['name' => 'Apple Watch', 'brand' => 'Apple', 'type' => 'watch'],
+    		['name' => 'Galaxy S6', 'brand' => 'Samsung', 'type' => 'phone'],
+    		['name' => 'Galaxy Gear', 'brand' => 'Samsung', 'type' => 'watch'],
+		]);
 
-		dd($unique = $collection->unique('brand'));
+		dd($collection->unique('brand'));
 
-        dd($clientOrders->unique('user_id'));
+        //dd($clientOrders->unique('user_id'));
 
         $clientOrders = $clientOrders->sortByDesc('updated_at');
 
