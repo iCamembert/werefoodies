@@ -10,7 +10,7 @@ use Request;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Collection;
 
 class UsersController extends Controller {
 
