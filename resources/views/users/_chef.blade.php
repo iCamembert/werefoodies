@@ -32,7 +32,7 @@
                                         <td class="text-center" style="vertical-align: middle;">
                                             <ul>
                                                 @foreach ($clientOrder->dishes as $orderedDish)
-                                                    <li>- {{ $orderedDish->name }}: </li>
+                                                    <li>{{ $orderedDish->name }}: {{ $orderedDish->quantity }}</li>
                                                 @endforeach
                                             </ul>
                                         </td>
