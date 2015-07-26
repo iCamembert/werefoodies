@@ -169,12 +169,11 @@ class DishesController extends Controller {
 	{
 		$quantity = Request::input('quantity');
 
-		if (Cart::count() && $dish->user_id != Cart::content()->first()->dish->user_id)
+		if (Cart::count() && $dish->user_id != dd(Cart::content()->first()->dish->user_id))
 		{
 			return redirect()->back()->with('flash_message', 'You must order dishes from one chef at once!');	
 		}
 		else {
-			dd($quantity);
 			Cart::add($dish->id, $dish->name, $quantity, $dish->price, ['chefId' => $dish->user_id, 'dish' => $dish]);
 			return redirect()->back()->with('flash_message', 'Your cart has been updated!');
 		}
