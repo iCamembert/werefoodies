@@ -70,7 +70,7 @@ class UsersController extends Controller {
     		['name' => 'Galaxy Gear', 'brand' => 'Samsung', 'type' => 'watch'],
 		]);
 
-		dd($collection->unique('brand'));
+		dd($collection);
 
         //dd($clientOrders->unique('user_id'));
 
