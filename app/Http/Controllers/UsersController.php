@@ -9,6 +9,7 @@ use Request;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Collection;
 
 class UsersController extends Controller {
 
@@ -37,7 +38,16 @@ class UsersController extends Controller {
 	 */
 	public function show(User $user)
 	{
-        return view('users.show', compact('user'));
+        $clientOrders = new Collection();
+
+        foreach ($user->dishes as $dish)
+        {
+        	$clientOrders->add($dish->orders);
+        }
+
+        $clientOrders->sortByDesc('updated_at');
+
+        return view('users.show', compact('user', 'clientOrders'));
 	}
 
 	/**

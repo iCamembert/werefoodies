@@ -7,7 +7,7 @@
                     Here's the list of orders placed by Hungries for your dishes!
                 </p>
                 <h5>Orders:</h5>
-                {{ $user->dishes->first()->orders->first()->dishes }}
+                
                 <!-- LIST OF ORDERS FROM OTHER USERS -->
                 <div class="row">
                     <div class="form-group">
@@ -25,7 +25,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($user->clientOrders as $index => $clientOrder)
+                                @foreach (clientOrders as $index => $clientOrder)
                                     <tr>
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                         <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
