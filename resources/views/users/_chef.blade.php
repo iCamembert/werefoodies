@@ -25,35 +25,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach ($clientOrders as $index => $clientOrder)
-                                    <tr>
-                                        <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
-                                        <td class="text-center" style="vertical-align: middle;">
-                                            <ul>
-                                                @foreach ($clientOrder->dishes as $orderedDish)
-                                                    <li>- {{ $orderedDish->name }}: </li>
-                                                @endforeach
-                                            </ul>
-                                        </td>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->user->toArray()['name'] }}</td>
-                                        <td class="text-center" style="vertical-align: middle;"></td>
-                                        <td style="vertical-align: middle;">{{ $clientOrder->served_at }}</td>
-                                        <td class="text-center" style="vertical-align: middle;">
-                                            @if ($clientOrder->status_id == 0)
-                                                <span class="orange"><strong>Pending</strong></span>
-                                                <a href="{{ action('OrdersController@accept', array('orders' => $clientOrder)) }}"><i class="fa fa-check" title="Accept Order!"></i></a>
-                                                <a href="{{ action('OrdersController@reject', array('orders' => $clientOrder)) }}"><i class="fa fa-times" title="Reject Order!"></i></a>
-                                            @elseif ($clientOrder->status_id == 1)
-                                                <span class="green"><strong>Accepted</strong></span>
-                                            @elseif ($clientOrder->status_id == 2)
-                                                <span class="red"><strong>Rejected</strong></span>
-                                            @elseif ($clientOrder->status_id ==3)
-                                                <span class="blue"><strong>Canceled</strong></span>
-                                            @endif
-                                        </td>
-                                    </tr>
-                                @endforeach
+                                
                                 </tbody>
                             </table>
                         </div>
