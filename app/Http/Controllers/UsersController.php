@@ -56,7 +56,7 @@ class UsersController extends Controller {
         $clientOrders = DB::table('orders')
         						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
         						->leftJoin('dishes', 'dish_order.dish_id', '=', 'dishes.id')
-        						->orderBy('updated_at', 'desc')
+        						->orderBy('orders.updated_at', 'desc')
         						->get();
 
         /*foreach ($user->dishes as $dish)
