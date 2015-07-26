@@ -45,7 +45,7 @@ class UsersController extends Controller {
         	$clientOrders->add($dish->orders);
         }
 
-        $clientOrders->sortByDesc('updated_at')->get();
+        dd($clientOrders->sortByDesc('updated_at')->get());
 
         return view('users.show', compact('user', 'clientOrders'));
 	}
