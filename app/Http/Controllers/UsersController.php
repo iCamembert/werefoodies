@@ -38,16 +38,7 @@ class UsersController extends Controller {
 	 */
 	public function show(User $user)
 	{
-        $clientOrders = new Collection();
-
-        foreach ($user->dishes as $dish)
-        {
-        	$clientOrders->add($dish->orders);
-        }
-
-        dd($clientOrders->sortByDesc('updated_at')->get());
-
-        return view('users.show', compact('user', 'clientOrders'));
+        return view('users.show', compact('user'));
 	}
 
 	/**
@@ -60,7 +51,16 @@ class UsersController extends Controller {
 	{
         $user = Auth::user();
 
-        return view('users.edit', compact('user'));
+        $clientOrders = new Collection();
+
+        foreach ($user->dishes as $dish)
+        {
+        	$clientOrders->add($dish->orders);
+        }
+
+        $clientOrders->sortByDesc('updated_at')->get();
+
+        return view('users.edit', compact('user', 'clientOrders'));
 	}
 
 	/**
