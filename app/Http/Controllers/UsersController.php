@@ -57,7 +57,7 @@ class UsersController extends Controller {
         						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
         						->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
         						->groupBy('orders.id')
-        						->orderBy('orders.updated_at', 'desc')
+        						->orderBy('orders.served_at', 'desc')
         						->get();
 
         /*foreach ($user->dishes as $dish)
