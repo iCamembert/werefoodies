@@ -61,7 +61,7 @@ class DishesController extends Controller {
         {
         	File::makeDirectory($destinationPath, 0777, true);
         }
-        
+
         $croppedPicture = $picture->crop((int)$request->input('cropw'), (int)$request->input('croph'), (int)$request->input('cropx'), (int)$request->input('cropy'));
         $croppedPicture->save($destinationPath . '/picture.jpg');
 
@@ -174,6 +174,7 @@ class DishesController extends Controller {
 			return redirect()->back()->with('flash_message', 'You must order dishes from one chef at once!');	
 		}
 		else {
+			dd($quantity);
 			Cart::add($dish->id, $dish->name, $quantity, $dish->price, ['chefId' => $dish->user_id, 'dish' => $dish]);
 			return redirect()->back()->with('flash_message', 'Your cart has been updated!');
 		}
