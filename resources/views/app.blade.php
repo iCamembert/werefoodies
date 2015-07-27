@@ -48,7 +48,7 @@
 }
 
 .symbol-filled {
-  background-color: black;
+  background-color: red;
 }
 
     </style>

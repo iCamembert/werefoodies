@@ -40,8 +40,8 @@
             </div>
         </div>
 
-        <input type="hidden" class="rating"/>
-        
+        <input type="hidden" class="rating" data-filled="glyphicon glyphicon-heart" data-empty="glyphicon glyphicon-heart-empty" />
+
         <input id="orderId" name="order_id" type="hidden" value="" />
 
     </div>
