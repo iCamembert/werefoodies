@@ -17,6 +17,7 @@ return [
     "todayBestDishes" => "Les Plats du Jour",
     "orderThemNow" => "Commandez-les Maintenant",
     "chefsOfTheWeek" => "Les Chefs de la Semaine",
-    "orderFreshDishesNow" => "Commandez dès maintenant de bons petits plats"
+    "orderFreshDishesNow" => "Commandez dès maintenant de bons petits plats",
+    "welcomeToEatMyThings" => "<strong>Bienvenue</strong> sur Eat My Things"
 
 ];
