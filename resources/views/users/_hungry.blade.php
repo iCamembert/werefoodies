@@ -30,9 +30,7 @@
                                             <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
                                             <td class="text-center" style="vertical-align: middle;">
                                                 <ul>
-                                                    @foreach ($order->dishes as $orderedDish)
-                                                        <li><a href="action('DishesController@show', array('dishes' => $orderedDish->id))" title="See Dish">{{ $orderedDish->name }}: {{ orderedDish->quantity }}</a></td></li>
-                                                    @endforeach
+                                                    
                                                 </ul>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->price }}</td>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->served_at }}</td>
