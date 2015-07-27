@@ -15,6 +15,9 @@ return [
 
     "homeSubtitle" => "The ultimate food network!",
     "todayBestDishes" => "Today's Best Dishes",
-    "orderThemNow" => "Order Them Now"
+    "orderThemNow" => "Order Them Now",
+    "chefsOfTheWeek" => "Chefs of the Week",
+    "orderFreshDishesNow" => "Order Fresh Dishes Now",
+    "welcomeToEatMyThings" => "<strong>Welcome</strong> to Eat My Things"
 
 ];

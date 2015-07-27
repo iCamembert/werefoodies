@@ -15,6 +15,8 @@ return [
 
     "homeSubtitle" => "Le réseau ultime pour bien manger!",
     "todayBestDishes" => "Les Plats du Jour",
-    "orderThemNow" => "Commandez-les Maintenant"
+    "orderThemNow" => "Commandez-les Maintenant",
+    "chefsOfTheWeek" => "Les Chefs de la Semaine",
+    "orderFreshDishesNow" => "Commandez dès maintenant de bons petits plats"
 
 ];

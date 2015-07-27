@@ -73,7 +73,7 @@
                              data-y="100"
                              data-speed="300"
                              data-start="800"
-                             data-easing="easeOutExpo">CHEFS OF THE WEEK
+                             data-easing="easeOutExpo">{{ trans('strings.chefsOfTheWeek') }}
                         </div>
 
                         <div class="tp-caption medium_bold_red medium_light_red sfr"
@@ -82,7 +82,7 @@
                              data-speed="300"
                              data-start="1100"
                              data-easing="easeOutExpo">
-                            <a href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527" target="_blank">ORDER FRESH DISHES NOW</a>
+                            <a href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527" target="_blank">{{ trans('strings.orderFreshDishesNow') }}</a>
                         </div>
 
                         @foreach ($chefsOfTheWeek as $index => $chefOfTheWeek)
@@ -112,7 +112,7 @@
 
         <section class="container text-center">
             <h1 class="text-center">
-                <strong>Welcome</strong> to Eat My Things
+                {!! trans('strings.welcomeToEatMyThings') !!}
                 <span class="subtitle">DISHES MADE BY PEOPLE, FOR PEOPLE!</span>
             </h1>
 
