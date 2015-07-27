@@ -97,7 +97,7 @@
 
     @include('partials._footer')
 
-    @include('reviews.create-modal')
+    @include('reviews.create')
 
 @endsection
 
