@@ -145,5 +145,6 @@
             $('#totalPrice').html(quantity * price);
         }
 
+        $('input').rating();
     </script>
 @endsection

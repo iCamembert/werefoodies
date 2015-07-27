@@ -40,6 +40,8 @@
             </div>
         </div>
 
+        <input type="hidden" class="rating"/>
+        
         <input id="orderId" name="order_id" type="hidden" value="" />
 
     </div>

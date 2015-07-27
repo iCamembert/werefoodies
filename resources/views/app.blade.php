@@ -35,6 +35,21 @@
         border-color: #4d90fe;
       }
 
+      .symbol {
+  display: inline-block;
+  border-radius: 50%;
+  border: 5px double white;
+  width: 30px;
+  height: 30px;
+}
+
+.symbol-empty {
+  background-color: #ccc;
+}
+
+.symbol-filled {
+  background-color: black;
+}
 
     </style>
 </head>
@@ -53,6 +68,7 @@
 <script src="{{ asset('/assets/js/all.js') }}"></script>
 <script src="{{ asset('js/Jcrop.js') }}"></script>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<script src="{{ asset('js/bootstrap-rating.min.js') }}"></script>
 
 @yield('footer')
 
