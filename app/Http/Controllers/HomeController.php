@@ -1,5 +1,6 @@
 <?php namespace App\Http\Controllers;
 
+use App;
 use App\Dish;
 use App\User;
 use Illuminate\Support\Facades\Auth;
