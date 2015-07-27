@@ -13,6 +13,8 @@ return [
     |
     */
 
-    "homeSubtitle" => "Le réseau ultime pour bien manger!"
+    "homeSubtitle" => "Le réseau ultime pour bien manger!",
+    "todayBestDishes" => "Les Plats du Jour",
+    "orderThemNow" => "Commandez-les Maintenant"
 
 ];

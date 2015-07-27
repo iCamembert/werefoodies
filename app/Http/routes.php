@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('/{language}', 'HomeController@changeLanguage');
 
 //Route::get('home', 'HomeController@index');
 

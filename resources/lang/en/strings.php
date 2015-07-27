@@ -13,6 +13,8 @@ return [
     |
     */
 
-    "homeSubtitle" => "The ultimate food network!"
+    "homeSubtitle" => "The ultimate food network!",
+    "todayBestDishes" => "Today's Best Dishes",
+    "orderThemNow" => "Order Them Now"
 
 ];

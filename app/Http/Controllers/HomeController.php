@@ -45,4 +45,19 @@ class HomeController extends Controller {
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
 	}
 
+	public function changeLanguage($language)
+	{
+		App::setLocale($language);
+
+		$users = User::all();
+
+        $dishes = Dish::orderBy('rating', 'desc')->limit(12)->get();
+
+        $todayDishes = Dish::orderBy('rating', 'desc')->limit(3)->get();
+
+        $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
+
+		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
+	}
+
 }

@@ -12,17 +12,17 @@
 
             <ul class="dropdown-menu">
                 <li>
-                    <a href="#">
+                    <a href="{{ action('HomeController@changeLanguage', array('language' => 'en')) }}">
                         <img src="{{ asset('img/flags/us.png') }}" width="16" height="11" alt="EN Language" /> [US] English
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ action('HomeController@changeLanguage', array('language' => 'kr')) }}">
                         <img src="{{ asset('img/flags/kr.png') }}" width="16" height="11" alt="KR Language" /> [KR] Korean
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="{{ action('HomeController@changeLanguage', array('language' => 'fr')) }}">
                         <img src="{{ asset('img/flags/fr.png') }}" width="16" height="11" alt="FR Language" /> [FR] French
                     </a>
                 </li>

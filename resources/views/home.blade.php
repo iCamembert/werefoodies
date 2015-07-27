@@ -21,7 +21,7 @@
                              data-y="233"
                              data-speed="300"
                              data-start="500"
-                             data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">TODAY's BEST DISHES
+                             data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">{{ trans('strings.todayBestDishes') }}
                         </div>
 
                         <div class="tp-caption large_bold_grey medium_thin_grey lfl stl"
@@ -30,7 +30,7 @@
                              data-speed="300"
                              data-start="800"
                              data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine">
-                            <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">ORDER THEM NOW</a>
+                            <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">{{ trans('strings.orderThemNow') }}</a>
                         </div>
 
                         @foreach ($todayDishes as $index => $todayDish)
