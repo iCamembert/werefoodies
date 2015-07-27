@@ -41,12 +41,12 @@
                     <div id="order{{ $order->id }}" style="display: none;">
                         @foreach ($order->dishes as $dishToRate)
                             <div class="col-sm-6 col-md-3">
-                                {!! Form::label('dish_rating', $dishToRate->name . ': ') !!}
                                 <div class="item-box fixed-box">
+                                    <h5 class="text-center">{{ $dishToRate->name }}</h5>
                                     <a href="{{ action('DishesController@show', array('dishes' => $dishToRate, 'isBeingOrdered' => 0)) }}" class="thumbnail">
                                         <img class="img-responsive center-block" src="{{ asset('/userdata/' . $dishToRate->user_id . '/dishes/' . $dishToRate->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" />
                                     </a>
-                                    {!! Form::input('hidden', 'dish_rating', null, ['class' => 'form-control rating', 'data-filled' => 'glyphicon glyphicon-heart', 'data-empty' => 'glyphicon glyphicon-heart-empty']) !!}
+                                    {!! Form::input('hidden', 'dish_rating', null, ['class' => 'form-control rating text-center', 'data-filled' => 'glyphicon glyphicon-heart', 'data-empty' => 'glyphicon glyphicon-heart-empty']) !!}
                                 </div>
                             </div>                                                                          
                         @endforeach
