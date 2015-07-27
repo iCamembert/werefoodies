@@ -41,7 +41,7 @@
                                             <td class="text-center" style="vertical-align: middle;">
                                                 @if ($order->status_id == 0)
                                                     <span class="orange"><strong>Pending</strong></span>
-                                                    <a href="action('DishesController@show', array('dishes' => $order->dish, 'isBeingOrdered' => 2, 'order' => $order))"><i class="fa fa-edit" title="Modify Order!"></i></a>
+                                                    <a href="{{ action('OrdersController@edit', array('orders' => $order)) }}"><i class="fa fa-edit" title="Modify Order!"></i></a>
                                                     <a href="{{ action('OrdersController@cancel', array('orders' => $order)) }}"><i class="fa fa-times" title="Cancel Order!"></i></a>
                                                 @elseif ($order->status_id == 1)
                                                     <span class="green"><strong>Accepted</strong></span>
