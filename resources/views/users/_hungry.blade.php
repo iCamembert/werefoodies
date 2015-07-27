@@ -31,7 +31,7 @@
                                             <td class="text-center" style="vertical-align: middle;">
                                                 <ul>
                                                     @foreach ($order->dishes as $orderedDish)
-                                                        <li><a href="{{ action('DishesController@show', array('dishes' => $orderedDish->id, 'isBeingOrdered' => 0)) }}" title="See Dish">{{ $orderedDish->name }}: {{ $orderedDish->quantity }}</a></li>
+                                                        <li><a href="{{ action('UsersController@show', array('users' => $order->dishes->first()->user->id)) }}" title="See Dish">{{ $orderedDish->name }}: {{ $orderedDish->quantity }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </td>
