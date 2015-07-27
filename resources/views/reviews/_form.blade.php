@@ -27,7 +27,7 @@
         <div class="row">
             <div class="form-group center-block">
                 {!! Form::label('chef_rating', 'Chef Rating:') !!}
-                {!! Form::input('number', 'chef_rating', null, ['size' => '1', 'class' => 'form-control']) !!}
+                {!! Form::input('number', 'chef_rating', null, ['size' => '1', 'class' => 'form-control rating']) !!}
             </div>
         </div>
 
@@ -36,11 +36,23 @@
         <div class="row">
             <div class="form-group center-block">
                 {!! Form::label('dish_rating', 'Dish Rating:') !!}
-                {!! Form::input('number', 'dish_rating', null, ['size' => '1', 'class' => 'form-control']) !!}
+                
+                @foreach($user->orders as $order)
+                    <div id="order{{ $order->id }}" style="display: none;">
+                        @foreach ($order->dishes as $dishToRate)
+                            <div class="row">
+                                <a href="{{ action('DishesController@show', array('dishes' => $dishToRate, 'isBeingOrdered' => 0)) }}" class="thumbnail">
+                                    <img class="img-responsive center-block" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dishToRate->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" />
+                                </a>
+                                {!! Form::label('dish_rating', $dishToRate->name . ': ') !!}
+                                {!! Form::input('number', 'dish_rating', null, ['size' => '1', 'class' => 'form-control rating', 'data-filled' => 'glyphicon glyphicon-heart', 'data-empty' => 'glyphicon glyphicon-heart-empty']) !!}
+                            </div>                                                                          
+                        @endforeach
+                    </div>
+                @endforeach
+
             </div>
         </div>
-
-        <input type="hidden" class="rating" data-filled="glyphicon glyphicon-heart" data-empty="glyphicon glyphicon-heart-empty" />
 
         <input id="orderId" name="order_id" type="hidden" value="" />
 

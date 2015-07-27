@@ -46,9 +46,9 @@
                                                 @elseif ($order->status_id == 1)
                                                     <span class="green"><strong>Accepted</strong></span>
                                                     @if ($order->reviewed())
-                                                        <span><a data-toggle="modal" data-target=".review-modal" onclick="Javascript: document.getElementById('orderId').value = {{ $order->id }};"><i class="fa fa-pencil" title="Review Order!"></i></a></span>
+                                                        
                                                     @else
-                                                        <span><a data-toggle="modal" data-target=".review-modal" onclick="Javascript: document.getElementById('orderId').value = {{ $order->id }};"><i class="fa fa-eye" title="See Review!"></i></a></span>
+                                                        <span><a data-toggle="modal" data-target=".review-modal" onclick="Javascript: document.getElementById('orderId').value = {{ $order->id }}; document.getElementById('order' + {{ $order->id }}).style = 'visible';"><i class="fa fa-pencil" title="Review Order!"></i></a></span>
                                                     @endif
                                                 @elseif ($order->status_id == 2)
                                                     <span class="red"><strong>Rejected</strong></span>

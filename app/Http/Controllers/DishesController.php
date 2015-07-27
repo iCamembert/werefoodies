@@ -90,7 +90,7 @@ class DishesController extends Controller {
 
         if (Auth::check() && ! Auth::user()->dishes()->find($dish->id))
             session(['dishId' => $dish->id]);
-
+        
         if (Input::get('order'))
         {
             $order = Order::findOrFail(Input::get('order'));

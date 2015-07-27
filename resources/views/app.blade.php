@@ -44,7 +44,7 @@
 }
 
 .symbol-empty {
-  background-color: #ccc;
+  background-color: red;
 }
 
 .symbol-filled {

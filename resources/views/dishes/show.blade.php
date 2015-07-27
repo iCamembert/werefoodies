@@ -104,11 +104,6 @@
                                 Check out how other Hungries enjoyed <strong>{{ $dish->user->name }}</strong>'s <strong>{{ $dish->name }}</strong>!
                             @endif
                         </p>
-
-                        @if ($dish->wasOrderedByUser())
-                            @include('reviews.create')
-                        @endif
-
                         
                     </div>
                 </div>
