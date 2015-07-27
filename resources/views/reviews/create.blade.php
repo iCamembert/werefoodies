@@ -1,18 +1,28 @@
-<div class="modal fade review-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-        <div class="modal-content">
+<div class="row">
 
-            <div class="modal-header"><!-- modal header -->
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Write a review for your order:</h4>
-            </div><!-- /modal header -->
+    <!-- CREATE REVIEW -->
+    <div class="col-md-6">
 
-            {!! Form::open(['url' => 'reviews']) !!}
+        <h2>Write a Review:</h2>
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <strong>Whoops!</strong> There were some problems with your input.<br><br>
+                <!--<ul>
+                    //@foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    //@endforeach
+                        </ul>-->
+            </div>
+        @endif
+
+        {!! Form::open(['url' => 'reviews']) !!}
             @include('reviews._form', ['submitButtonText' => 'Post Review'])
-            {!! Form::close() !!}
+        {!! Form::close() !!}
 
-            @include('errors.list')
+        @include('errors.list')
 
-        </div>
     </div>
+    <!-- /CREATE REVIEW -->
+
 </div>

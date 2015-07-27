@@ -52,7 +52,7 @@ class Dish extends Model {
 
     public function wasOrderedByUser()
     {
-        return Auth::check() ? (!Auth::user()->orders()->join('dish_order', 'orders.id', '=', 'dish_order.order_id')->where('dish_order.dish_id', $this->id)->get()->isEmpty() ? false : true) : false;
+        return Auth::check() ? (Auth::user()->orders()->rightJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')->where('dish_order.dish_id', $this->id)->get()->isEmpty() ? false : true) : false;
     }
 
     public function isMyDish()
