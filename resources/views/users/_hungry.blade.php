@@ -16,9 +16,8 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center" style="width: 5%;">#</th>
-                                    <th class="text-center" style="width: 25%;">Dish</th>
+                                    <th class="text-center" style="width: 35%;">Dishes</th>
                                     <th class="text-center" style="width: 15%;">Chef's Name</th>
-                                    <th class="text-center" style="width: 10%;">Quantity</th>
                                     <th class="text-center" style="width: 10%;">Total Price</th>
                                     <th class="text-center" style="width: 15%;">Asked For</th>
                                     <th class="text-center" style="width: 20%;">Status</th>
@@ -29,10 +28,14 @@
                                     @if ($order->status_id <> 3)
                                         <tr>
                                             <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="action('DishesController@show', array('dishes' => $order->dish->id))" title="See Dish"></a></td>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="action('UsersController@show', array('users' => $order->dish->user->id))" title="See Profile"></a></td>
-                                            <td class="text-center" style="vertical-align: middle;"></td>
-                                            <td class="text-center" style="vertical-align: middle;"></td>
+                                            <td class="text-center" style="vertical-align: middle;">
+                                                <ul>
+                                                    @foreach ($order->dishes as $dish)
+                                                        <li><a href="action('DishesController@show', array('dishes' => $orderedDish->id))" title="See Dish">{{ $orderedDish->name }}: {{ orderedDish->quantity }}</a></td></li>
+                                                    @endforeach
+                                                </ul>
+                                            <td class="text-center" style="vertical-align: middle;"><a href="action('UsersController@show', array('users' => $order->dishes->first()->user->id))" title="See Profile"></a></td>
+                                            <td class="text-center" style="vertical-align: middle;">{{ $order->price }}</td>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->served_at }}</td>
                                             <td class="text-center" style="vertical-align: middle;">
                                                 @if ($order->status_id == 0)
