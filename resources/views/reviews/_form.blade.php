@@ -42,7 +42,7 @@
                         @foreach ($order->dishes as $dishToRate)
                             <div class="row">
                                 <a href="{{ action('DishesController@show', array('dishes' => $dishToRate, 'isBeingOrdered' => 0)) }}" class="thumbnail">
-                                    <img class="img-responsive center-block" src="{{ asset('/userdata/' . $user->id . '/dishes/' . $dishToRate->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" />
+                                    <img class="img-responsive center-block" src="{{ asset('/userdata/' . $dishToRate->user_id . '/dishes/' . $dishToRate->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" />
                                 </a>
                                 {!! Form::label('dish_rating', $dishToRate->name . ': ') !!}
                                 {!! Form::input('number', 'dish_rating', null, ['size' => '1', 'class' => 'form-control rating', 'data-filled' => 'glyphicon glyphicon-heart', 'data-empty' => 'glyphicon glyphicon-heart-empty']) !!}
