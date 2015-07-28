@@ -21,7 +21,7 @@
                              data-y="233"
                              data-speed="300"
                              data-start="500"
-                             data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">{{ trans('strings.todayBestDishes') }}
+                             data-easing="easeOutExpo" data-end="8800" data-endspeed="300" data-endeasing="easeInSine">{{ trans('strings.homeCarousel1') }}
                         </div>
 
                         <div class="tp-caption large_bold_grey medium_thin_grey lfl stl"
@@ -30,7 +30,7 @@
                              data-speed="300"
                              data-start="800"
                              data-easing="easeOutExpo" data-end="9100" data-endspeed="300" data-endeasing="easeInSine">
-                            <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">{{ trans('strings.orderThemNow') }}</a>
+                            <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">{{ trans('strings.homeCarousel2') }}</a>
                         </div>
 
                         @foreach ($todayDishes as $index => $todayDish)
@@ -73,7 +73,7 @@
                              data-y="100"
                              data-speed="300"
                              data-start="800"
-                             data-easing="easeOutExpo">{{ trans('strings.chefsOfTheWeek') }}
+                             data-easing="easeOutExpo">{{ trans('strings.homeCarousel3') }}
                         </div>
 
                         <div class="tp-caption medium_bold_red medium_light_red sfr"
@@ -82,7 +82,7 @@
                              data-speed="300"
                              data-start="1100"
                              data-easing="easeOutExpo">
-                            <a href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527" target="_blank">{{ trans('strings.orderFreshDishesNow') }}</a>
+                            <a href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527" target="_blank">{{ trans('strings.homeCarousel4') }}</a>
                         </div>
 
                         @foreach ($chefsOfTheWeek as $index => $chefOfTheWeek)
@@ -112,18 +112,18 @@
 
         <section class="container text-center">
             <h1 class="text-center">
-                {!! trans('strings.welcomeToEatMyThings') !!}
-                <span class="subtitle">DISHES MADE BY PEOPLE, FOR PEOPLE!</span>
+                {!! trans('strings.homeWelcome1') !!}
+                <span class="subtitle">{{ trans('strings.homeWelcome2') }}</span>
             </h1>
 
             <div class="row white-row">
-                <h4>Where are you now?</h4>
+                <h4>{{ trans('strings.homeSearch1') }}</h4>
                 <div class="row">
                     <div class="col-md-4 col-md-offset-4">
-                        <p class="nomargin">Find a chef near you</p>
+                        <p class="nomargin">{{ trans('strings.homeSearch2') }}</p>
 
                         <form method="get" action="#" class="input-group">
-                            <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="Type in your location (e.g. 'Paris, France')" />
+                            <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
                             <div id="map-canvas"></div>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
@@ -131,7 +131,7 @@
                         </form>
                     </div>
                     <div class="col-md-2 col-md-offset-5">
-                        <a id="advancedSearchButton">Advanced Search</a>
+                        <a id="advancedSearchButton">{{ trans('strings.homeSearch4') }}</a>
                     </div>
                 </div>
 
@@ -144,7 +144,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {!! Form::label('name', 'By Name:') !!}
+                                        {!! Form::label('name', '{{ trans("strings.homeSearch5") }}') !!}
                                         {!! Form::text('name', null, ['class' => 'form-control input-lg']) !!}
                                     </div>
                                 </div>
@@ -155,7 +155,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {!! Form::label('rating', 'Rating Above:') !!}
+                                        {!! Form::label('rating', '{{ trans("strings.homeSearch6") }}') !!}
                                         {!! Form::number('rating', null, ['size' => '1', 'class' => 'form-control input-lg']) !!}
                                     </div>
                                 </div>
@@ -166,20 +166,20 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {!! Form::label('price', 'Price Below:') !!}
+                                        {!! Form::label('price', '{{ trans("strings.homeSearch7") }}') !!}
                                         {!! Form::text('price', null, ['pattern' => '^\d*(\.\d{2}$)?', 'size' => '4', 'class' => 'form-control input-lg']) !!}
                                     </div>
                                 </div>
                             </div>
 
-                            <a id="cancelAdvancedSearchButton">Cancel</a>
+                            <a id="cancelAdvancedSearchButton">{{ trans('strings.homeSearch8') }}</a>
 
                         </section>
                     </div>
                 </div>
             </div>
 
-            <p class="lead">Hungry? Come and check out the best dishes cooked by the best chefs in your area.</p>
+            <p class="lead">{{ trans('strings.homeBestDishes1') }}</p>
         </section>
 
         <div id="shop">
@@ -196,10 +196,10 @@
                                         <span class="overlay color2"></span>
     										<span class="inner">
     											<span class="block fa fa-plus fsize20"></span>
-    											<strong>SEE</strong> MORE
+    											{!! trans('strings.homeBestDishes2') !!}
     										</span>
                                     </a>
-                                    <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 1)) }}" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> ORDER</a>
+                                    <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 1)) }}" class="btn btn-primary add_to_cart"><i class="fa fa-shopping-cart"></i> {{ trans('strings.homeBestDishes3') }}</a>
                                     <img class="img-responsive" src="{{ asset('userdata/' . $dish->user_id . '/dishes/' . $dish->id . '/' . 'picture_md.jpg') }}" width="100" height="100" alt="">
                                 </figure>
                                 <div class="item-box-desc">
@@ -221,14 +221,14 @@
 
             <div class="row bs-callout nomargin-bottom">
                 <div class="col-md-8 text-center">
-                    <h3 class="padding20">Subscribe <strong>now</strong> and get the <strong>latest</strong> dish suggestions.</h3>
+                    <h3 class="padding20">{!! trans('strings.homeSubscribe1') !!}</h3>
                 </div>
                 <div class="col-md-4">
 
-                    <p class="nomargin">Type your best E-mail Address</p>
+                    <p class="nomargin">{{ trans('strings.homeSubscribe2') }}</p>
 
                     <form method="get" action="#" class="input-group">
-                        <input type="text" class="form-control" name="s" id="s" value="" placeholder="E-mail Address" />
+                        <input type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSubscribe3') }}" />
 							<span class="input-group-btn">
 								<button class="btn btn-primary"><i class="fa fa-search"></i></button>
 							</span>

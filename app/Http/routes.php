@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
-Route::get('/{language}', 'HomeController@changeLanguage');
+
 
 //Route::get('home', 'HomeController@index');
 
@@ -22,7 +22,7 @@ Route::get('my-account', 'UsersController@edit');
 Route::put('users/{users}', 'UsersController@update');
 Route::patch('users/{users}', 'UsersController@update');
 Route::delete('users/{users}', 'UsersController@destroy');
-
+Route::get('/{language}', 'HomeController@changeLanguage');
 //Route::get('dishes', 'DishesController@index');
 //Route::get('dishes/create', 'DishesController@create');
 //Route::get('dishes/{id}', 'DishesController@show');

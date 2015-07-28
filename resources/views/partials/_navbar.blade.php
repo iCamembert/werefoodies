@@ -33,7 +33,7 @@
         @if(Auth::guest())
             <!-- SIGN IN -->
             <div class="pull-right nav signin-dd">
-                <a id="quick_sign_in" href="{{ url('/auth/login') }}"><i class="fa fa-users"></i><span class="hidden-xs"> Sign In</span></a>
+                <a id="quick_sign_in" href="{{ url('/auth/login') }}"><i class="fa fa-users"></i><span class="hidden-xs"> {{ trans('strings.navSignIn') }}</span></a>
                 <div class="dropdown-menu" role="menu" aria-labelledby="quick_sign_in">
 
                     <h4>Sign In</h4>
@@ -77,7 +77,7 @@
             <!-- /SIGN IN -->
         @else
             <a href="{{ url('/my-account') }}"><i class="fa fa-users"></i><span class="hidden-xs">{{ Auth::user()->name}}</span></a>
-            <a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i><span class="hidden-xs">Sign Out</span></a>
+            <a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i><span class="hidden-xs">{{ trans('strings.navSignOut') }}</span></a>
         @endif
 
         <!-- CART MOBILE BUTTON -->
@@ -86,8 +86,8 @@
 
         <!-- LINKS -->
         <div class="pull-right nav hidden-xs">
-            <a href="page-about-us.html"><i class="fa fa-angle-right"></i> About</a>
-            <a href="contact-us.html"><i class="fa fa-angle-right"></i> Contact</a>
+            <a href="page-about-us.html"><i class="fa fa-angle-right"></i> {{ trans('strings.navAbout') }}</a>
+            <a href="contact-us.html"><i class="fa fa-angle-right"></i> {{ trans('strings.navContact') }}</a>
         </div>
         <!-- /LINKS -->
 
@@ -116,14 +116,14 @@
                     
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="{{ url('/') }}">
-                            <b>Home</b> <i class="fa fa-angle-down"></i>
+                            <b>{{ trans('strings.navMenuTitle') }}</b> <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a href="magazine-home.html">How does it work?</a></li>
-                            <li><a href="magazine-category.html">Tips & Tricks</a></li>
-                            <li><a href="magazine-single.html">About Us</a></li>
+                            <li><a href="magazine-home.html">{{ trans('strings.navMenuItem1') }}</a></li>
+                            <li><a href="magazine-category.html">{{ trans('strings.navMenuItem2') }}</a></li>
+                            <li><a href="magazine-single.html">{{ trans('strings.navAbout') }}</a></li>
                             <li class="divider"></li>
-                            <li><a href="realestate-home.html">Contact Us</a></li>
+                            <li><a href="realestate-home.html">{{ trans('strings.navContact') }}</a></li>
                         </ul>
                     </li>
 
@@ -131,7 +131,7 @@
                     <li class="search">
                         <!-- search form -->
                         <form method="get" action="#" class="input-group pull-right">
-                            <input type="text" class="form-control" name="k" id="k" value="" placeholder="Search">
+                            <input type="text" class="form-control" name="k" id="k" value="" placeholder="{{ trans('strings.navSearch') }}">
 									<span class="input-group-btn">
 										<button class="btn btn-primary notransition"><i class="fa fa-search"></i></button>
 									</span>
@@ -147,7 +147,7 @@
                         <div class="quick-cart-content">
 
                             @if (Cart::count())
-                                <p><i class="fa fa-warning"></i> Your hungry cart currently contains:</p>
+                                <p><i class="fa fa-warning"></i> {{ trans('strings.navCartNotEmpty') }}</p>
                                 
                                 @foreach (Cart::content() as $item)
                                     <a class="item" href="{{ action('DishesController@show', array('dishes' => $item->options->dish, 'isBeingOrdered' => 0)) }}">
@@ -162,15 +162,15 @@
                                 <!-- QUICK CART BUTTONS -->
                                 <div class="row cart-footer">
                                     <div class="col-md-6 nopadding-right">
-                                        <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary btn-xs fullwidth">VIEW CART</a>
+                                        <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary btn-xs fullwidth">{{ trans('strings.navCartButton1') }}</a>
                                     </div>
                                     <div class="col-md-6 nopadding-left">
-                                        <a href="{{ action('OrdersController@create') }}" class="btn btn-info btn-xs fullwidth">CHECKOUT</a>
+                                        <a href="{{ action('OrdersController@create') }}" class="btn btn-info btn-xs fullwidth">{{ trans('strings.navCartButton2') }}</a>
                                     </div>
                                 </div>
                                 <!-- /QUICK CART BUTTONS -->
                             @else
-                                <p><i class="fa fa-warning"></i> You currently haven't got anything in your hungry cart!</p>
+                                <p><i class="fa fa-warning"></i> {{ trans('strings.navCartEmpty') }}</p>
                             @endif
 
                         </div>
