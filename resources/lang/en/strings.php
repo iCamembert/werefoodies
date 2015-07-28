@@ -16,7 +16,7 @@ return [
     // ******** Navigation ********
 
     "navAbout" => "About Us",
-    "navContact" => "Contact Us"
+    "navContact" => "Contact Us",
     "navSignIn" => "Sign In",
     "navSignOut" => "Sign Out",
     "navMenuTitle" => "Home",
