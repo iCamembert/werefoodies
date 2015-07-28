@@ -16,7 +16,7 @@ return [
     // ******** Navigation ********
 
     "navAbout" => "Qui sommes-nous?",
-    "navContact" => "Contact {{ Auth::check() ? Auth::user()->name : Us }}",
+    "navContact" => "Contact ",
     "navSignIn" => "Sign In",
     "navSignOut" => "Sign Out",
     "navMenuTitle" => "Home",
