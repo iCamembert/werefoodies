@@ -1,12 +1,12 @@
 @if ($user->isMe())
     <div class="row">
         <div class="col-md-12">
-            <h2>Orders from Hungries</h2>
+            <h2>{{ trans('strings.profileChefOrders1') }}</h2>
             <form class="white-row" method="post" action="shop-cc-pay.html">
                 <p>
-                    Here's the list of orders placed by Hungries for your dishes!
+                    {{ trans('strings.profileChefOrders3') }}
                 </p>
-                <h5>Orders:</h5>
+                <h5>{{ trans('strings.profileChefOrders4') }}</h5>
                 
                 <!-- LIST OF ORDERS FROM OTHER USERS -->
                 <div class="row">
@@ -16,19 +16,17 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center" style="width: 5%;">#</th>
-                                    <th class="text-center" style="width: 10%;">Order ID</th>
-                                    <th class="text-center" style="width: 30%;">Dishes</th>
-                                    <th class="text-center" style="width: 10%;">Client's Name</th>
-                                    <th class="text-center" style="width: 10%;">Total Price</th>
-                                    <th class="text-center" style="width: 15%;">Due on</th>
-                                    <th class="text-center" style="width: 20%;">Status</th>
+                                    <th class="text-center" style="width: 40%;">{{ trans('strings.profileChefOrders5') }}</th>
+                                    <th class="text-center" style="width: 10%;">{{ trans('strings.profileChefOrders6') }}</th>
+                                    <th class="text-center" style="width: 10%;">{{ trans('strings.profileChefOrders7') }}</th>
+                                    <th class="text-center" style="width: 15%;">{{ trans('strings.profileChefOrders8') }}</th>
+                                    <th class="text-center" style="width: 20%;">{{ trans('strings.profileChefOrders9') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach ($clientOrders as $index => $clientOrder)
                                     <tr>
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                        <td class="text-center" style="vertical-align: middle;">{{ $clientOrder->id }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             <ul>
                                                 @foreach ($clientOrder->dishes as $orderedDish)
@@ -41,15 +39,15 @@
                                         <td style="vertical-align: middle;">{{ $clientOrder->served_at }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
                                             @if ($clientOrder->status_id == 0)
-                                                <span class="orange"><strong>Pending</strong></span>
-                                                <a href="{{ action('OrdersController@accept', array('orders' => $clientOrder)) }}"><i class="fa fa-check" title="Accept Order!"></i></a>
-                                                <a href="{{ action('OrdersController@reject', array('orders' => $clientOrder)) }}"><i class="fa fa-times" title="Reject Order!"></i></a>
+                                                <span class="orange"><strong>{{ trans('strings.profileChefOrders10') }}</strong></span>
+                                                <a href="{{ action('OrdersController@accept', array('orders' => $clientOrder)) }}"><i class="fa fa-check" title="{{ trans('strings.profileChefOrders11') }}"></i></a>
+                                                <a href="{{ action('OrdersController@reject', array('orders' => $clientOrder)) }}"><i class="fa fa-times" title="{{ trans('strings.profileChefOrders12') }}"></i></a>
                                             @elseif ($clientOrder->status_id == 1)
-                                                <span class="green"><strong>Accepted</strong></span>
+                                                <span class="green"><strong>{{ trans('strings.profileChefOrders13') }}</strong></span>
                                             @elseif ($clientOrder->status_id == 2)
-                                                <span class="red"><strong>Rejected</strong></span>
+                                                <span class="red"><strong>{{ trans('strings.profileChefOrders14') }}</strong></span>
                                             @elseif ($clientOrder->status_id ==3)
-                                                <span class="blue"><strong>Canceled</strong></span>
+                                                <span class="blue"><strong>{{ trans('strings.profileChefOrders15') }}</strong></span>
                                             @endif
                                         </td>
                                     </tr>
@@ -72,28 +70,28 @@
 <div class="row">
     <div class="col-md-12">
         @if ($user->isMe())
-            <h2>My Dishes</h2>
+            <h2>{{ trans('strings.profileChefDishes1') }}</h2>
         @else
-            <h2>{{ $user->name }}'s Dishes</h2>
+            <h2>{{ trans('strings.profileChefDishes2') }}</h2>
         @endif
         <form class="white-row" method="post" action="shop-cc-pay.html">
             <p>
                 @if ($user->isMe())
-                    Here's the list of dishes you created.
+                    {{ trans('strings.profileChefDishes3') }}
                 @else
-                    Here's the list of dishes {{ $user->name }} created.
+                    {{ trans('strings.profileChefDishes4') }}
                 @endif
             </p>
             @if ($user->isMe())
                 <p>
-                    <strong>How about adding a new one?</strong>
-                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">Add a Dish</a>
+                    <strong>{{ trans('strings.profileChefDishes5') }}</strong>
+                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">{{ trans('strings.profileChefDishes6') }}</a>
                 </p>
             @else
                 @unless ($user->isChef())
                 <p>
-                    <strong>How about becoming a chef yourself?</strong>
-                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">Suggest a Dish</a>
+                    <strong>{{ trans('strings.profileChefDishes7') }}</strong>
+                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">{{ trans('strings.profileChefDishes8') }}</a>
                 </p>
                 @endunless
             @endif
@@ -107,13 +105,13 @@
                             <thead>
                             <tr>
                                 <th class="text-center" style="width: 5%;">#</th>
-                                <th class="text-center" style="width: 15%;">Picture</th>
-                                <th class="text-center" style="width: 5%;">Price</th>
-                                <th class="text-center" style="width: 10%;">Name</th>
-                                <th class="text-center" style="width: 33%;">Description</th>
-                                <th class="text-center" style="width: 7%;">Rating</th>
-                                <th class="text-center" style="width: 10%;">Created on</th>
-                                <th class="text-center" style="width: 20%;">Action</th>
+                                <th class="text-center" style="width: 15%;">{{ trans('strings.profileChefDishes9') }}</th>
+                                <th class="text-center" style="width: 5%;">{{ trans('strings.profileChefDishes10') }}</th>
+                                <th class="text-center" style="width: 10%;">{{ trans('strings.profileChefDishes11') }}</th>
+                                <th class="text-center" style="width: 33%;">{{ trans('strings.profileChefDishes12') }}</th>
+                                <th class="text-center" style="width: 7%;">{{ trans('strings.profileChefDishes13') }}</th>
+                                <th class="text-center" style="width: 10%;">{{ trans('strings.profileChefDishes14') }}</th>
+                                <th class="text-center" style="width: 20%;">{{ trans('strings.profileChefDishes15') }}</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -128,8 +126,8 @@
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->rating }}%</td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->created_at }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
-                                            <a href="{{ action('DishesController@edit', array('dishes' => $dish)) }}" class="btn btn-primary">Edit</a>
-                                            <a href="" class="btn btn-primary">Delete</a>
+                                            <a href="{{ action('DishesController@edit', array('dishes' => $dish)) }}" class="btn btn-primary">{{ trans('strings.profileChefDishes16') }}</a>
+                                            <a href="" class="btn btn-primary">{{ trans('strings.profileChefDishes17') }}</a>
                                         </td>
                                     @else
                                         <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
@@ -140,8 +138,8 @@
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->rating }}%</td>
                                         <td class="text-center" style="vertical-align: middle;">{{ $dish->created_at }}</td>
                                         <td class="text-center" style="vertical-align: middle;">
-                                            <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}" class="btn btn-primary">See</a>
-                                            <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 1)) }}" class="btn btn-primary">Order</a>
+                                            <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 0)) }}" class="btn btn-primary">{{ trans('strings.profileChefDishes18') }}</a>
+                                            <a href="{{ action('DishesController@show', array('dishes' => $dish, 'isBeingOrdered' => 1)) }}" class="btn btn-primary">{{ trans('strings.profileChefDishes19') }}</a>
                                         </td>
                                     @endif
 
@@ -165,13 +163,13 @@
 
 <div class="row">
     <div class="col-md-12">
-        <h2>Reviews from Hungries</h2>
+        <h2>{{ trans('strings.profileChefReviews1') }}</h2>
         <form class="white-row" method="post" action="shop-cc-pay.html">
             <p>
                 @if ($user->isMe())
-                    Check out how Hungries enjoyed <strong>your</strong> dishes!
+                    {{ trans('strings.profileChefReviews2') }}
                 @else
-                    Check out how Hungries enjoyed <strong>{{ $user->name }}'s</strong> dishes!
+                    {{ trans('strings.profileChefReviews3') }}
                 @endif
             </p>
 
