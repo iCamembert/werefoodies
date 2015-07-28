@@ -102,7 +102,7 @@ return [
     // ******** Profile Page ********
 
     "profileSummary1" => "My Profile",
-    "profileSummary2" => "Location:"
+    "profileSummary2" => "Location:",
     "profileSummary3" => "Rating:",
     "profileSummary4" => "Average Dishes Rating:",
     "profileSummary5" => "Number of Dishes:",
