@@ -136,9 +136,9 @@ return [
     "profileChefOrders16" => "See Review!",
 
     "profileChefDishes1" => "My Dishes",
-    "profileChefDishes2" => "{{ $user->name }}'s Dishes",
+    "profileChefDishes2" => "'s Dishes",
     "profileChefDishes3" => "Here's the list of dishes you created:",
-    "profileChefDishes4" => "Here's the list of dishes {{ $user->name }} created.",
+    "profileChefDishes4" => "Here's the list of dishes  created.",
     "profileChefDishes5" => "How about adding a new one?",
     "profileChefDishes6" => "Add a Dish",
     "profileChefDishes7" => "How about becoming a chef yourself?",
@@ -157,7 +157,7 @@ return [
 
     "profileChefReviews1" => "Reviews from Hungries",
     "profileChefReviews2" => "Check out how Hungries enjoyed <strong>your</strong> dishes!",
-    "profileChefReviews3" => "Check out how much Hungries enjoyed <strong>{{ $user->name }}'s</strong> dishes!",
+    "profileChefReviews3" => "Check out how much Hungries enjoyed <strong>'s</strong> dishes!",
 
     // ******** Dish Page ********
 
