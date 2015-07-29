@@ -14,25 +14,10 @@
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
                         <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-                            {{{ $properties['native'] }}}
+                            <img src="{{ asset('img/flags/{{$localeCode}}.png') }}" width="16" height="11" alt="{{$localeCode}} Language" /> [{{$localeCode}}] {{{ $properties['native'] }}}
                         </a>
                     </li>
                 @endforeach
-                <li>
-                    <a href="{{ action('HomeController@changeLanguage', array('language' => 'en')) }}">
-                        <img src="{{ asset('img/flags/us.png') }}" width="16" height="11" alt="EN Language" /> [US] English
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ action('HomeController@changeLanguage', array('language' => 'kr')) }}">
-                        <img src="{{ asset('img/flags/kr.png') }}" width="16" height="11" alt="KR Language" /> [KR] Korean
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ action('HomeController@changeLanguage', array('language' => 'fr')) }}">
-                        <img src="{{ asset('img/flags/fr.png') }}" width="16" height="11" alt="FR Language" /> [FR] French
-                    </a>
-                </li>
             </ul>
         </div>
         <!-- /LANGUAGE -->

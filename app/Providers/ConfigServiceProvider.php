@@ -16,7 +16,15 @@ class ConfigServiceProvider extends ServiceProvider {
 	public function register()
 	{
 		config([
-			//
+            'laravellocalization.supportedLocales' => [
+	            'en'  => array( 'name' => 'English', 'script' => 'Latn', 'native' => 'English' ),
+	            'kr'  => array( 'name' => 'Korean', 'script' => 'ko-KR', 'native' => '한국어' ),
+	            'fr'  => array( 'name' => 'French', 'script' => 'Latn', 'native' => 'Français' ),
+	        ],
+
+	        'laravellocalization.useAcceptLanguageHeader' => true,
+
+	        'laravellocalization.hideDefaultLocaleInURL' => true
 		]);
 	}
 
