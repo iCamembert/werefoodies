@@ -106,7 +106,7 @@
 
         <!-- Logo text or image -->
         <a class="logo" href="{{ url('/') }}">
-            <img src="{{ asset('img/logo.png') }}" alt="werefoodies" />
+            <img src="{{ asset('img/logo.png') }}" alt="werefoodies" width="20%" height="20%"/>
         </a>
 
         <!-- Top Nav -->
