@@ -77,7 +77,7 @@ return [
     "signInForgot3" => "<strong>Type your E-mail Address</strong>",
     "signInForgot4" => "E-mail Address",
     "signInForgot5" => "Send Reset Link",
-    "signInNoAccountYet" => "Not a member yet? <a href=\"{{ url('/auth/register') }}\">Click here to register</a>, it's quick and free!",
+    "signInNoAccountYet" => "Not a member yet? <a href=\"\">Click here to register</a>, it's quick and free!",
 
     // ******** Sign Up Page ********
 
@@ -95,7 +95,7 @@ return [
     "signUpWhy6" => "Become a chef yourself, make your creations visible, share your passion & become rich!",
     "signUpWhy7" => "Play to our games, participate to our contests & events, all related to Food!",
     "signUpWhy8" => "Eat!",
-    "signUpAlreadyAccount" => "Already a member? <a href=\"{{ url('/auth/login') }}\">Click here to sign in</a>!",
+    "signUpAlreadyAccount" => "Already a member? <a href=\"\">Click here to sign in</a>!",
     "signUpContact1" => "<strong>Contact our support team!</strong>",
     "signUpContact2" => "Don't hesitate, <a href=\"\">click here if you need help</a>!",
 
