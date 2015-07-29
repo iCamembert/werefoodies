@@ -7,7 +7,7 @@
         <!-- LANGUAGE -->
         <div class="btn-group pull-right hidden-xs">
             <button class="dropdown-toggle language" type="button" data-toggle="dropdown">
-                <img src="{{ asset('img/flags/{{ LaravelLocalization::getCurrentLocale() }}.png') }}" width="16" height="11" alt="{{ LaravelLocalization::getCurrentLocale() }} Language" /> {{ LaravelLocalization::getCurrentLocaleName() }} <span class="caret"></span>
+                <img src="{{ asset('img/flags/' . LaravelLocalization::getCurrentLocale() . '.png') }}" width="16" height="11" alt="{{ LaravelLocalization::getCurrentLocale() }} Language" /> {{ LaravelLocalization::getCurrentLocaleName() }} <span class="caret"></span>
             </button>
 
             <ul class="dropdown-menu">
