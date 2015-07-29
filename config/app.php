@@ -52,7 +52,7 @@ return [
 	|
 	*/
 
-	//'locale' => 'en',
+	'locale' => 'en',
 
 	'locales' => ['en' => 'English', 'kr' => 'Korean', 'fr' => 'French'],
 
