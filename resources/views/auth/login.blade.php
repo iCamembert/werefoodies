@@ -10,11 +10,11 @@
             <!-- PAGE TITLE -->
             <header id="page-title">
                 <div class="container">
-                    <h1>Sign In</h1>
+                    <h1>{{ trans('strings.breadSignIn') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="active">Sign In</li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li class="active">{{ trans('strings.breadSignIn') }}</li>
                     </ul>
                 </div>
             </header>
@@ -27,7 +27,7 @@
                     <!-- LOGIN -->
                     <div class="col-md-6">
 
-                        <h2>Sign <strong>In</strong></h2>
+                        <h2>{!! trans('strings.signInLogin1') !!}</h2>
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -46,7 +46,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>E-mail Address</label>
+                                        <label>{{ trans('strings.signInLogin2') }}</label>
                                         <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                                     </div>
                                 </div>
@@ -54,7 +54,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        <label>Password</label>
+                                        <label>{{ trans('strings.signInLogin3') }}</label>
                                         <input type="password" class="form-control" name="password">
                                     </div>
                                 </div>
@@ -63,12 +63,12 @@
                                 <div class="col-md-6">
 										<span class="remember-box checkbox">
 											<label for="rememberme">
-                                                <input type="checkbox" id="rememberme" name="remember">Remember Me
+                                                <input type="checkbox" id="rememberme" name="remember">{{ trans('strings.signInLogin4') }}
                                             </label>
 										</span>
                                 </div>
                                 <div class="col-md-6">
-                                    <input type="submit" value="Sign In" class="btn btn-primary pull-right" data-loading-text="Loading...">
+                                    <input type="submit" value="{{ trans('strings.signInLogin5') }}" class="btn btn-primary pull-right" data-loading-text="Loading...">
                                 </div>
                             </div>
 
@@ -80,12 +80,12 @@
                     <!-- PASSWORD -->
                     <div class="col-md-6">
 
-                        <h2>Forgot <strong>Password</strong>?</h2>
+                        <h2>{!! trans('strings.signInForgot1') !!}</h2>
 
                         <div class="white-row">
 
                             <p>
-                                Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo.
+                                {{ trans('strings.signInForgot2') }}
                             </p>
 
                             <!-- alert success -->
@@ -101,12 +101,12 @@
                             </div>
 
                             <!-- password form -->
-                            <label>Type your E-mail Address</label>
+                            <label>{!! trans('strings.signInForgot2') !!}</label>
                             <form class="input-group" method="post" action="#">
-                                <input type="text" class="form-control" name="s" id="s" value="" placeholder="E-mail Address" />
+                                <input type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.signInForgot3') }}" />
 									<span class="input-group-btn">
-                                        <a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-										<button class="btn btn-primary">SEND</button>
+                                        <a class="btn btn-link" href="{{ url('/password/email') }}">{{ trans('strings.signInForgot4') }}</a>
+										<button class="btn btn-primary">{{ trans('strings.signInForgot5') }}</button>
 									</span>
                             </form>
 
@@ -119,7 +119,7 @@
 
 
                 <p class="white-row">
-                    Don't have an account yet? <a href="{{ url('/auth/register') }}">Click to create one</a>, it's free!
+                    {!! trans('strings.signInNoAccountYet') !!}
                 </p>
 
             </section>

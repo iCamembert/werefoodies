@@ -82,11 +82,11 @@ return [
     // ******** Sign Up Page ********
 
     "signUpRegister1" => "Create <strong>Account</strong>",
-    "signUpRegister1" => "Name",
-    "signUpRegister1" => "E-mail Address",
-    "signUpRegister1" => "Password",
-    "signUpRegister1" => "Confirm Password",
-    "signUpRegister1" => "Sign Up",
+    "signUpRegister2" => "Name",
+    "signUpRegister3" => "E-mail Address",
+    "signUpRegister4" => "Password",
+    "signUpRegister5" => "Confirm Password",
+    "signUpRegister6" => "Sign Up",
     "signUpWhy1" => "Why Register?",
     "signUpWhy2" => "<strong>Because you can! :)</strong>",
     "signUpWhy3" => "Free registration will allow you to:",
@@ -161,35 +161,46 @@ return [
 
     // ******** Dish Page ********
 
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
+    "dishCreate1" => "New Dish Information",
+    "dishCreate2" => "Name",
+    "dishCreate3" => "Description",
+    "dishCreate4" => "Price",
+    "dishCreate5" => "Picture",
+    "dishCreate6" => "Tags",
+    "dishCreate7" => "Add Dish",
+    
+    "dishAbout1" => "About this Dish",
+    "dishAbout2" => "Rating:",
+    "dishAbout3" => "Price for 1 Portion:",
+    "dishAbout4" => "Portion Size: Persons",
+    "dishAbout5" => "Chef:",
+    "dishAbout6" => "Description:",
+    "dishAbout7" => "Tags",
+    "dishAbout8" => "Edit",
+    
+    "dishReviews1" => "Related Reviews",
+    "dishReviews2" => "Check out how Hungries enjoyed your",
 
     // ******** Cart Page ********
 
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
+    "cart1" => "Hungry Cart",
+    "cart2" => "DISH NAME",
+    "cart3" => "QUANTITY",
+    "cart4" => "TOTAL",
+    "cart5" => "TOTAL",
+    "cart6" => "Order",
 
     // ******** Order Page ********
 
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
-    "profileName" => "Name",
+    "order1" => "Order Information",
+    "order2" => "Date & Time:",
+    "order3" => "Type:",
+    "order4" => "Pick Up",
+    "order5" => "Delivery",
+    "order6" => "At My Home",
+    "order7" => "At Chef's Home",
+    "order8" => "Comment:",
+    "order9" => "Back to Cart",
+    "order10" => "Place Order",
 
 ];
