@@ -14,7 +14,7 @@
                 @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                     <li>
                         <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
-                            <img src="{{ asset('img/flags/{{$localeCode}}.png') }}" width="16" height="11" alt="{{$localeCode}} Language" /> [{{$localeCode}}] {{{ $properties['native'] }}}
+                            <img src="{{ asset('img/flags/{{$localeCode}}.png') }}" width="16" height="11" alt="{{$localeCode}} Language" /> [{{$localeCode}}] {{ $properties['native'] }}
                         </a>
                     </li>
                 @endforeach
