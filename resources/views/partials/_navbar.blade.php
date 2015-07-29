@@ -11,6 +11,13 @@
             </button>
 
             <ul class="dropdown-menu">
+                @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    <li>
+                        <a rel="alternate" hreflang="{{$localeCode}}" href="{{LaravelLocalization::getLocalizedURL($localeCode) }}">
+                            {{{ $properties['native'] }}}
+                        </a>
+                    </li>
+                @endforeach
                 <li>
                     <a href="{{ action('HomeController@changeLanguage', array('language' => 'en')) }}">
                         <img src="{{ asset('img/flags/us.png') }}" width="16" height="11" alt="EN Language" /> [US] English

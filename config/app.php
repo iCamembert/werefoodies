@@ -54,8 +54,6 @@ return [
 
 	'locale' => 'en',
 
-	'locales' => ['en' => 'English', 'kr' => 'Korean', 'fr' => 'French'],
-
 	/*
 	|--------------------------------------------------------------------------
 	| Application Fallback Locale
@@ -160,6 +158,8 @@ return [
 
         'Gloudemans\Shoppingcart\ShoppingcartServiceProvider',
 
+        'Mcamara\LaravelLocalization\LaravelLocalizationServiceProvider',
+
     ),
 
 	/*
@@ -238,6 +238,7 @@ return [
         'Thumbnail' => 'Bootstrapper\Facades\Thumbnail',
         'Image'     => 'Intervention\Facades\Image',
         'Cart'      => 'Gloudemans\Shoppingcart\Facades\Cart',
+        'LaravelLocalization'   => 'Mcamara\LaravelLocalization\Facades\LaravelLocalization',
 
 	],
 
