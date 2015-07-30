@@ -135,7 +135,7 @@ return [
     "profileChefOrders16" => "See Review!",
 
     "profileChefDishes1" => "My Dishes",
-    "profileChefDishes2" => ":userName's Dishes",
+    "profileChefDishes2" => "Dishes made by :userName",
     "profileChefDishes3" => "Here's the list of dishes you created:",
     "profileChefDishes4" => "Here's the list of dishes  created.",
     "profileChefDishes5" => "How about adding a new one?",
