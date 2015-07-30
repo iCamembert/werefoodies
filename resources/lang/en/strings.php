@@ -36,7 +36,7 @@ return [
     "breadSignIn" => "Sign In",
     "breadSignUp" => "Sign Up",
     "breadMyAccount" => "My Account",
-    "breadAboutUser" => "About :user",
+    "breadAboutUser" => "About :userName",
     "breadMyCart" => "My Cart",
     "breadPlaceOrder" => "Place Order",
     "breadEditOrder" => "Edit Order",
@@ -75,8 +75,7 @@ return [
     "signInForgot1" => "Forgot <strong>Password</strong>?",
     "signInForgot2" => "That's okay, your food isn't gonna fly away! Just follow this quick step to retrieve your password:",
     "signInForgot3" => "<strong>Type your E-mail Address</strong>",
-    "signInForgot4" => "E-mail Address",
-    "signInForgot5" => "Send Reset Link",
+    "signInForgot4" => "Send Reset Link",
     "signInNoAccountYet" => "Not a member yet? <a href=\"\">Click here to register</a>, it's quick and free!",
 
     // ******** Sign Up Page ********
@@ -106,13 +105,13 @@ return [
     "profileSummary3" => "Rating:",
     "profileSummary4" => "Average Dishes Rating:",
     "profileSummary5" => "Number of Dishes:",
-    "profileSummary6" => "About Me",
+    "profileSummary6" => "About Me:",
     "profileSummary7" => "Edit",
     "profileSummary8" => "Email",
     "profileSummary9" => "Location:",
     "profileSummary10" => "Type in your city",
     "profileSummary11" => "About:",
-    "profileSummary12" => "Picture",
+    "profileSummary12" => "Picture:",
     "profileSummary13" => "Cancel",
     "profileSummary14" => "Update Profile",
 
@@ -136,7 +135,7 @@ return [
     "profileChefOrders16" => "See Review!",
 
     "profileChefDishes1" => "My Dishes",
-    "profileChefDishes2" => "'s Dishes",
+    "profileChefDishes2" => ":userName's Dishes",
     "profileChefDishes3" => "Here's the list of dishes you created:",
     "profileChefDishes4" => "Here's the list of dishes  created.",
     "profileChefDishes5" => "How about adding a new one?",

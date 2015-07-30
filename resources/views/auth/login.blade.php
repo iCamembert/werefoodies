@@ -101,11 +101,10 @@
                             </div>
 
                             <!-- password form -->
-                            <label>{!! trans('strings.signInForgot2') !!}</label>
+                            <label>{!! trans('strings.signInForgot3') !!}</label>
                             <form class="input-group" method="post" action="#">
-                                <input type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.signInForgot3') }}" />
+                                <input type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.signInForgot4') }}" />
 									<span class="input-group-btn">
-                                        <a class="btn btn-link" href="{{ url('/password/email') }}">{{ trans('strings.signInForgot4') }}</a>
 										<button class="btn btn-primary">{{ trans('strings.signInForgot5') }}</button>
 									</span>
                             </form>

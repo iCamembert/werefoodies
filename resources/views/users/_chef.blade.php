@@ -72,7 +72,7 @@
         @if ($user->isMe())
             <h2>{{ trans('strings.profileChefDishes1') }}</h2>
         @else
-            <h2>{{ trans('strings.profileChefDishes2') }}</h2>
+            <h2>{{ Lang::get('profileChefDishes2', ['userName' => $user->name]) }}</h2>
         @endif
         <form class="white-row" method="post" action="shop-cc-pay.html">
             <p>

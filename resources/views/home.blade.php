@@ -155,7 +155,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {!! Form::label('rating', '{{ trans("strings.homeSearch6") }}') !!}
+                                        {!! Form::label('rating', trans("strings.homeSearch6")) !!}
                                         {!! Form::number('rating', null, ['size' => '1', 'class' => 'form-control input-lg']) !!}
                                     </div>
                                 </div>
@@ -166,7 +166,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {!! Form::label('price', '{{ trans("strings.homeSearch7") }}') !!}
+                                        {!! Form::label('price', trans("strings.homeSearch7")) !!}
                                         {!! Form::text('price', null, ['pattern' => '^\d*(\.\d{2}$)?', 'size' => '4', 'class' => 'form-control input-lg']) !!}
                                     </div>
                                 </div>

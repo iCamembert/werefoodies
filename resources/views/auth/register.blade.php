@@ -91,7 +91,7 @@
 
                         <div class="white-row">
 
-                            <h4>{{ trans('strings.signUpWhy2') }}</h4>
+                            <h4>{!! trans('strings.signUpWhy2') !!}</h4>
 
                             <p>{{ trans('strings.signUpWhy3') }}</p>
                             <ul class="list-icon check">
@@ -110,9 +110,9 @@
                         </div>
 
                         <div class="white-row">
-                            <h4>{{ trans('strings.signUpContact1') }}</h4>
+                            <h4>{!! trans('strings.signUpContact1') !!}</h4>
                             <p>
-                                {{ trans('strings.signUpContact2') }}
+                                {!! trans('strings.signUpContact2') !!}
                             </p>
                         </div>
 
