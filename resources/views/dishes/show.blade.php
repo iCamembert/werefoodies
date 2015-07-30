@@ -17,7 +17,7 @@
                         @if ($dish->isMyDish())
                             <li><a href="{{ action('UsersController@edit') }}">My Account</a></li>
                         @else
-                            <li><a href="{{ action('UsersController@show', array('users' => $dish->user)) }}">About {{ $dish->user->name }}</a></li>
+                            <li><a href="{{ action('UsersController@show', array('users' => $dish->user)) }}">{{ Lang::get('breadAboutUser', ['name' => $dish->user->name]) }}</a></li>
                         @endif
                         <li class="active">{{ $dish->name }}</li>
                     </ul>

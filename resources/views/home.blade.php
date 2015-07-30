@@ -144,7 +144,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="form-group">
-                                        {!! Form::label('name', '{{ trans("strings.homeSearch5") }}') !!}
+                                        {!! Form::label('name', trans("strings.homeSearch5")) !!}
                                         {!! Form::text('name', null, ['class' => 'form-control input-lg']) !!}
                                     </div>
                                 </div>

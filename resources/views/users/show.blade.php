@@ -14,7 +14,7 @@
 
                     <ul class="breadcrumb">
                         <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="active">About {{ $user->name }}</li>
+                        <li class="active">{{ Lang::get('breadAboutUser', ['name' => $dish->user->name]) }}</li>
                     </ul>
                 </div>
             </header>

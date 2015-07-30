@@ -36,7 +36,7 @@ return [
     "breadSignIn" => "Sign In",
     "breadSignUp" => "Sign Up",
     "breadMyAccount" => "My Account",
-    "breadAboutUser" => "About",
+    "breadAboutUser" => "About :user",
     "breadMyCart" => "My Cart",
     "breadPlaceOrder" => "Place Order",
     "breadEditOrder" => "Edit Order",
