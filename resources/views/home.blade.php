@@ -66,7 +66,7 @@
                     <li data-transition="curtain-2" data-slotamount="5" data-masterspeed="700">
 
                         <!-- COVER IMAGE -->
-                        <img src="{{ asset('img/slider-bg2.jpg') }}" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="assets/images/demo/revolution_slider/slider7.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
                         <div class="tp-caption large_text sft"
                              data-x="center"
