@@ -98,7 +98,7 @@
 
         <!-- Logo text or image -->
         <a class="logo" href="{{ url('/') }}">
-            <img src="{{ asset('img/logo0.png') }}" alt="werefoodies" />
+            <img src="{{ asset('img/logo-alone-small.png') }}" alt="Eat My Things" />
         </a>
 
         <!-- Top Nav -->

@@ -101,19 +101,18 @@ return [
     // ******** Profile Page ********
 
     "profileSummary1" => "My Profile",
-    "profileSummary2" => "Location:",
-    "profileSummary3" => "Rating:",
+    "profileSummary2" => ":userName's Profile",
+    "profileSummary3" => "Average Rating:",
     "profileSummary4" => "Average Dishes Rating:",
     "profileSummary5" => "Number of Dishes:",
-    "profileSummary6" => "About Me:",
-    "profileSummary7" => "Edit",
-    "profileSummary8" => "Email",
-    "profileSummary9" => "Location:",
+    "profileSummary6" => "Email:",
+    "profileSummary7" => "Location:",
+    "profileSummary8" => "About Me:",
+    "profileSummary9" => "Edit",
     "profileSummary10" => "Type in your city",
-    "profileSummary11" => "About:",
-    "profileSummary12" => "Picture:",
-    "profileSummary13" => "Cancel",
-    "profileSummary14" => "Update Profile",
+    "profileSummary11" => "Picture:",
+    "profileSummary12" => "Cancel",
+    "profileSummary13" => "Update Profile",
 
     "profileChef1" => "Chef Me",
 

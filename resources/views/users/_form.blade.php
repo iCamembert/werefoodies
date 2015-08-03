@@ -2,7 +2,7 @@
 
 <div class="row">
     <div class="form-group">
-        {!! Form::label('email', 'Email:') !!}
+        {!! Form::label('email', trans('strings.profileSummary6')) !!}
         {!! Form::email('email', null, ['class' => 'form-control']) !!}
     </div>
 </div>
@@ -11,8 +11,8 @@
 
 <div class="row">
     <div class="form-group">
-        {!! Form::label('location', 'Location:') !!}
-        {!! Form::text('google_place_id', null, ['id' => 'pac-input', 'class' => 'form-control', 'placeholder' => 'Type in your city']) !!}
+        {!! Form::label('location', trans('strings.profileSummary7')) !!}
+        {!! Form::text('google_place_id', null, ['id' => 'pac-input', 'class' => 'form-control', 'placeholder' => trans('strings.profileSummary10')]) !!}
     </div>
 </div>
 
@@ -23,7 +23,7 @@
 
 <div class="row">
     <div class="form-group">
-        {!! Form::label('about', 'About:') !!}
+        {!! Form::label('about', trans('strings.profileSummary8')) !!}
         {!! Form::textarea('about', null, ['class' => 'form-control']) !!}
     </div>
 </div>
@@ -33,7 +33,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('picture', 'Picture:') !!}
+            {!! Form::label('picture', trans('strings.profileSummary11')) !!}
             {!! Form::file('picture', ['class' => '', 'onChange' => 'readURL(this)']) !!}
         </div>
     </div>
@@ -48,7 +48,7 @@
 
 <div class="row">
     <div class="col-md-6">
-        <a id="cancelEditProfileButton" class="btn btn-primary">Cancel</a>
+        <a id="cancelEditProfileButton" class="btn btn-primary">{{ trans('strings.profileSummary12') }}</a>
     </div>
     <div class="col-md-6">
         {!! Form::submit($submitButtonText, ['class' => 'btn btn-primary pull-right']) !!}
