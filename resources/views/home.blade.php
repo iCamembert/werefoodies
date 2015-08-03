@@ -113,11 +113,17 @@
         <section class="container text-center">
             <h1 class="text-center">
                 {!! trans('strings.homeWelcome1') !!}
-                <span class="subtitle">{{ trans('strings.homeWelcome2') }}</span>
+                
             </h1>
 
-            <img src="{{ asset('img/logo.png') }}" alt="Eat My Things" />
+            <div class="block-center">
+              <img class="img-responsive" src="{{ asset('img/logo.png') }}" alt="Eat My Things" />
+            </div>
 
+            <h1 class="text-center">
+              <span class="subtitle">{{ trans('strings.homeWelcome2') }}</span>
+            </h1>
+            
             <div class="row white-row">
                 <h4>{{ trans('strings.homeSearch1') }}</h4>
                 <div class="row">
