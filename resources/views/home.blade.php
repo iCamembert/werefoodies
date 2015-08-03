@@ -186,7 +186,7 @@
                           </div>
 
                           <div class="col-md-6">
-                            <img src="{{ asset('img/leo-searching.png') }}" alt="Eat My Things" />
+                            <img class="img-responsive" src="{{ asset('img/leo-searching.png') }}" alt="Eat My Things" />
                           </div>
 
                         </section>
