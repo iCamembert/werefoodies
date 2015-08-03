@@ -48,7 +48,7 @@ return [
     "homeCarousel2" => "Order Them Now",
     "homeCarousel3" => "Chefs of the Week",
     "homeCarousel4" => "Order Fresh Dishes Now",
-    "homeWelcome1" => "<strong>Welcome</strong> to Eat My Things",
+    "homeWelcome1" => "<strong>Welcome</strong> to",
     "homeWelcome2" => "Dishes Made By People, For People!",
     "homeSearch1" => "Where do you want to eat?",
     "homeSearch2" => "Find a chef near you",
