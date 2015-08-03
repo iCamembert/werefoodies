@@ -145,6 +145,8 @@
                 <div class="row">
                     <div class="col-md-6 col-md-offset-3">
                         <section id="advancedSearch">
+                          
+                          <div class="col-md-6">
 
                             <!-- Name Form Input -->
 
@@ -180,6 +182,12 @@
                             </div>
 
                             <a id="cancelAdvancedSearchButton">{{ trans('strings.homeSearch8') }}</a>
+
+                          </div>
+
+                          <div class="col-md-6">
+                            <img src="{{ asset('img/leo-searching.png') }}" alt="Eat My Things" />
+                          </div>
 
                         </section>
                     </div>

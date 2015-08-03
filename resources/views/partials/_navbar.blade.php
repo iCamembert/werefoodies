@@ -153,6 +153,7 @@
 
                                 <!-- QUICK CART BUTTONS -->
                                 <div class="row cart-footer">
+                                    <img src="{{ asset('img/leo-pushing-cart.png') }}" alt="Eat My Things" />
                                     <div class="col-md-6 nopadding-right">
                                         <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary btn-xs fullwidth">{{ trans('strings.navCartButton1') }}</a>
                                     </div>
