@@ -33,6 +33,15 @@
                             <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527">{{ trans('strings.homeCarousel2') }}</a>
                         </div>
 
+                        <div class="tp-caption large_bold_grey medium_thin_grey lfl stl"
+                             data-x="80"
+                             data-y="0"
+                             data-speed="200"
+                             data-start="900"
+                             data-easing="easeOutExpo" data-end="9300" data-endspeed="300" data-endeasing="easeInSine">
+                            <a target="_blank" href="https://wrapbootstrap.com/theme/atropos-responsive-website-template-WB05SR527"><img class="img-responsive" src="{{ asset('img/bonnie-enjoying-orders-small.png') }}" alt="Eat My Things" /></a>
+                        </div>
+
                         @foreach ($todayDishes as $index => $todayDish)
                             <div class="tp-caption lft ltb"
                                  data-x="right" data-hoffset="-20"
