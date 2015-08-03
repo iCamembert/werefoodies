@@ -116,6 +116,8 @@
                 <span class="subtitle">{{ trans('strings.homeWelcome2') }}</span>
             </h1>
 
+            <img src="{{ asset('img/logo.png') }}" alt="Eat My Things" />
+
             <div class="row white-row">
                 <h4>{{ trans('strings.homeSearch1') }}</h4>
                 <div class="row">
