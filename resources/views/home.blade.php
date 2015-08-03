@@ -143,10 +143,10 @@
                 </div>
 
                 <div class="row">
-                    <div class="col-md-6 col-md-offset-3">
+                    <div class="col-md-6 col-md-offset-1">
                         <section id="advancedSearch">
                           
-                          <div class="col-md-6">
+                          <div class="col-md-7">
 
                             <!-- Name Form Input -->
 
@@ -185,7 +185,7 @@
 
                           </div>
 
-                          <div class="col-md-6">
+                          <div class="col-md-5">
                             <img class="img-responsive" src="{{ asset('img/leo-searching.png') }}" alt="Eat My Things" />
                           </div>
 
