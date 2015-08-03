@@ -14,7 +14,7 @@
                     <li data-transition="3dcurtain-vertical" ddata-slotamount="15" data-masterspeed="300" data-delay="9400">
 
                         <!-- COVER IMAGE -->
-                        <img src="assets/images/demo/revolution_slider/sliderbg.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="{{ asset('img/slider-bg1.jpg') }}" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
                         <div class="tp-caption large_bold_grey lfl stl"
                              data-x="18"
@@ -66,7 +66,7 @@
                     <li data-transition="curtain-2" data-slotamount="5" data-masterspeed="700">
 
                         <!-- COVER IMAGE -->
-                        <img src="assets/images/demo/revolution_slider/slider7.jpg" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
+                        <img src="{{ asset('img/slider-bg2.jpg') }}" alt="" data-bgfit="cover" data-bgposition="left top" data-bgrepeat="no-repeat">
 
                         <div class="tp-caption large_text sft"
                              data-x="center"
@@ -112,8 +112,7 @@
 
         <section class="container text-center">
             <h1 class="text-center">
-                {!! trans('strings.homeWelcome1') !!}
-                
+                {!! trans('strings.homeWelcome1') !!}   
             </h1>
 
             <div class="block-center">
@@ -123,7 +122,7 @@
             <h1 class="text-center">
               <span class="subtitle">{{ trans('strings.homeWelcome2') }}</span>
             </h1>
-            
+
             <div class="row white-row">
                 <h4>{{ trans('strings.homeSearch1') }}</h4>
                 <div class="row">
