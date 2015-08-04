@@ -37,7 +37,7 @@
                         @if ($user->isChef())
                             <li class="active">
                                 <a href="#tab1" data-toggle="tab">
-                                    <i class="fa fa-cogs"></i> {{ Lang::get('strings.profileChef3', ['userName' => $user->name]) }}
+                                    <i class="fa fa-cogs"></i> {{ Lang::get('strings.profileChef4', ['userName' => $user->name]) }}
                                 </a>
                             </li>
                             @if ($user->isHungry())

@@ -83,7 +83,10 @@
                             </div>
 
                             <div id="tab2" class="tab-pane">
-                                    <span>{!! trans('strings.profileChef2') !!}</span>
+                                    <span>
+                                        {!! trans('strings.profileChef2') !!}
+                                        <a href="{{ action('DishesController@create') }}" class='btn btn-primary'>{{ trans('strings.profileChef3') }}</a>
+                                    </span>
                             </div>
                         @endif
                     </div>

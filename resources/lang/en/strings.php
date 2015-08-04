@@ -79,7 +79,9 @@ return [
     "signInForgot3" => "<strong>Type your E-mail Address</strong>",
     "signInForgot4" => "Send Reset Link",
     "signInForgot5" => "Send",
-    "signInNoAccountYet" => "Not a member yet? <a href='action(\'Auth\AuthController@getRegister\')'>Click here to register</a>, it's quick and free!",
+    "signInNoAccountYet1" => "Not a member yet? ",
+    "signInNoAccountYet2" => "Click here to register",
+    "signInNoAccountYet3" => ", it's quick and free!",
 
     // ******** Sign Up Page ********
 
@@ -97,9 +99,11 @@ return [
     "signUpWhy6" => "Become a chef yourself, make your creations visible, share your passion & become rich!",
     "signUpWhy7" => "Play to our games, participate to our contests & events, all related to Food!",
     "signUpWhy8" => "Eat!",
-    "signUpAlreadyAccount" => "Already a member? <a href='action(\'Auth\AuthController@getLogin\')'>Click here to sign in</a>!",
+    "signUpAlreadyAccount1" => "Already a member? ",
+    "signUpAlreadyAccount2" => "Click here to sign in!",
     "signUpContact1" => "<strong>Contact our support team!</strong>",
-    "signUpContact2" => "Don't hesitate, <a href=''>click here if you need help</a>!",
+    "signUpContact2" => "Don't hesitate, ",
+    "signUpContact3" => "click here if you need help!",
 
     // ******** Profile Page ********
 
@@ -118,8 +122,9 @@ return [
     "profileSummary13" => "Update Profile",
 
     "profileChef1" => "Chef Me",
-    "profileChef2" => "You don't have any chef activities yet. <strong>Why don't you become one now?</strong> <a href='action(\'DishesController@create\')' class='btn btn-primary'>Suggest a Dish</a>",
-    "profileChef3" => "Chef :userName",
+    "profileChef2" => "You don't have any chef activities yet. <strong>Why don't you become one now?</strong> ",
+    "profileChef3" => "Suggest a Dish",
+    "profileChef4" => "Chef :userName",
 
     "profileChefOrders1" => "Orders from Hungries",
     "profileChefOrders2" => "You have no order yet...",

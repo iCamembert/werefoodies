@@ -118,7 +118,9 @@
 
 
                 <p class="white-row">
-                    {!! trans('strings.signInNoAccountYet') !!}
+                    {{ trans('strings.signInNoAccountYet1') }}
+                    <a href="{{ action('Auth\AuthController@getRegister') }}">{{ trans('strings.signInNoAccountYet1') }}</a>
+                    {{ trans('strings.signInNoAccountYet3') }}
                 </p>
 
             </section>

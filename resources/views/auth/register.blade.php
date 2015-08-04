@@ -105,14 +105,16 @@
                             <hr class="half-margins" />
 
                             <p>
-                                {!! trans('strings.signUpAlreadyAccount') !!}
+                                {{ trans('strings.signUpAlreadyAccount1') }}
+                                <a href="{{ action('Auth\AuthController@getLogin') }}">{{ trans('strings.signUpAlreadyAccount2') }}</a>
                             </p>
                         </div>
 
                         <div class="white-row">
                             <h4>{!! trans('strings.signUpContact1') !!}</h4>
                             <p>
-                                {!! trans('strings.signUpContact2') !!}
+                                {{ trans('strings.signUpContact2') }}
+                                {{ trans('strings.signUpContact3') }}
                             </p>
                         </div>
 
