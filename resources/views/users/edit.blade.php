@@ -193,7 +193,7 @@
   geocoder.geocode({'placeId': placeId}, function(results, status) {
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[0]) {
-        $('#locationListElement').html('Location: ' + results[0].formatted_address);
+        //$('#locationListElement').html('Location: ' + results[0].formatted_address);
         //$('#pac-input').val(results[0].formatted_address);
       }
     }
@@ -206,7 +206,7 @@
     mapOptions);
 
   var input = /** @type {HTMLInputElement} */(
-      document.getElementById('pac-input'));
+      document.getElementById('pacc-input'));
 
   //var types = document.getElementById('type-selector');
   //map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
@@ -214,7 +214,7 @@
 
   var autocomplete = new google.maps.places.Autocomplete(input,
     {
-        types: ['(cities)']
+        //types: ['(cities)']
     });
   autocomplete.bindTo('bounds', map);
 
