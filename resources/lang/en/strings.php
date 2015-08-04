@@ -116,7 +116,7 @@ return [
     "profileSummary13" => "Update Profile",
 
     "profileChef1" => "Chef Me",
-    "profileChef2" => "You don't have any chef activities yet. <strong>Why don't you become one now?</strong> <a href="url('dishes/create')" class="btn btn-primary">Suggest a Dish</a>"
+    "profileChef2" => "You don't have any chef activities yet. <strong>Why don't you become one now?</strong> <a href='url(\'dishes/create\')' class='btn btn-primary'>Suggest a Dish</a>"
     "profileChef3" => "Chef :userName",
 
     "profileChefOrders1" => "Orders from Hungries",
