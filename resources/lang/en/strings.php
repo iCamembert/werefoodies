@@ -160,7 +160,7 @@ return [
 
     "profileChefReviews1" => "Reviews from Hungries",
     "profileChefReviews2" => "Check out how Hungries enjoyed <strong>your</strong> dishes!",
-    "profileChefReviews3" => "Check out how much Hungries enjoyed <strong>'s</strong> dishes!",
+    "profileChefReviews3" => "Check out how much Hungries enjoyed <strong>:userName's</strong> dishes!",
     "profileChefReviews4" => "Reviews:",
 
     "profileHungry1" => "Chef Me",

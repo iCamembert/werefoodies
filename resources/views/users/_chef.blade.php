@@ -169,7 +169,7 @@
                 @if ($user->isMe())
                     {{ trans('strings.profileChefReviews2') }}
                 @else
-                    {{ trans('strings.profileChefReviews3') }}
+                    {!! Lang::get('strings.profileChefReviews3', ['userName' => $user->name]) !!}
                 @endif
             </p>
 
