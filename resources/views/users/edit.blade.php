@@ -259,10 +259,10 @@
       ].join(' ');
     }
 
-    $('#placeId').val(place.place_id);
+    //$('#placeId').val(place.place_id);
 
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    infowindow.open(map, marker);
+    //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    //infowindow.open(map, marker);
   });
 
   // Sets a listener on a radio button to change the filter type on Places
