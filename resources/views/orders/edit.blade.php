@@ -11,11 +11,11 @@
             <!-- PAGE TITLE -->
             <header id="page-title">
                 <div class="container">
-                    <h1>Modify your Order</h1>
+                    <h1>{{ trans('strings.breadEditOrder') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="active">Modify Order</li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li class="active">{{ trans('strings.breadEditOrder') }}</li>
                     </ul>
                 </div>
             </header>
@@ -28,7 +28,7 @@
                     <!-- CREATE ORDER -->
                     <div class="col-md-6">
 
-                        <h2>Order Information:</h2>
+                        <h2>{{ trans('strings.order1') }}</h2>
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -42,7 +42,7 @@
                         @endif
 
                         {!! Form::model($order, ['method' => 'PATCH', 'action' => ['OrdersController@update', $order->id]]) !!}
-                            @include('orders._form', ['submitButtonText' => 'Update Order'])
+                            @include('orders._form', ['submitButtonText' => trans('strings.order11')])
                         {!! Form::close() !!}
 
                         @include('errors.list')

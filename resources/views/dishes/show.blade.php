@@ -29,7 +29,7 @@
 
                 @include('partials._flash')
 
-                <h2>About this dish</h2>
+                <h2>{{ trans('strings.dishShowAbout1') }}</h2>
                 
 
                     <div class="row">
@@ -39,16 +39,13 @@
                         </div>
                         <div class="col-md-9">
                             <ul>
-                                <li>Rating: {{ $dish->rating }}%</li>
-                                <li>Price for 1 Portion: {{ $dish->price }}</li>
-                                <li>Portion Size: Persons</li>
-                                <li>Chef: {{ $dish->user->name }}</li>
-                                <li>Available Since: {{ $dish->created_at }}</li>
-                                <li>Preparation Time: </li>
-                                <li>Description: {{ $dish->description }}</li>
-                                <li>Tags:
+                                <li>{{ trans('strings.dishShowAbout2') }} {{ $dish->rating }}%</li>
+                                <li>{{ trans('strings.dishShowAbout3') }} {{ $dish->price }}</li>
+                                <li>{{ trans('strings.dishShowAbout4') }}</li>
+                                <li>{{ trans('strings.dishShowAbout5') }} {{ $dish->user->name }}</li>
+                                <li>{{ trans('strings.dishShowAbout6') }} {{ $dish->description }}</li>
+                                <li>{{ trans('strings.dishShowAbout7') }}
                                     @unless ($dish->tags->isEmpty())
-                                        <h5>Tags:</h5>
                                         <ul>
                                             @foreach ($dish->tags as $tag)
                                                 <li>{{ $tag->name }}</li>
@@ -58,12 +55,12 @@
                                 </li>
                             </ul>
                             @if ($dish->isMyDish())
-                                <a href="{{ action('DishesController@edit', array('dishes' => $dish)) }}" class="btn btn-primary">Edit</a>
+                                <a href="{{ action('DishesController@edit', array('dishes' => $dish)) }}" class="btn btn-primary">{{ trans('strings.dishShowAbout8') }}</a>
                             @else
                                 @if (Cart::search(array('id' => $dish->id)))
                                     <div id="dishAlreadyInCart" class="row">
-                                        <strong>This dish is already in your cart!</strong>
-                                        <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary">View Cart</a>
+                                        <strong>{{ trans('strings.dishShowAbout9') }}</strong>
+                                        <a href="{{ action('DishesController@viewCart') }}" class="btn btn-primary">{{ trans('strings.dishShowAbout10') }}</a>
                                 @else
                                     <div id="dishQuantityBlock" class="row">
                                         <div class="form-group center-block" style="display: flex; align-items: center;">
@@ -71,19 +68,19 @@
                                                 <input type="hidden" name="dishId" value="{{ $dish->id }}">
                                                 <input type="hidden" name="dishName" value="{{ $dish->name }}">
                                                 <div class="col-md-3">
-                                                    {!! Form::label('quantity', 'Quantity:') !!}
-                                                    {!! Form::number('quantity', 1, ['id' => 'quantity', 'class' => 'form-control', 'placeholder' => 1, 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
+                                                    {!! Form::label('quantity', trans('strings.dishShowAbout11')) !!}
+                                                    {!! Form::number('quantity', 1, ['id' => 'quantity', 'class' => 'form-control', 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
                                                 </div>
                                                 <div class="col-md-6">
-                                                    <span>Total Price: <strong id="totalPrice"></strong></span>
+                                                    <span>{{ trans('strings.dishShowAbout12') }} <strong id="totalPrice"></strong></span>
                                                 </div>
                                                 <div class="col-md-6">
-                                                    {!! Form::submit('Add', ['class' => 'btn btn-primary form control']) !!}
+                                                    {!! Form::submit(trans('strings.dishShowAbout13'), ['class' => 'btn btn-primary form control']) !!}
                                                 </div>
                                             {!! Form::close() !!}
                                         </div>
                                     </div>
-                                    <a id="addToCartButton" class="btn btn-primary">Add to Cart</a>
+                                    <a id="addToCartButton" class="btn btn-primary">{{ trans('strings.dishShowAbout14') }}</a>
                                 @endif
                             @endif
                         </div>
@@ -96,12 +93,12 @@
 
                 <div class="row white-row">
                     <div class="col-md-12">
-                        <h2>Reviews from other Hungries</h2>
+                        <h2>{{ trans('strings.dishShowReviews1') }}</h2>
                         <p>
                             @if ($dish->isMyDish())
-                                Check out how other Hungries enjoyed <strong>your</strong> <strong>{{ $dish->name }}</strong>!
+                                {!! Lang::get('strings.dishShowReviews2', ['dishName' => $dish->name]) !!}
                             @else
-                                Check out how other Hungries enjoyed <strong>{{ $dish->user->name }}</strong>'s <strong>{{ $dish->name }}</strong>!
+                                {!! Lang::get('strings.dishShowReviews3', ['userName' => $dish->user->name, 'dishName' => $dish->name]) !!}
                             @endif
                         </p>
                         

@@ -201,17 +201,27 @@ return [
     "dishCreate6" => "Tags:",
     "dishCreate7" => "Add Dish",
     
-    "dishAbout1" => "About this Dish",
-    "dishAbout2" => "Rating:",
-    "dishAbout3" => "Price for 1 Portion:",
-    "dishAbout4" => "Portion Size: Persons",
-    "dishAbout5" => "Chef:",
-    "dishAbout6" => "Description:",
-    "dishAbout7" => "Tags",
-    "dishAbout8" => "Edit",
+    "dishShowAbout1" => "About this Dish",
+    "dishShowAbout2" => "Average Rating:",
+    "dishShowAbout3" => "Price for 1 Portion:",
+    "dishShowAbout4" => "Portion Size: Persons",
+    "dishShowAbout5" => "Chef:",
+    "dishShowAbout6" => "Description:",
+    "dishShowAbout7" => "Tags",
+    "dishShowAbout8" => "Edit",
+    "dishShowAbout9" => "This dish is already in your cart!",
+    "dishShowAbout10" => "View Cart",
+    "dishShowAbout11" => "Quantity:",
+    "dishShowAbout12" => "Total Price:",
+    "dishShowAbout13" => "Add",
+    "dishShowAbout14" => "Add to Cart",
     
-    "dishReviews1" => "Related Reviews",
-    "dishReviews2" => "Check out how Hungries enjoyed your",
+    "dishShowReviews1" => "Related Reviews",
+    "dishShowReviews2" => "Check out Hungries' reviews related to your <em>:dishName</em>!",
+    "dishShowReviews3" => "Check out Hungries' reviews related to <strong>:userName</strong>'s <em>:dishName</em>!",
+
+    "dishEdit1" => "Edited Dish Information:",
+    "dishEdit2" => "Update Dish",
 
     // ******** Cart Page ********
 
@@ -234,5 +244,6 @@ return [
     "order8" => "Comment:",
     "order9" => "Back to Cart",
     "order10" => "Place Order",
+    "order11" => "Update Order"
 
 ];

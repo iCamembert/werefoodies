@@ -28,7 +28,7 @@
                     <!-- EDIT DISH -->
                     <div class="col-md-6">
 
-                        <h2>Edit your Dish:</h2>
+                        <h2>{{ trans('strings.dishEdit1') }}</h2>
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -42,7 +42,7 @@
                         @endif
 
                         {!! Form::model($dish, ['method' => 'PATCH', 'action' => ['DishesController@update', $dish->id], 'files' => true]) !!}
-                        @include('dishes._form', ['submitButtonText' => 'Update Dish'])
+                        @include('dishes._form', ['submitButtonText' => trans('strings.dishEdit2')])
                         {!! Form::close() !!}
 
                         @include('errors.list')
