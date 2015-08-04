@@ -79,7 +79,9 @@ class AuthController extends Controller {
     public function postRegister(Request $request)
     {
         $validator = $this->registrar->validator($request->all());
-
+        $tvar = $request->input('email');
+        $pw = $request->input('password');
+        
         if ($validator->fails())
         {
             $this->throwValidationException(
@@ -89,7 +91,10 @@ class AuthController extends Controller {
 
         $this->registrar->create($request->all());
 
-        return Redirect::route('home'); //$this->loginPath()
+        if ($this->auth->attempt(['email' => $tvar, 'password' => $pw]))
+        {
+        	return Redirect::route('home'); //$this->loginPath()
+        }
     }
 
 }
