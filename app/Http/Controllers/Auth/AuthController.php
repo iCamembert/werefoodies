@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Http\Request;
 
 class AuthController extends Controller {
 
@@ -58,7 +59,7 @@ class AuthController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function postLogin(LoginRequest $request)
+    public function postLogin(Request $request)
     {
         $tvar = $request->input('email');
         $pw = $request->input('password');
