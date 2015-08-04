@@ -76,6 +76,7 @@ return [
     "signInForgot2" => "That's okay, your food isn't gonna fly away! Just follow this quick step to retrieve your password:",
     "signInForgot3" => "<strong>Type your E-mail Address</strong>",
     "signInForgot4" => "Send Reset Link",
+    "signInForgot5" => "Send",
     "signInNoAccountYet" => "Not a member yet? <a href=\"\">Click here to register</a>, it's quick and free!",
 
     // ******** Sign Up Page ********
@@ -115,6 +116,8 @@ return [
     "profileSummary13" => "Update Profile",
 
     "profileChef1" => "Chef Me",
+    "profileChef2" => "You don't have any chef activities yet. <strong>Why don't you become one now?</strong> <a href="url('dishes/create')" class="btn btn-primary">Suggest a Dish</a>"
+    "profileChef3" => "Chef :userName",
 
     "profileChefOrders1" => "Orders from Hungries",
     "profileChefOrders2" => "You have no order yet...",
@@ -156,6 +159,11 @@ return [
     "profileChefReviews1" => "Reviews from Hungries",
     "profileChefReviews2" => "Check out how Hungries enjoyed <strong>your</strong> dishes!",
     "profileChefReviews3" => "Check out how much Hungries enjoyed <strong>'s</strong> dishes!",
+
+    "profileHungry1" => "Chef Me",
+    "profileHungry2" => "You don't have any hungry activities yet."
+    "profileHungry3" => "Hungry :userName",
+    "profileHungry4" => ":userName doesn't have any hungry activities yet."
 
     // ******** Dish Page ********
 

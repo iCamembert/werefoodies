@@ -10,10 +10,10 @@
             <!-- PAGE TITLE -->
             <header id="page-title">
                 <div class="container">
-                    <h1>About {{ $user->name }}</h1>
+                    <h1>{{ Lang::get('strings.breadAboutUser', ['userName' => $user->name]) }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
                         <li class="active">{{ Lang::get('strings.breadAboutUser', ['userName' => $user->name]) }}</li>
                     </ul>
                 </div>
@@ -37,20 +37,20 @@
                         @if ($user->isChef())
                             <li class="active">
                                 <a href="#tab1" data-toggle="tab">
-                                    <i class="fa fa-cogs"></i> Chef {{ $user->name }}
+                                    <i class="fa fa-cogs"></i> {{ Lang::get('strings.profileChef3', ['userName' => $user->name]) }}
                                 </a>
                             </li>
                             @if ($user->isHungry())
                                 <li>
                                     <a href="#tab2" data-toggle="tab">
-                                        <i class="fa fa-heart"></i> Hungry {{ $user->name }}
+                                        <i class="fa fa-heart"></i> {{ Lang::get('strings.profileHungry3', ['userName' => $user->name]) }}
                                     </a>
                                 </li>
                             @endif
                         @else
                             <li class="active">
                                 <a href="#tab1" data-toggle="tab">
-                                    <i class="fa fa-heart"></i> Hungry {{ $user->name }}
+                                    <i class="fa fa-heart"></i> {{ Lang::get('strings.profileHungry3', ['userName' => $user->name]) }}
                                 </a>
                             </li>
                         @endif
@@ -72,7 +72,7 @@
                                 @if ($user->isHungry())
                                     @include('users._hungry')
                                 @else
-                                    <span>{{ $user->name }} doesn't have any hungry activities yet.</span>
+                                    <span>{{ Lang::get('strings.profileHungry4', ['userName' => $user->name]) }}</span>
                                 @endif
                             </div>
                         @endif

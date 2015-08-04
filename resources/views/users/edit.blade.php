@@ -10,11 +10,11 @@
             <!-- PAGE TITLE -->
             <header id="page-title">
                 <div class="container">
-                    <h1>My Account</h1>
+                    <h1>{{ trans('strings.breadMyAccount') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="active">My Account</li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li class="active">{{ trans('strings.breadMyAccount') }}</li>
                     </ul>
                 </div>
             </header>
@@ -37,23 +37,23 @@
                         @if ($user->isChef())
                             <li class="active">
                                 <a href="#tab1" data-toggle="tab">
-                                    <i class="fa fa-cogs"></i> Chef me
+                                    <i class="fa fa-cogs"></i> {{ trans('strings.profileChef1') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="#tab2" data-toggle="tab">
-                                    <i class="fa fa-heart"></i> Hungry me
+                                    <i class="fa fa-heart"></i> {{ trans('strings.profileHungry1') }}
                                 </a>
                             </li>
                         @else
                             <li class="active">
                                 <a href="#tab1" data-toggle="tab">
-                                    <i class="fa fa-heart"></i> Hungry me
+                                    <i class="fa fa-heart"></i> {{ trans('strings.profileHungry1') }}
                                 </a>
                             </li>
                             <li>
                                 <a href="#tab2" data-toggle="tab">
-                                    <i class="fa fa-cogs"></i> Chef me
+                                    <i class="fa fa-cogs"></i> {{ trans('strings.profileChef1') }}
                                 </a>
                             </li>
                         @endif
@@ -70,7 +70,7 @@
                                 @if ($user->isHungry())
                                     @include('users._hungry')
                                 @else
-                                    <span>You don't have any hungry activities yet.</span>
+                                    <span>{{ trans('strings.profileHungry2') }}</span>
                                 @endif
                             </div>
                         @else
@@ -78,12 +78,12 @@
                                 @if ($user->isHungry())
                                     @include('users._hungry')
                                 @else
-                                    <span>You don't have any hungry activities yet.</span>
+                                    <span>{{ trans('strings.profileHungry2') }}</span>
                                 @endif
                             </div>
 
                             <div id="tab2" class="tab-pane">
-                                    <span>You don't have any chef activities yet. <strong>Why don't you become one now?</strong> <a href="{{ url('dishes/create') }}" class="btn btn-primary">Suggest a Dish</a></span>
+                                    <span>{!! trans('strings.profileChef2') !!}</span>
                             </div>
                         @endif
                     </div>
@@ -194,7 +194,7 @@
     if (status == google.maps.GeocoderStatus.OK) {
       if (results[0]) {
         $('#locationListElement').html('Location: ' + results[0].formatted_address);
-        $('#pac-input').val(results[0].formatted_address);
+        //$('#pac-input').val(results[0].formatted_address);
       }
     }
   });
