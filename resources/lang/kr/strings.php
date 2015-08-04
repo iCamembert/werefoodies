@@ -108,7 +108,7 @@ return [
     // ******** Profile Page ********
 
     "profileSummary1" => "내 프로필",
-    "profileSummary2" => ":userName 프로필",
+    "profileSummary2" => ":userName님의 프로필",
     "profileSummary3" => "평균 등급:",
     "profileSummary4" => "평균 요리등급:",
     "profileSummary5" => "요리 수:",
