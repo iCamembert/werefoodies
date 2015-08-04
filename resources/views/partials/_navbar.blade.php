@@ -49,7 +49,7 @@
 
                         <div class="checkbox"><!-- remmember -->
                             <label>
-                                <input type="checkbox"> Remember me &bull; <a href="{{ url('/auth/login') }}">Forgot password?</a>
+                                <input type="checkbox"> Remember me &bull; <a href="">Forgot password?</a>
                             </label>
                         </div>
 
@@ -62,14 +62,14 @@
                     <!--<a href="#" class="btn-google-plus fullwidth radius3"><i class="fa fa-google-plus"></i> Connect With Google</a>-->
 
                     <p class="bottom-create-account">
-                        <a href="{{ url('/auth/register') }}">Manual create account</a>
+                        <a href="{{ action('Auth\AuthController@getRegister') }}">Manual create account</a>
                     </p>
                 </div>
             </div>
             <!-- /SIGN IN -->
         @else
-            <a href="{{ url('/my-account') }}"><i class="fa fa-users"></i><span class="hidden-xs">{{ Auth::user()->name}}</span></a>
-            <a href="{{ url('/auth/logout') }}"><i class="fa fa-sign-out"></i><span class="hidden-xs">{{ trans('strings.navSignOut') }}</span></a>
+            <a href="{{ action('UsersController@edit') }}"><i class="fa fa-users"></i><span class="hidden-xs">{{ Auth::user()->name}}</span></a>
+            <a href="{{ action('Auth\AuthController@getLogout') }}"><i class="fa fa-sign-out"></i><span class="hidden-xs">{{ trans('strings.navSignOut') }}</span></a>
         @endif
 
         <!-- CART MOBILE BUTTON -->
