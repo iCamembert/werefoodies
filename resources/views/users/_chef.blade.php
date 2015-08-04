@@ -173,7 +173,7 @@
                 @endif
             </p>
 
-            <h5>Reviews:</h5>
+            <h5>{{ trans('strings.profileChefReviews4') }}</h5>
 
             <!-- LIST OF REVIEWS FROM OTHER USERS-->
             <div class="row">

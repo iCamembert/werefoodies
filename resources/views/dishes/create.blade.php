@@ -11,11 +11,11 @@
             <!-- PAGE TITLE -->
             <header id="page-title">
                 <div class="container">
-                    <h1>Add a Dish</h1>
+                    <h1>{{ trans('strings.breadAddDish') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="active">Add a Dish</li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li class="active">{{ trans('strings.breadAddDish') }}</li>
                     </ul>
                 </div>
             </header>
@@ -28,7 +28,7 @@
                     <!-- CREATE DISH -->
                     <div class="col-md-6">
 
-                        <h2>Add a Dish:</h2>
+                        <h2>{{ trans('strings.dishCreate1') }}</h2>
 
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -42,7 +42,7 @@
                         @endif
 
                         {!! Form::open(['url' => 'dishes', 'role' => 'form', 'files' => true]) !!}
-                        @include('dishes._form', ['submitButtonText' => 'Add Dish'])
+                        @include('dishes._form', ['submitButtonText' => trans('strings.dishCreate7')])
                         {!! Form::close() !!}
 
                         @include('errors.list')

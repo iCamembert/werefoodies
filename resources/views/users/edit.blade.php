@@ -185,9 +185,9 @@
                 $('input,text').keypress(function(event) { return event.keyCode != 13; });
                 $('input,email').keypress(function(event) { return event.keyCode != 13; });
 
-        function initializes() {
+        function initialize() {
 
-            var placeId = '';
+            var placeId = '{{ $user->place_id }}';
             var geocoder = new google.maps.Geocoder();
             
   geocoder.geocode({'placeId': placeId}, function(results, status) {
@@ -259,10 +259,10 @@
       ].join(' ');
     }
 
-    //$('#placeId').val(place.place_id);
+    $('#placeId').val(place.place_id);
 
-    //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    //infowindow.open(map, marker);
+    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    infowindow.open(map, marker);
   });
 
   // Sets a listener on a radio button to change the filter type on Places

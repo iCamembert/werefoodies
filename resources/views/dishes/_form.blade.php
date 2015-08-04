@@ -3,7 +3,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('name', 'Name:') !!}
+            {!! Form::label('name', trans('strings.dishCreate2')) !!}
             {!! Form::text('name', null, ['class' => 'form-control input-lg']) !!}
         </div>
     </div>
@@ -14,7 +14,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('description', 'Description:') !!}
+            {!! Form::label('description', trans('strings.dishCreate3')) !!}
             {!! Form::textarea('description', null, ['class' => 'form-control input-lg']) !!}
         </div>
     </div>
@@ -25,8 +25,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('price', 'Price:') !!}
-            {!! Form::number('price', null, ['pattern' => '^\d*(\.\d{2}$)?', 'step' => '0.1', 'class' => 'form-control input-lg']) !!}
+            {!! Form::label('price', trans('strings.dishCreate4')) !!}
+            {!! Form::number('price', 1, ['pattern' => '^\d*(\.\d{2}$)?', 'min' => '0.1', 'step' => '0.1', 'class' => 'form-control input-lg']) !!}
         </div>
     </div>
 </div>
@@ -36,7 +36,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('picture', 'Picture') !!}
+            {!! Form::label('picture', trans('strings.dishCreate5')) !!}
             {!! Form::file('picture', ['class' => '', 'onChange' => 'readURL(this)']) !!}
         </div>
     </div>
@@ -47,7 +47,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="form-group">
-            {!! Form::label('tags_list', 'Tags:') !!}
+            {!! Form::label('tags_list', trans('strings.dishCreate6')) !!}
             {!! Form::select('tags_list[]', $tags, null, ['id' => 'tags_list', 'class' => 'form-control input-lg', 'multiple']) !!}
         </div>
     </div>

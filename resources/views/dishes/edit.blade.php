@@ -11,11 +11,11 @@
             <!-- PAGE TITLE -->
             <header id="page-title">
                 <div class="container">
-                    <h1>Edit your Dish</h1>
+                    <h1>{{ trans('strings.breadEditDish') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
-                        <li class="active">Edit your Dish</li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li class="active">{{ trans('strings.breadEditDish') }}</li>
                     </ul>
                 </div>
             </header>

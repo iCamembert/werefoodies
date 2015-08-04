@@ -13,9 +13,9 @@
                     <h1>{{ $dish->name  }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
                         @if ($dish->isMyDish())
-                            <li><a href="{{ action('UsersController@edit') }}">My Account</a></li>
+                            <li><a href="{{ action('UsersController@edit') }}">{{ trans('strings.breadMyAccount') }}</a></li>
                         @else
                             <li><a href="{{ action('UsersController@show', array('users' => $dish->user)) }}">{{ Lang::get('strings.breadAboutUser', ['userName' => $dish->user->name]) }}</a></li>
                         @endif
@@ -72,7 +72,7 @@
                                                 <input type="hidden" name="dishName" value="{{ $dish->name }}">
                                                 <div class="col-md-3">
                                                     {!! Form::label('quantity', 'Quantity:') !!}
-                                                    {!! Form::number('quantity', null, ['id' => 'quantity', 'class' => 'form-control', 'placeholder' => 1, 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
+                                                    {!! Form::number('quantity', 1, ['id' => 'quantity', 'class' => 'form-control', 'placeholder' => 1, 'min' => 1, 'onchange' => 'updateTotalPrice(this.value);']) !!}
                                                 </div>
                                                 <div class="col-md-6">
                                                     <span>Total Price: <strong id="totalPrice"></strong></span>

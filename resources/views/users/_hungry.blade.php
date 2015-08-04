@@ -1,12 +1,12 @@
 @if ($user->isMe())
     <div class="row">
         <div class="col-md-12">
-            <h2>My Orders</h2>
+            <h2>{{ trans('strings.profileHungryOrders1') }}</h2>
             <form class="white-row" method="post" action="shop-cc-pay.html">
                 <p>
-                    Here's the list of orders you placed!
+                    {{ trans('strings.profileHungryOrders2') }}
                 </p>
-                <h5>Orders:</h5>
+                <h5>{{ trans('strings.profileHungryOrders3') }}</h5>
 
                 <!-- LIST OF ORDERS FROM USER -->
                 <div class="row">
@@ -16,11 +16,11 @@
                                 <thead>
                                 <tr>
                                     <th class="text-center" style="width: 5%;">#</th>
-                                    <th class="text-center" style="width: 35%;">Dishes</th>
-                                    <th class="text-center" style="width: 15%;">Chef's Name</th>
-                                    <th class="text-center" style="width: 10%;">Total Price</th>
-                                    <th class="text-center" style="width: 15%;">Asked For</th>
-                                    <th class="text-center" style="width: 20%;">Status</th>
+                                    <th class="text-center" style="width: 35%;">{{ trans('strings.profileHungryOrders4') }}</th>
+                                    <th class="text-center" style="width: 15%;">{{ trans('strings.profileHungryOrders5') }}</th>
+                                    <th class="text-center" style="width: 10%;">{{ trans('strings.profileHungryOrders6') }}</th>
+                                    <th class="text-center" style="width: 15%;">{{ trans('strings.profileHungryOrders7') }}</th>
+                                    <th class="text-center" style="width: 20%;">{{ trans('strings.profileHungryOrders8') }}</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -31,27 +31,27 @@
                                             <td class="text-center" style="vertical-align: middle;">
                                                 <ul>
                                                     @foreach ($order->dishes as $orderedDish)
-                                                        <li><a href="{{ action('DishesController@show', array('dishes' => $orderedDish)) }}" title="See Dish">{{ $orderedDish->name }}: {{ $orderedDish->quantity }}</a></li>
+                                                        <li><a href="{{ action('DishesController@show', array('dishes' => $orderedDish)) }}" title="{{ trans('strings.profileHungryOrders9') }}">{{ $orderedDish->name }}: {{ $orderedDish->quantity }}</a></li>
                                                     @endforeach
                                                 </ul>
                                             </td>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $order->dishes->first()->user->id)) }}" title="See Profile">{{ $order->dishes->first()->user->name }}</a></td>
+                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $order->dishes->first()->user->id)) }}" title="{{ trans('strings.profileHungryOrders10') }}">{{ $order->dishes->first()->user->name }}</a></td>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->price }}</td>
                                             <td class="text-center" style="vertical-align: middle;">{{ $order->served_at }}</td>
                                             <td class="text-center" style="vertical-align: middle;">
                                                 @if ($order->status_id == 0)
-                                                    <span class="orange"><strong>Pending</strong></span>
-                                                    <a href="{{ action('OrdersController@edit', array('orders' => $order)) }}"><i class="fa fa-edit" title="Modify Order!"></i></a>
-                                                    <a href="{{ action('OrdersController@cancel', array('orders' => $order)) }}"><i class="fa fa-times" title="Cancel Order!"></i></a>
+                                                    <span class="orange"><strong>{{ trans('strings.profileHungryOrders11') }}</strong></span>
+                                                    <a href="{{ action('OrdersController@edit', array('orders' => $order)) }}"><i class="fa fa-edit" title="{{ trans('strings.profileHungryOrders12') }}"></i></a>
+                                                    <a href="{{ action('OrdersController@cancel', array('orders' => $order)) }}"><i class="fa fa-times" title="{{ trans('strings.profileHungryOrders13') }}"></i></a>
                                                 @elseif ($order->status_id == 1)
-                                                    <span class="green"><strong>Accepted</strong></span>
+                                                    <span class="green"><strong>{{ trans('strings.profileHungryOrders14') }}</strong></span>
                                                     @if ($order->reviewed())
-                                                        <span><a data-toggle="modal" data-target=".review-modal" onclick="Javascript: document.getElementById('orderId').value = {{ $order->id }}; document.getElementById('order' + {{ $order->id }}).style = 'visible';"><i class="fa fa-pencil" title="Review Order!"></i></a></span>
+                                                        <span><a data-toggle="modal" data-target=".review-modal" onclick="Javascript: document.getElementById('orderId').value = {{ $order->id }}; document.getElementById('order' + {{ $order->id }}).style = 'visible';"><i class="fa fa-pencil" title="{{ trans('strings.profileHungryOrders15') }}"></i></a></span>
                                                     @else
                                                         
                                                     @endif
                                                 @elseif ($order->status_id == 2)
-                                                    <span class="red"><strong>Rejected</strong></span>
+                                                    <span class="red"><strong>{{ trans('strings.profileHungryOrders16') }}</strong></span>
                                                 @endif
                                             </td>
                                         </tr>
@@ -75,19 +75,19 @@
 <div class="row">
     <div class="col-md-12">
         @if ($user->isMe())
-            <h2>My Reviews</h2>
+            <h2>{{ trans('strings.profileHungryReviews1') }}</h2>
         @else
-            <h2>{{ $user->name }}'s Reviews</h2>
+            <h2>{{ Lang::get('strings.profileHungryReviews2', ['userName' => $user->name]) }}</h2>
         @endif
         <form class="white-row" method="post" action="shop-cc-pay.html">
             <p>
                 @if ($user->isMe())
-                    Here's the list of reviews you wrote.
+                    {{ trans('strings.profileHungryReviews3') }}
                 @else
-                    Here's the list of reviews {{ $user->name }} wrote.
+                    {{ Lang::get('strings.profileHungryReviews4', ['userName' => $user->name]) }}
                 @endif
             </p>
-            <h5>Reviews:</h5>
+            <h5>{{ trans('strings.profileHungryReviews5') }}</h5>
 
             <!-- LIST OF REVIEWS FROM USER -->
             <div class="row">
