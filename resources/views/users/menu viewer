@@ -16,13 +16,13 @@
             @if ($user->isMe())
                 <p>
                     <strong>How about adding a new one?</strong>
-                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">Add a Dish</a>
+                    <a href="{{ action('DishesController@create') }}" class="btn btn-primary">Add a Dish</a>
                 </p>
             @else
                 @unless ($user->isChef())
                 <p>
                     <strong>How about becoming a chef yourself?</strong>
-                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">Suggest a Dish</a>
+                    <a href="{{ action('DishesController@create') }}" class="btn btn-primary">Suggest a Dish</a>
                 </p>
                 @endunless
             @endif

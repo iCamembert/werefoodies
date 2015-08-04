@@ -13,7 +13,7 @@
                     <h1>Hungry Cart</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">Home</a></li>
+                        <li><a href="{{ action('HomeController@index') }}">Home</a></li>
                         <li class="active">My Cart</li>
                     </ul>
                 </div>

@@ -85,13 +85,13 @@
             @if ($user->isMe())
                 <p>
                     <strong>{{ trans('strings.profileChefDishes5') }}</strong>
-                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">{{ trans('strings.profileChefDishes6') }}</a>
+                    <a href="{{ action('DishesController@create') }}" class="btn btn-primary">{{ trans('strings.profileChefDishes6') }}</a>
                 </p>
             @else
                 @unless ($user->isChef())
                 <p>
                     <strong>{{ trans('strings.profileChefDishes7') }}</strong>
-                    <a href="{{ url('dishes/create') }}" class="btn btn-primary">{{ trans('strings.profileChefDishes8') }}</a>
+                    <a href="{{ action('DishesController@create') }}" class="btn btn-primary">{{ trans('strings.profileChefDishes8') }}</a>
                 </p>
                 @endunless
             @endif

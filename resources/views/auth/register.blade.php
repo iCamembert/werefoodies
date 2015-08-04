@@ -13,7 +13,7 @@
                     <h1>{{ trans('strings.breadSignUp') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li><a href="{{ action('HomeController@index') }}">{{ trans('strings.breadHome') }}</a></li>
                         <li class="active">{{ trans('strings.breadSignUp') }}</li>
                     </ul>
                 </div>
@@ -29,7 +29,7 @@
 
                         <h2>{!! trans('strings.signUpRegister1') !!}</h2>
 
-                        <form class="white-row" role="form" method="POST" action="{{ url('/auth/register') }}">
+                        <form class="white-row" role="form" method="POST" action="{{ action('Auth\AuthController@getRegister') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             @if (count($errors) > 0)

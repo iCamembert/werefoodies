@@ -13,7 +13,7 @@
                     <h1>{{ Lang::get('strings.breadAboutUser', ['userName' => $user->name]) }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li><a href="{{ action('HomeController@index') }}">{{ trans('strings.breadHome') }}</a></li>
                         <li class="active">{{ Lang::get('strings.breadAboutUser', ['userName' => $user->name]) }}</li>
                     </ul>
                 </div>

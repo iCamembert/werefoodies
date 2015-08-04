@@ -79,7 +79,7 @@ return [
     "signInForgot3" => "<strong>이메일주소를 적어주세요</strong>",
     "signInForgot4" => "재설정 링크 보내기",
     "signInForgot5" => "보내기",
-    "signInNoAccountYet" => "아직 회원이 아니신가요? <a href=\"\">여기를 눌러 가입하세요</a>, 빠르고 무료입니다!",
+    "signInNoAccountYet" => "아직 회원이 아니신가요? <a href='action(\'Auth\AuthController@getRegister\')'>여기를 눌러 가입하세요</a>, 빠르고 무료입니다!",
 
     // ******** Sign Up Page ********
 
@@ -97,9 +97,9 @@ return [
     "signUpWhy6" => "직접 요리사가 되어 당신의 창작품을 뽐내보세요. 당신의 열정을 공유하고 부자되세요!",
     "signUpWhy7" => "음식에 관련된 저희의 모든 게임, 대회 및 이벤트에 참여하세요!",
     "signUpWhy8" => "먹어봅시다!",
-    "signUpAlreadyAccount" => "이미 회원이신가요? <a href=\"\">여기를 눌러 로그인하세요</a>!",
+    "signUpAlreadyAccount" => "이미 회원이신가요? <a href='action(\'Auth\AuthController@getLogin\')'>여기를 눌러 로그인하세요</a>!",
     "signUpContact1" => "<strong>고객센터에 연락하세요!</strong>",
-    "signUpContact2" => "망설이지 마세요, <a href=\"\">도움이 필요하시면 여기를 눌러주세요</a>!",
+    "signUpContact2" => "망설이지 마세요, <a href=''>도움이 필요하시면 여기를 눌러주세요</a>!",
 
     // ******** Profile Page ********
 
@@ -118,7 +118,7 @@ return [
     "profileSummary13" => "프로필 업데이트",
 
     "profileChef1" => "내가 요리사",
-    "profileChef2" => "아직 요리사 활동이 없으십니다. <strong>요리사가 되어보는건 어떠신가요?</strong> <a href='url(\'dishes/create\')' class='btn btn-primary'>요리 추천하기</a>",
+    "profileChef2" => "아직 요리사 활동이 없으십니다. <strong>요리사가 되어보는건 어떠신가요?</strong> <a href='action(\'DishesController@create\')' class='btn btn-primary'>요리 추천하기</a>",
     "profileChef3" => "요리사 :userName",
 
     "profileChefOrders1" => "식신들의 주문",

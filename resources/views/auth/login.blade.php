@@ -13,7 +13,7 @@
                     <h1>{{ trans('strings.breadSignIn') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li><a href="{{ action('HomeController@index') }}">{{ trans('strings.breadHome') }}</a></li>
                         <li class="active">{{ trans('strings.breadSignIn') }}</li>
                     </ul>
                 </div>
@@ -40,7 +40,7 @@
                             </div>
                         @endif
 
-                        <form class="white-row" role="form" method="POST" action="{{ url('/auth/login') }}">
+                        <form class="white-row" role="form" method="POST" action="{{ action('Auth\AuthController@getLogin') }}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
                             <div class="row">

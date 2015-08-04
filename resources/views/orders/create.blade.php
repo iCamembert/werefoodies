@@ -14,7 +14,7 @@
                     <h1>{{ trans('strings.breadPlaceOrder') }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li><a href="{{ action('HomeController@index') }}">{{ trans('strings.breadHome') }}</a></li>
                         <li class="active">{{ trans('strings.breadPlaceOrder') }}</li>
                     </ul>
                 </div>

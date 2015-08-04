@@ -13,7 +13,7 @@
                     <h1>{{ $dish->name  }}</h1>
 
                     <ul class="breadcrumb">
-                        <li><a href="{{ url('/') }}">{{ trans('strings.breadHome') }}</a></li>
+                        <li><a href="{{ action('HomeController@index') }}">{{ trans('strings.breadHome') }}</a></li>
                         @if ($dish->isMyDish())
                             <li><a href="{{ action('UsersController@edit') }}">{{ trans('strings.breadMyAccount') }}</a></li>
                         @else
