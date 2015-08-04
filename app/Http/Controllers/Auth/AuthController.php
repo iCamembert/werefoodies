@@ -53,4 +53,16 @@ class AuthController extends Controller {
         return Redirect::route('home');
     }
 
+    /**
+     * Log the user in the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postLogin()
+    {
+        $this->auth->login();
+
+        return Redirect::route('home');
+    }
+
 }
