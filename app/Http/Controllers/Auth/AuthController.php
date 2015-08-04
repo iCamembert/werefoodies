@@ -58,11 +58,16 @@ class AuthController extends Controller {
      *
      * @return \Illuminate\Http\Response
      */
-    public function postLogin()
+    public function postLogin(LoginRequest $request)
     {
-        $this->auth->login();
+        $tvar = $request->input('email');
+        $pw = $request->input('password');
 
-        return Redirect::route('home');
+        if ($this->auth->attempt(['email' => $tvar, 'password' => $pw]))
+        {
+            return Redirect::route('home');
+        }
+        
     }
 
 }
