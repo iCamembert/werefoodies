@@ -244,10 +244,13 @@
         <section class="container">
 
             <div class="row bs-callout nomargin-bottom">
-                <div class="col-md-8 text-center">
+                <div class="col-md-3">
+                  <img class="img-responsive" src="{{ asset('img/brocks-paper-plane.png') }}" alt="Eat My Things" />
+                </div>
+                <div class="col-md-6 text-center">
                     <h3 class="padding20">{!! trans('strings.homeSubscribe1') !!}</h3>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
 
                     <p class="nomargin">{{ trans('strings.homeSubscribe2') }}</p>
 
