@@ -14,7 +14,7 @@
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	
-	Route::get('/', 'HomeController@index');
+	Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
 
 	//Route::get('home', 'HomeController@index');

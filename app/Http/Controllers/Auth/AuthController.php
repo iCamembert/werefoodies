@@ -49,7 +49,7 @@ class AuthController extends Controller {
 
         Cart::destroy();
 
-        return action('HomeController@index');
+        return Redirect::route('home');
     }
 
 }
