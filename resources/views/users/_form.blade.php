@@ -12,7 +12,7 @@
 <div class="row">
     <div class="form-group">
         {!! Form::label('location', trans('strings.profileSummary7')) !!}
-        {!! Form::text('google_place_id', null, ['id' => 'pac-input', 'class' => 'form-control', 'placeholder' => trans('strings.profileSummary10')]) !!}
+        {!! Form::text('name', null, ['id' => 'pac-input', 'class' => 'form-control', 'placeholder' => trans('strings.profileSummary10')]) !!}
     </div>
 </div>
 
