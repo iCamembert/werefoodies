@@ -185,7 +185,7 @@
                 $('input,text').keypress(function(event) { return event.keyCode != 13; });
                 $('input,email').keypress(function(event) { return event.keyCode != 13; });
 
-        function initialize() {
+        function initializes() {
 
             var placeId = '';
             var geocoder = new google.maps.Geocoder();
