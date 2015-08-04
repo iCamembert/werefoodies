@@ -5,6 +5,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\Redirect;
 
 class AuthController extends Controller {
 
