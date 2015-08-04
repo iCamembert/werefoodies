@@ -71,4 +71,25 @@ class AuthController extends Controller {
         
     }
 
+    /**
+     * Register the user in the application.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function postRegister(Request $request)
+    {
+        $validator = $this->registrar->validator($request->all());
+
+        if ($validator->fails())
+        {
+            $this->throwValidationException(
+                $request, $validator
+            );
+        }
+
+        $this->registrar->create($request->all());
+
+        return Redirect::route('home'); //$this->loginPath()
+    }
+
 }
