@@ -161,9 +161,9 @@ return [
     "profileChefReviews3" => "Check out how much Hungries enjoyed <strong>'s</strong> dishes!",
 
     "profileHungry1" => "Chef Me",
-    "profileHungry2" => "You don't have any hungry activities yet."
+    "profileHungry2" => "You don't have any hungry activities yet.",
     "profileHungry3" => "Hungry :userName",
-    "profileHungry4" => ":userName doesn't have any hungry activities yet."
+    "profileHungry4" => ":userName doesn't have any hungry activities yet.",
 
     // ******** Dish Page ********
 
