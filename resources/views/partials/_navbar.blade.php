@@ -25,7 +25,7 @@
         @if(Auth::guest())
             <!-- SIGN IN -->
             <div class="pull-right nav signin-dd">
-                <a id="quick_sign_in" href="{{ url('/auth/login') }}"><i class="fa fa-users"></i><span class="hidden-xs"> {{ trans('strings.navSignIn') }}</span></a>
+                <a id="quick_sign_in" href="{{ action('Auth\AuthController@getLogin') }}"><i class="fa fa-users"></i><span class="hidden-xs"> {{ trans('strings.navSignIn') }}</span></a>
                 <div class="dropdown-menu" role="menu" aria-labelledby="quick_sign_in">
 
                     <h4>Sign In</h4>
@@ -97,7 +97,7 @@
         </button>
 
         <!-- Logo text or image -->
-        <a class="logo" href="{{ url('/') }}">
+        <a class="logo" href="{{ action('HomeController@index') }}">
             <img src="{{ asset('img/logo-alone-very-small.png') }}" alt="Eat My Things" />
         </a>
 
@@ -107,7 +107,7 @@
                 <ul class="nav nav-pills nav-main scroll-menu" id="topMain">                    
                     
                     <li class="dropdown">
-                        <a class="dropdown-toggle" href="{{ url('/') }}">
+                        <a class="dropdown-toggle" href="{{ action('HomeController@index') }}">
                             <b>{{ trans('strings.navMenuTitle') }}</b> <i class="fa fa-angle-down"></i>
                         </a>
                         <ul class="dropdown-menu">
