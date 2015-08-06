@@ -37,7 +37,7 @@
             <div class="form-group center-block">
                 {!! Form::label('dish_rating', 'Dish Rating:') !!}
                 
-                @foreach($user->orders as $order)
+                @foreach($user->orders as $index => $order)
                     <div id="order{{ $order->id }}" style="display: none;">
                         @foreach ($order->dishes as $dishToRate)
                             <div class="col-sm-6 col-md-3">
@@ -46,7 +46,7 @@
                                     <a href="{{ action('DishesController@show', array('dishes' => $dishToRate, 'isBeingOrdered' => 0)) }}" class="thumbnail">
                                         <img class="img-responsive center-block" src="{{ asset('/userdata/' . $dishToRate->user_id . '/dishes/' . $dishToRate->id . '/picture_sm.jpg') }}" alt="Dish Picture" width="130" height="130" />
                                     </a>
-                                    {!! Form::input('hidden', 'dish_rating', null, ['class' => 'form-control rating text-center', 'data-filled' => 'glyphicon glyphicon-heart', 'data-empty' => 'glyphicon glyphicon-heart-empty']) !!}
+                                    {!! Form::input('hidden', 'dish_rating_' . ($index + 1), null, ['class' => 'form-control rating text-center', 'data-filled' => 'glyphicon glyphicon-heart', 'data-empty' => 'glyphicon glyphicon-heart-empty']) !!}
                                 </div>
                             </div>                                                                          
                         @endforeach

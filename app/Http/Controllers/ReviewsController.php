@@ -50,10 +50,23 @@ class ReviewsController extends Controller {
         $order->status_id = 4;
         $order->save();
 
-        $dish = Dish::findOrFail($order->dish_id);
+        foreach ($order->dishes as $dish)
+        {
+        	$nOrders = Order::select('orders.*')
+        						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
+        						->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
+        						->where('dishes.id', '=', $dish->id)
+        						->where('orders.status_id', '=', 4)
+        						->groupBy('orders.id')
+        						->count();
+        	$dish->rating = ($dish->rating * ($nOrders - 1) + Input::get('dish_rating')) / $nOrders;
+        	$dish->save();
+        }
+
+        /*$dish = Dish::findOrFail($order->dish_id);
         $nOrders = Order::where('dish_id', $dish->id)->where('status_id', '=', 4)->count();
         $dish->rating = ($dish->rating * ($nOrders - 1) + Input::get('dish_rating')) / $nOrders;
-        $dish->save();
+        $dish->save();*/
 
         $chef = $dish->user;
         $nReviews = $chef->clientReviews->count();

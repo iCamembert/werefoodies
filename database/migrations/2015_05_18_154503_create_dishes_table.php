@@ -20,7 +20,7 @@ class CreateDishesTable extends Migration {
             $table->string('currency');
             $table->string('name');
             $table->text('description');
-            $table->integer('rating')->unsigned();
+            $table->integer('rating')->unsigned(); // mqmfjgiqmodfjgomMOIJGSMOIJgmoigjsomfjig
 			$table->timestamps();
 
             $table->foreign('user_id')
