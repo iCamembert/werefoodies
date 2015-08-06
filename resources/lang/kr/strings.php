@@ -168,7 +168,7 @@ return [
     "profileChefReviews3" => "식신들이 <strong>:userName님의</strong> 요리를 얼마나 즐겼는지 확인해보세요!",
     "profileChefReviews4" => "후기:",
 
-    "profileHungry1" => "내가 요리사",
+    "profileHungry1" => "내가 식신",
     "profileHungry2" => "회원님께서는 아직 식신 활동이 없으십니다.",
     "profileHungry3" => "식신 :userName",
     "profileHungry4" => ":userName님께서는 아직 식신 활동이 없으십니다.",
