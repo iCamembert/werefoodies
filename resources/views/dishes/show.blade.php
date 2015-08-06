@@ -39,7 +39,7 @@
                         </div>
                         <div class="col-md-9">
                             <ul>
-                                <li>{{ trans('strings.dishShowAbout2') }} {{ $dish->rating }}%</li>
+                                <li>{{ trans('strings.dishShowAbout2') }} {{ $dish->rating }}</li>
                                 <li>{{ trans('strings.dishShowAbout3') }} {{ $dish->price }}</li>
                                 <li>{{ trans('strings.dishShowAbout4') }}</li>
                                 <li>{{ trans('strings.dishShowAbout5') }} {{ $dish->user->name }}</li>

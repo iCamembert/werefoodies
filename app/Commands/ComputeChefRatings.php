@@ -36,7 +36,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 			$chefRatingsSum = $chefRatingsSum + $clientReview->chef_rating;
 		}
 
-        $chef->rating = $chefRatingsSum / $nReviews;
+        $chef->rating = 5.0;
         $chef->save();
 	}
 
