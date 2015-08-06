@@ -37,7 +37,7 @@
             <div class="form-group center-block">
                 {!! Form::label('dish_rating', 'Dish Rating:') !!}
                 
-                @foreach($user->orders as $$order)
+                @foreach($user->orders as $order)
                     <div id="order{{ $order->id }}" style="display: none;">
                         @foreach ($order->dishes as $dishToRate)
                             <div class="col-sm-6 col-md-3">
