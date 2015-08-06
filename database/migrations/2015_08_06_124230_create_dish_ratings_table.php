@@ -16,6 +16,7 @@ class CreateDishRatingsTable extends Migration {
 		{
 			$table->increments('id');
 			$table->integer('user_id')->unsigned();
+			$table->integer('dish_id')->unsigned();
 			$table->integer('review_id')->unsigned();
 			$table->decimal('rating', 3, 1);
 			$table->timestamps();

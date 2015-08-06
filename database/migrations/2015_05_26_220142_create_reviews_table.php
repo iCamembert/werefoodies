@@ -19,7 +19,7 @@ class CreateReviewsTable extends Migration {
             $table->integer('order_id')->unsigned();
             $table->string('title');
             $table->text('body');
-            $table->integer('chef_rating')->unsigned();
+            $table->decimal('chef_rating', 3, 1);
             $table->timestamps();
 
             $table->foreign('user_id')
