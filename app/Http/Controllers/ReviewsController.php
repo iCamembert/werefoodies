@@ -8,6 +8,8 @@ use App\Http\Requests\ReviewRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
 use Request;
+use App\Commands\ComputeChefRatings;
+use App\Commands\ComputeDishRatings;
 
 class ReviewsController extends Controller {
 
@@ -62,7 +64,7 @@ class ReviewsController extends Controller {
 
         $chef = $dish->user;
 
-        $this->dispatchFrom('App\Commands\ComputeChefRatings', $chef);
+        $this->dispatch(new ComputeChefRatings($chef));
         $this->dispatchFrom('App\Commands\ComputeDishRatings', $order);
         /*$dish = Dish::findOrFail($order->dish_id);
         $nOrders = Order::where('dish_id', $dish->id)->where('status_id', '=', 4)->count();
