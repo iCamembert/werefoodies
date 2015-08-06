@@ -25,37 +25,7 @@
                                 </thead>
                                 <tbody>
                                 @foreach ($user->orders as $index => $order)
-                                    @if ($order->status_id <> 3)
-                                        <tr>
-                                            <th class="text-center" style="vertical-align: middle;" scope="row">{{ $index + 1 }}</th>
-                                            <td class="text-center" style="vertical-align: middle;">
-                                                <ul>
-                                                    @foreach ($order->dishes as $orderedDish)
-                                                        <li><a href="{{ action('DishesController@show', array('dishes' => $orderedDish)) }}" title="{{ trans('strings.profileHungryOrders9') }}">{{ $orderedDish->name }}: {{ $orderedDish->quantity }}</a></li>
-                                                    @endforeach
-                                                </ul>
-                                            </td>
-                                            <td class="text-center" style="vertical-align: middle;"><a href="{{ action('UsersController@show', array('users' => $order->dishes->first()->user->id)) }}" title="{{ trans('strings.profileHungryOrders10') }}">{{ $order->dishes->first()->user->name }}</a></td>
-                                            <td class="text-center" style="vertical-align: middle;">{{ $order->price }}</td>
-                                            <td class="text-center" style="vertical-align: middle;">{{ $order->served_at }}</td>
-                                            <td class="text-center" style="vertical-align: middle;">
-                                                @if ($order->status_id == 0)
-                                                    <span class="orange"><strong>{{ trans('strings.profileHungryOrders11') }}</strong></span>
-                                                    <a href="{{ action('OrdersController@edit', array('orders' => $order)) }}"><i class="fa fa-edit" title="{{ trans('strings.profileHungryOrders12') }}"></i></a>
-                                                    <a href="{{ action('OrdersController@cancel', array('orders' => $order)) }}"><i class="fa fa-times" title="{{ trans('strings.profileHungryOrders13') }}"></i></a>
-                                                @elseif ($order->status_id == 1)
-                                                    <span class="green"><strong>{{ trans('strings.profileHungryOrders14') }}</strong></span>
-                                                    @if ($order->reviewed())
-                                                        <span><a data-toggle="modal" data-target=".review-modal" onclick="Javascript: document.getElementById('orderId').value = {{ $order->id }}; document.getElementById('order' + {{ $order->id }}).style = 'visible';"><i class="fa fa-pencil" title="{{ trans('strings.profileHungryOrders15') }}"></i></a></span>
-                                                    @else
-                                                        
-                                                    @endif
-                                                @elseif ($order->status_id == 2)
-                                                    <span class="red"><strong>{{ trans('strings.profileHungryOrders16') }}</strong></span>
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    @endif
+                                    
                                 @endforeach
                                 </tbody>
                             </table>

@@ -53,9 +53,10 @@ class ReviewsController extends Controller {
 
         foreach ($order->dishes as $dish)
         {
-        	$dishRating = Auth::user()->dishRatings()->create();
-        	$dishRating->rating = Input::get('dish_rating_' . $dish->id);
+        	$dishRating = new DishRating();
+        	$dishRating->user_id = Auth::user()->id;
         	$dishRating->dish_id = $dish->id;
+        	$dishRating->rating = Input::get('dish_rating_' . $dish->id);
         	$dishRating->save();
         }
 
