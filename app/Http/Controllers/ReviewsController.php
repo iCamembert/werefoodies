@@ -3,6 +3,7 @@
 use App\Order;
 use App\Dish;
 use App\Review;
+use App\DishRating;
 use App\Http\Requests\ReviewRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
@@ -52,27 +53,19 @@ class ReviewsController extends Controller {
 
         foreach ($order->dishes as $dish)
         {
-        	$nOrders = Order::select('orders.*')
-        						->leftJoin('dish_order', 'orders.id', '=', 'dish_order.order_id')
-        						->join('dishes', 'dish_order.dish_id', '=', 'dishes.id')
-        						->where('dishes.id', '=', $dish->id)
-        						->where('orders.status_id', '=', 4)
-        						->groupBy('orders.id')
-        						->count();
-        	$dish->rating = ($dish->rating * ($nOrders - 1) + Input::get('dish_rating')) / $nOrders;
-        	$dish->save();
+        	$dishRating = Auth::user()->dishRatings()->create(Input::get('dish_rating_' . $dish->id));
+        	$dishRating->dish_id = $dish->id;
+        	$dishRating->save();
         }
 
+        $chef = $dish->user;
+
+        $this->dispatchFrom('App\Commands\ComputeChefRatings', $chef);
+        $this->dispatchFrom('App\Commands\ComputeDishRatings', $order);
         /*$dish = Dish::findOrFail($order->dish_id);
         $nOrders = Order::where('dish_id', $dish->id)->where('status_id', '=', 4)->count();
         $dish->rating = ($dish->rating * ($nOrders - 1) + Input::get('dish_rating')) / $nOrders;
         $dish->save();*/
-
-        $chef = $dish->user;
-        $nReviews = $chef->clientReviews->count();
-        $chef->rating = ($chef->rating * ($nReviews - 1) + Input::get('chef_rating')) / $nReviews;
-        $chef->save();
-
 
         flash()->success('Your review has been posted!');
 

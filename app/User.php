@@ -92,4 +92,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         return Auth::check() ? (Auth::user()->id == $this->id ? true: false) : false;
     }
 
+    public function dishRatings()
+    {
+        return $this->hasMany('App\DishRating');
+    }
+
 }

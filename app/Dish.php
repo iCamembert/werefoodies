@@ -60,4 +60,9 @@ class Dish extends Model {
         return Auth::check() ? (Auth::user()->id == $this->user_id ? true : false) : false;
     }
 
+    public function dishRatings()
+    {
+        return $this->hasMany('App\DishRating');
+    }
+
 }
