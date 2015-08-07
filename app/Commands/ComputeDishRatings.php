@@ -20,7 +20,7 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 	 *
 	 * @return void
 	 */
-	public function __construct(Order $order)
+	public function __construct($order)
 	{
 		$this->order = $order;
 	}
@@ -32,19 +32,7 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		foreach ($order->dishes as $dish)
-		{
-			$dishRatingsSum = 0;
-			$nDishRatings = $dish->dishRatings->count();
-
-			foreach ($dish->dishRatings as $dishRating)
-			{
-				$dishRatingsSum = $dishRatingsSum + $dishRating->rating;
-			}
-
-			$dish->rating = $dishRatingsSum / $nDishRatings;
-			$dish->save();
-		}
+		
 	}
 
 }
