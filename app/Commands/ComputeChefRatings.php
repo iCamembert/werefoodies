@@ -6,6 +6,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
+use App\User;
 
 class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued {
 
@@ -18,7 +19,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 	 *
 	 * @return void
 	 */
-	public function __construct($chef)
+	public function __construct(User $chef)
 	{
 		$this->chef = $chef;
 	}

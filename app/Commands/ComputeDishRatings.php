@@ -7,6 +7,8 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
 
+use App\Order;
+
 class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued {
 
 	use InteractsWithQueue, SerializesModels;
@@ -18,7 +20,7 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 	 *
 	 * @return void
 	 */
-	public function __construct($order)
+	public function __construct(Order $order)
 	{
 		$this->order = $order;
 	}
