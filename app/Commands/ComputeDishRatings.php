@@ -30,10 +30,10 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		foreach ($order->dishes as $dish)
+		/*foreach ($order->dishes as $dish)
 		{
 			$dishRatingsSum = 0;
-			/*$nDishRatings = $dish->dishRatings->count();
+			$nDishRatings = $dish->dishRatings->count();
 
 			foreach ($dish->dishRatings as $dishRating)
 			{
@@ -41,8 +41,8 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 			}
 
 			$dish->rating = $dishRatingsSum / $nDishRatings;
-			$dish->save();*/
-		}
+			$dish->save();
+		}*/
 	}
 
 }
