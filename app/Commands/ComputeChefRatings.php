@@ -31,7 +31,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		$orders = $chef->orders;
+		$orders = $this->chef->orders;
 		
 	}
 
