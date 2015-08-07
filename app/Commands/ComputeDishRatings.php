@@ -12,7 +12,7 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 	use InteractsWithQueue, SerializesModels;
 
 	protected $order;
-	
+
 	/**
 	 * Create a new command instance.
 	 *
@@ -33,7 +33,7 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 		foreach ($order->dishes as $dish)
 		{
 			$dishRatingsSum = 0;
-			$nDishRatings = $dish->dishRatings->count();
+			$nDishRatings = $dishh->dishRatings->count();
 
 			foreach ($dish->dishRatings as $dishRating)
 			{
