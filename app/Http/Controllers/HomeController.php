@@ -44,7 +44,7 @@ class HomeController extends Controller {
 
         $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
 
-        $location = GeoIP::getLocation();
+        $location = GeoIPFacade::getLocation();
 
         if ($location->isoCode == 'FR')
         {
