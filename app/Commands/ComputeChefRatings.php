@@ -30,7 +30,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		dd("sdfgsd");
+		
 	}
 
 }
