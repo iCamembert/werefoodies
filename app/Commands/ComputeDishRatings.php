@@ -11,16 +11,16 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 
 	use InteractsWithQueue, SerializesModels;
 
-	protected $order;
+	
 
 	/**
 	 * Create a new command instance.
 	 *
 	 * @return void
 	 */
-	public function __construct($order)
+	public function __construct()
 	{
-		$this->order = $order;
+		
 	}
 
 	/**
@@ -30,19 +30,7 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		foreach ($order->dishes as $dish)
-		{
-			$dishRatingsSum = 0;
-			$nDishRatings = $dishh->dishRatings->count();
-
-			foreach ($dish->dishRatings as $dishRating)
-			{
-				$dishRatingsSum = $dishRatingsSum + $dishRating->rating;
-			}
-
-			$dish->rating = $dishRatingsSum / $nDishRatings;
-			$dish->save();
-		}
+		
 	}
 
 }
