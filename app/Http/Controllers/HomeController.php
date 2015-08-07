@@ -4,6 +4,7 @@ use App;
 use App\Dish;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Torann\GeoIP\GeoIPFacade;
 
 class HomeController extends Controller {
 
@@ -42,6 +43,19 @@ class HomeController extends Controller {
         $todayDishes = Dish::orderBy('rating', 'desc')->limit(3)->get();
 
         $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
+
+        $location = GeoIP::getLocation();
+
+        if ($location->isoCode == 'FR')
+        {
+        	App::setLocale('fr');
+        } else if ($location->isoCode == 'KR')
+        {
+        	App::setLocale('kr');
+        } else
+        {
+        	App::setLocale('en');
+        }
 
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
 	}
