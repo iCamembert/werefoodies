@@ -1,12 +1,12 @@
 <?php namespace App\Commands;
 
+use App\User;
 use App\Commands\Command;
 
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Bus\SelfHandling;
 use Illuminate\Contracts\Queue\ShouldBeQueued;
-use App\User;
 
 class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued {
 
