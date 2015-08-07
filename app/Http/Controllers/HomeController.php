@@ -46,10 +46,10 @@ class HomeController extends Controller {
 
         $location = GeoIPFacade::getLocation();
 
-        if ($location->isoCode == 'FR')
+        if ($location['isoCode'] == 'FR')
         {
         	App::setLocale('fr');
-        } else if ($location->isoCode == 'KR')
+        } else if ($location['isoCode'] == 'KR')
         {
         	App::setLocale('kr');
         } else
