@@ -11,6 +11,8 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 
 	use InteractsWithQueue, SerializesModels;
 
+	protected $chef;
+
 	/**
 	 * Create a new command instance.
 	 *

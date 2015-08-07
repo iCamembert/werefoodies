@@ -11,6 +11,8 @@ class ComputeDishRatings extends Command implements SelfHandling, ShouldBeQueued
 
 	use InteractsWithQueue, SerializesModels;
 
+	protected $order;
+	
 	/**
 	 * Create a new command instance.
 	 *
