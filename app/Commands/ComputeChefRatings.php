@@ -31,7 +31,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		$chef = User::find($chefId);
+		$chef = User::find(1);
 		
 	}
 
