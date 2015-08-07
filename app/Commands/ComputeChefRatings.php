@@ -12,16 +12,16 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 
 	use InteractsWithQueue, SerializesModels;
 
-	public $chefId;
+	public $chef;
 
 	/**
 	 * Create a new command instance.
 	 *
 	 * @return void
 	 */
-	public function __construct($chefId)
+	public function __construct(User $chef)
 	{
-		$this->chefId = $chefId;
+		$this->chef = $chef;
 	}
 
 	/**
@@ -31,7 +31,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 	 */
 	public function handle()
 	{
-		$chef = User::find($chefId);
+		$orders = $chef->orders;
 		
 	}
 

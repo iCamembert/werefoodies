@@ -64,7 +64,7 @@ class ReviewsController extends Controller {
 
         $chef = $dish->user;
 
-        $this->dispatch(new ComputeChefRatings(2));
+        $this->dispatch(new ComputeChefRatings($chef));
         $this->dispatch(new ComputeDishRatings($order));
         /*$dish = Dish::findOrFail($order->dish_id);
         $nOrders = Order::where('dish_id', $dish->id)->where('status_id', '=', 4)->count();
