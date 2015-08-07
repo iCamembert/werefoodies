@@ -32,16 +32,7 @@ class ComputeChefRatings extends Command implements SelfHandling, ShouldBeQueued
 	public function handle()
 	{
 		$chef = User::find($chefId);
-		$chefRatingsSum = 0;
-		$nReviews = $chef->clientReviews->count();
-
-		foreach ($chef->clientReviews as $clientReview)
-		{
-			$chefRatingsSum = $chefRatingsSum + $clientReview->chef_rating;
-		}
-
-        $chef->rating = 5.0;
-        $chef->save();
+		
 	}
 
 }
