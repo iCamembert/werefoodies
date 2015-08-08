@@ -5,6 +5,7 @@ use App\Dish;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Torann\GeoIP\GeoIPFacade;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class HomeController extends Controller {
 
@@ -48,13 +49,19 @@ class HomeController extends Controller {
 
         if ($location['isoCode'] == 'FR')
         {
-        	App::setLocale('fr');
+
+        	LaravelLocalization::setLocale('fr');
+
         } else if ($location['isoCode'] == 'KR')
         {
-        	App::setLocale('kr');
+
+        	LaravelLocalization::setLocale('kr');
+
         } else
         {
-        	App::setLocale('en');
+
+        	LaravelLocalization::setLocale('en');
+
         }
 
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
