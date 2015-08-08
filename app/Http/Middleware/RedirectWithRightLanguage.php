@@ -16,21 +16,25 @@ class RedirectWithRightLanguage {
 	public function handle($request, Closure $next)
 	{
 		$location = GeoIPFacade::getLocation();
+		$url = $request->url();
 
         if ($location['isoCode'] == 'FR')
         {
 
-        	return redirect(LaravelLocalization::getLocalizedURL('fr'));
+        	if ($url != LaravelLocalization::getLocalizedURL('fr'))
+        		return redirect(LaravelLocalization::getLocalizedURL('fr'));
 
         } else if ($location['isoCode'] == 'KR')
         {
 
-        	return redirect(LaravelLocalization::getLocalizedURL('kr'));
+        	if ($url != LaravelLocalization::getLocalizedURL('kr'))
+        		return redirect(LaravelLocalization::getLocalizedURL('kr'));
 
         } else
         {
 
-        	return redirect(LaravelLocalization::getLocalizedURL('en'));
+        	if ($url != LaravelLocalization::getLocalizedURL('en'))
+        		return redirect(LaravelLocalization::getLocalizedURL('en'));
 
         }
 
