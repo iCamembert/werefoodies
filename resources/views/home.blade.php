@@ -203,6 +203,7 @@
                 </div>
             </div>
 
+            <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
             <p class="lead">{{ trans('strings.homeBestDishes1') }}</p>
         </section>
 
