@@ -275,7 +275,7 @@
 								<button class="btn btn-primary"><i class="fa fa-search"></i></button>
 							</span>
                     </form>
-{{ $location['lat'] }}
+
                 </div>
             </div>
 
@@ -310,8 +310,11 @@
 
         function initialize() {
 
+          var userLat = {{ $location['lat'] }};
+          var userLon = {{ $location['lon'] }};
+
   var mapOptions = {
-    center: new google.maps.LatLng(-33.8688, 151.2195),
+    center: new google.maps.LatLng(userLat, userLon),
     zoom: 13,
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),
