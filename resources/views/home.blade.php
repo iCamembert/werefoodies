@@ -288,7 +288,7 @@
 @section('afterScripts')
     <script>
         $('#advancedSearch').hide();
-        $('#map-canvas').show();
+        $('#map-canvas').css('overflow', 'visible');
         $('#advancedSearchButton').click(function() {
             $(this).hide();
             //$('#profileShow').hide(400);
