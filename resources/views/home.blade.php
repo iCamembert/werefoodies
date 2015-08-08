@@ -312,6 +312,13 @@
   var map = new google.maps.Map(document.getElementById('map-canvas'),
     mapOptions);
 
+  var request = {
+    location: pyrmont,
+    radius: 500,
+    types: ['store']
+  };
+
+
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
 
