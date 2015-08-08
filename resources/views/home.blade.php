@@ -378,6 +378,7 @@
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
+    $('#map-canvas').setVisible(true);
   });
 
   // Sets a listener on a radio button to change the filter type on Places
