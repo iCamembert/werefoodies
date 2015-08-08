@@ -202,7 +202,11 @@
                     </div>
                 </div>
             </div>
-            <div class="row" id="map-canvas"></div>
+            <div class="row">
+              <div class="col-md-12">
+                <div id="map-canvas"></div>
+              </div>
+            </div>
             <div class="row">
               <div class="col-md-2 col-md-offset-5">
                 <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
@@ -299,7 +303,7 @@
 
         var map;
         var infoWindow;
-        
+
         function initialize() {
   var mapOptions = {
     center: new google.maps.LatLng(-33.8688, 151.2195),
@@ -322,6 +326,8 @@
   autocomplete.bindTo('bounds', map);
 
   var infowindow = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map);
+  service.nearbySearch(request, callback);
   var marker = new google.maps.Marker({
     map: map,
     anchorPoint: new google.maps.Point(0, -29)
@@ -379,6 +385,27 @@
   setupClickListener('changetype-address', ['address']);
   setupClickListener('changetype-establishment', ['establishment']);
   setupClickListener('changetype-geocode', ['geocode']);*/
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      createMarker(results[i]);
+    }
+  }
+}
+
+function createMarker(place) {
+  var placeLoc = place.geometry.location;
+  var marker = new google.maps.Marker({
+    map: map,
+    position: place.geometry.location
+  });
+
+  google.maps.event.addListener(marker, 'click', function() {
+    infowindow.setContent(place.name);
+    infowindow.open(map, this);
+  });
 }
 
 google.maps.event.addDomListener(window, 'load', initialize);
