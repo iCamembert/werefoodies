@@ -140,7 +140,7 @@
 
                         <form method="get" action="#" class="input-group">
                             <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
-                            <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
+                            <div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                             </span>
@@ -204,7 +204,7 @@
 
                 <div class="row">
                   <div class="col-md-12">
-                    <div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>
+                    <div id="map-canvas2" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>
                   </div>
                 </div>
             </div>
