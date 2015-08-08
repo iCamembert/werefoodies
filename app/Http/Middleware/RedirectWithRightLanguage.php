@@ -20,17 +20,17 @@ class RedirectWithRightLanguage {
         if ($location['isoCode'] == 'FR')
         {
 
-        	LaravelLocalization::setLocale('fr');
+        	return redirect(LaravelLocalization::getLocalizedURL('fr'));
 
         } else if ($location['isoCode'] == 'KR')
         {
 
-        	LaravelLocalization::setLocale('kr');
+        	return redirect(LaravelLocalization::getLocalizedURL('kr'));
 
         } else
         {
 
-        	LaravelLocalization::setLocale('en');
+        	return redirect(LaravelLocalization::getLocalizedURL('en'));
 
         }
 
