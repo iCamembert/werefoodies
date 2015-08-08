@@ -45,25 +45,6 @@ class HomeController extends Controller {
 
         $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
 
-        $location = GeoIPFacade::getLocation();
-
-        if ($location['isoCode'] == 'FR')
-        {
-
-        	LaravelLocalization::setLocale('fr');
-
-        } else if ($location['isoCode'] == 'KR')
-        {
-
-        	LaravelLocalization::setLocale('kr');
-
-        } else
-        {
-
-        	LaravelLocalization::setLocale('en');
-
-        }
-
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
 	}
 
