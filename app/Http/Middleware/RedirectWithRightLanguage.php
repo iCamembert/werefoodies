@@ -20,19 +20,19 @@ class RedirectWithRightLanguage {
         if ($location['isoCode'] == 'FR')
         {
 
-        	if ( ! ($request->is('fr') || $request->is('fr/*')) )
+        	if ( ! ($request->is('fr') || $request->is('fr/*') || $request->is('kr') || $request->is('kr/*') || $request->is('en') || $request->is('en/*')) )
         		return redirect(LaravelLocalization::getLocalizedURL('fr'));
 
         } else if ($location['isoCode'] == 'KR')
         {
 
-        	if ( ! ($request->is('kr') || $request->is('kr/*')) )
+        	if ( ! ($request->is('kr') || $request->is('kr/*') || $request->is('fr') || $request->is('fr/*') || $request->is('en') || $request->is('en/*')) )
         		return redirect(LaravelLocalization::getLocalizedURL('kr'));
 
         } else
         {
 
-        	if ( ! ($request->is('en') || $request->is('en/*')) )
+        	if ( ! ($request->is('en') || $request->is('en/*') $request->is('fr') || $request->is('fr/*') || $request->is('kr') || $request->is('kr/*')) )
         		return redirect(LaravelLocalization::getLocalizedURL('en'));
 
         }
