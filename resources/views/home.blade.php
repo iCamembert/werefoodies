@@ -311,7 +311,7 @@
         function initialize() {
 
   var mapOptions = {
-    center: new google.maps.LatLng({{ $location['lat'] }}, {{ $location['lon'] }}),
+    center: new google.maps.LatLng(-33.8688, 151.2195),
     zoom: 13,
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),

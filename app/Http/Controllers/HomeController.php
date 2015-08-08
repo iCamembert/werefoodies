@@ -46,6 +46,8 @@ class HomeController extends Controller {
         $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
 
         $location = GeoIPFacade::getLocation();
+        $lat = $location['lat'];
+        $lon = $location['lon'];
 
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek', 'location'));
 	}
