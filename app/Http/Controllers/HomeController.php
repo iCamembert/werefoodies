@@ -45,7 +45,9 @@ class HomeController extends Controller {
 
         $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
 
-		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
+        $location = GeoIPFacade::getLocation();
+
+		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek', 'location'));
 	}
 
 	public function changeLanguage($language)

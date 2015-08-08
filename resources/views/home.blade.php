@@ -139,11 +139,13 @@
                         <p class="nomargin">{{ trans('strings.homeSearch2') }}</p>
 
                         <!--<form method="get" action="#" class="input-group">-->
+                        <div class="input-group">
                             <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
                             <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
                             <span class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                             </span>
+                        </div>
                         <!--</form>-->
                     </div>
                     <div class="col-md-2 col-md-offset-5">
@@ -307,8 +309,9 @@
         var infoWindow;
 
         function initialize() {
+
   var mapOptions = {
-    center: new google.maps.LatLng(-33.8688, 151.2195),
+    center: new google.maps.LatLng({{ $location['lat'] }}, {{ $location['lon'] }}),
     zoom: 13,
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),
