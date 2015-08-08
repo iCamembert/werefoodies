@@ -24,7 +24,7 @@ class ConfigServiceProvider extends ServiceProvider {
 
 	        'laravellocalization.useAcceptLanguageHeader' => true,
 
-	        'laravellocalization.hideDefaultLocaleInURL' => true
+	        'laravellocalization.hideDefaultLocaleInURL' => false
 		]);
 	}
 
