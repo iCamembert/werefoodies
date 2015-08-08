@@ -203,12 +203,12 @@
                 </div>
             </div>
             <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-2 col-offset-5">
                 <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
               </div>
-              <div class="col-md-9">
-                <p class="lead">{{ trans('strings.homeBestDishes1') }}</p>
-              </div>
+            </div>
+            <div class="row">
+              <p class="lead">{{ trans('strings.homeBestDishes1') }}</p>
             </div>
         </section>
 
