@@ -32,7 +32,7 @@ class RedirectWithRightLanguage {
         } else
         {
 
-        	if ( ! ($request->is('en') || $request->is('en/*') $request->is('fr') || $request->is('fr/*') || $request->is('kr') || $request->is('kr/*')) )
+        	if ( ! ($request->is('en') || $request->is('en/*') || $request->is('fr') || $request->is('fr/*') || $request->is('kr') || $request->is('kr/*')) )
         		return redirect(LaravelLocalization::getLocalizedURL('en'));
 
         }
