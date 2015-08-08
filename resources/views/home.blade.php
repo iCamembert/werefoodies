@@ -204,7 +204,7 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div id="map-canvas2" style="height: 100%; margin: 0; padding: 0;"></div>
+                <div id="map-canvas2" style="height: 100%; margin: 0; padding: 0; position: absolute;"></div>
               </div>
             </div>
             <div class="row">

@@ -64,8 +64,8 @@ return [
     "homeBestDishes2" => "<strong>Voir</strong> plus",
     "homeBestDishes3" => "Commander",
     "homeSubscribe1" => "Inscrivez-vous <strong>maintenant</strong> pour recevoir notre <strong>délicieuse</strong> newsletter!",
-    "homeSubscribe2" => "Tapez votre address e-mail habituelle",
-    "homeSubscribe3" => "Address e-mail",
+    "homeSubscribe2" => "Tapez votre addresse e-mail habituelle",
+    "homeSubscribe3" => "Addresse e-mail",
 
     // ******** Sign In Page ********
 
