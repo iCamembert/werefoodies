@@ -201,12 +201,14 @@
                         </section>
                     </div>
                 </div>
+
+                <div class="row">
+                  <div class="col-md-12">
+                    <div id="map-canvas2" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>
+                  </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-12">
-                <div id="map-canvas2" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>
-              </div>
-            </div>
+            
             <div class="row">
               <div class="col-md-2 col-md-offset-5">
                 <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
