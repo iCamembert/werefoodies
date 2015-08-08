@@ -392,7 +392,7 @@ var infowindow2;
 
 function initialize2() {
   var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
-  alert('sfgijsmo');
+
   map2 = new google.maps.Map(document.getElementById('map-canvas2'), {
     center: pyrmont,
     zoom: 15
@@ -404,10 +404,8 @@ function initialize2() {
     types: ['store']
   };
   infowindow2 = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map2);
-  service.nearbySearch(request, callback);
-  $('#map-canvas2').css('display', 'block');
-  $('#map-canvas2').css('visibility', 'visible');
+  //var service = new google.maps.places.PlacesService(map2);
+  //service.nearbySearch(request, callback);
 }
 
 function callback(results, status) {
