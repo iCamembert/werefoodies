@@ -203,7 +203,7 @@
                 </div>
             </div>
             <div class="row">
-              <div class="col-md-2 col-offset-5">
+              <div class="col-md-2 col-md-offset-5">
                 <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
               </div>
             </div>
