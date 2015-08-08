@@ -312,7 +312,7 @@
 
           var userLat = {{ $location['lat'] }};
           var userLon = {{ $location['lon'] }};
-          var userCity = {{ $location['city'] }};
+          var userCity = {{ $location['country'] }};
           alert(userCity);
 
   var mapOptions = {
