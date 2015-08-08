@@ -140,7 +140,7 @@
 
                         <form method="get" action="#" class="input-group">
                             <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
-                            <!--<div id="map-canvas"></div>-->
+                            <div id="map-canvas"></div>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                             </span>
@@ -204,7 +204,7 @@
             </div>
             <div class="row">
               <div class="col-md-12">
-                <div id="map-canvas" style="height: 100%;"></div>
+                <div id="map-canvas2" style="height: 100%; margin: 0; padding: 0;"></div>
               </div>
             </div>
             <div class="row">
@@ -288,7 +288,6 @@
 @section('afterScripts')
     <script>
         $('#advancedSearch').hide();
-        $('#map-canvas').css('overflow', 'visible');
         $('#advancedSearchButton').click(function() {
             $(this).hide();
             //$('#profileShow').hide(400);
@@ -312,13 +311,6 @@
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'),
     mapOptions);
-  var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
-  var request = {
-    location: pyrmont,
-    radius: 500,
-    types: ['store']
-  };
-
 
   var input = /** @type {HTMLInputElement} */(
       document.getElementById('pac-input'));
@@ -334,8 +326,6 @@
   autocomplete.bindTo('bounds', map);
 
   var infowindow = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map);
-  service.nearbySearch(request, callback);
   var marker = new google.maps.Marker({
     map: map,
     anchorPoint: new google.maps.Point(0, -29)
@@ -343,7 +333,7 @@
 
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
-    marker.setVisible(true);
+    marker.setVisible(false);
     var place = autocomplete.getPlace();
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
@@ -378,7 +368,6 @@
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
-    $('#map-canvas').setVisible(true);
   });
 
   // Sets a listener on a radio button to change the filter type on Places
@@ -396,6 +385,29 @@
   setupClickListener('changetype-geocode', ['geocode']);*/
 }
 
+google.maps.event.addDomListener(window, 'load', initialize);
+
+var map2;
+var infowindow2;
+
+function initialize2() {
+  var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
+
+  map2 = new google.maps.Map(document.getElementById('map-canvas2'), {
+    center: pyrmont,
+    zoom: 15
+  });
+
+  var request = {
+    location: pyrmont,
+    radius: 500,
+    types: ['store']
+  };
+  infowindow2 = new google.maps.InfoWindow();
+  var service = new google.maps.places.PlacesService(map2);
+  service.nearbySearch(request, callback);
+}
+
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -407,16 +419,17 @@ function callback(results, status) {
 function createMarker(place) {
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
-    map: map,
+    map: map2,
     position: place.geometry.location
   });
 
   google.maps.event.addListener(marker, 'click', function() {
     infowindow.setContent(place.name);
-    infowindow.open(map, this);
+    infowindow.open(map2, this);
   });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', initialize2);
+
     </script>
 @endsection
