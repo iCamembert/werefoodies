@@ -329,7 +329,7 @@
 
   var autocomplete = new google.maps.places.Autocomplete(input,
     {
-        types: ['(cities)', 'address']
+        types: ['(cities)']
     });
   autocomplete.bindTo('bounds', map);
 
