@@ -406,6 +406,8 @@ function initialize2() {
   infowindow2 = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map2);
   service.nearbySearch(request, callback);
+  $('#map-canvas2').css('display', 'block');
+  $('#map-canvas2').css('visibility', 'visible');
 }
 
 function callback(results, status) {
