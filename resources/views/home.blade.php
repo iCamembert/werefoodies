@@ -312,6 +312,8 @@
 
           var userLat = {{ $location['lat'] }};
           var userLon = {{ $location['lon'] }};
+          var userCity = {{ $location['city'] }};
+          alert(userCity);
 
   var mapOptions = {
     center: new google.maps.LatLng(userLat, userLon),
