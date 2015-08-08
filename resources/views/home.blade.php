@@ -202,9 +202,14 @@
                     </div>
                 </div>
             </div>
-
-            <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
-            <p class="lead">{{ trans('strings.homeBestDishes1') }}</p>
+            <div class="row">
+              <div class="col-md-3">
+                <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
+              </div>
+              <div class="col-md-9">
+                <p class="lead">{{ trans('strings.homeBestDishes1') }}</p>
+              </div>
+            </div>
         </section>
 
         <div id="shop">
