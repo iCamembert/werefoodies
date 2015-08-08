@@ -275,7 +275,7 @@
 								<button class="btn btn-primary"><i class="fa fa-search"></i></button>
 							</span>
                     </form>
-
+{{ $location['lat'] }}
                 </div>
             </div>
 
