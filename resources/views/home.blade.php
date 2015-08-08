@@ -392,7 +392,7 @@ var infowindow2;
 
 function initialize2() {
   var pyrmont = new google.maps.LatLng(-33.8665433, 151.1956316);
-
+  alert('sfgijsmo');
   map2 = new google.maps.Map(document.getElementById('map-canvas2'), {
     center: pyrmont,
     zoom: 15
