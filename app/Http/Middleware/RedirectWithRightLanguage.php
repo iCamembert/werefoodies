@@ -1,6 +1,8 @@
 <?php namespace App\Http\Middleware;
 
 use Closure;
+use Torann\GeoIP\GeoIPFacade;
+use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class RedirectWithRightLanguage {
 
@@ -31,7 +33,7 @@ class RedirectWithRightLanguage {
         	LaravelLocalization::setLocale('en');
 
         }
-        
+
 		return $next($request);
 	}
 
