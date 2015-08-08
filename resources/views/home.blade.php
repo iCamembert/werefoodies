@@ -140,7 +140,7 @@
 
                         <form method="get" action="#" class="input-group">
                             <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
-                            <div id="map-canvas"></div>
+                            <!--<div id="map-canvas"></div>-->
                             <span class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                             </span>
@@ -202,6 +202,7 @@
                     </div>
                 </div>
             </div>
+            <div class="row" id="map-canvas"></div>
             <div class="row">
               <div class="col-md-2 col-md-offset-5">
                 <img class="img-responsive" src="{{ asset('img/leo-hungry.png') }}" alt="Eat My Things" />
@@ -296,6 +297,9 @@
             $('#advancedSearchButton').show();
         });
 
+        var map;
+        var infoWindow;
+        
         function initialize() {
   var mapOptions = {
     center: new google.maps.LatLng(-33.8688, 151.2195),
