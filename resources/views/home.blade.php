@@ -400,8 +400,8 @@ function initialize2() {
 
   var request = {
     location: pyrmont,
-    radius: 500,
-    types: ['store']
+    radius: 500 //,
+    //types: ['store']
   };
   infowindow2 = new google.maps.InfoWindow();
   //var service = new google.maps.places.PlacesService(map2);
