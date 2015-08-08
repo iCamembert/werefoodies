@@ -140,7 +140,7 @@
 
                         <form method="get" action="#" class="input-group">
                             <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
-                            <div id="map-canvas"></div>
+                            <div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>
                             <span class="input-group-btn">
                                 <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                             </span>
@@ -389,7 +389,7 @@
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-var map2;
+/*var map2;
 var infowindow2;
 
 function initialize2() {
@@ -431,7 +431,7 @@ function createMarker(place) {
   });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize2);
+google.maps.event.addDomListener(window, 'load', initialize2);*/
 
     </script>
 @endsection
