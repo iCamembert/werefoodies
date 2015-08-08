@@ -342,7 +342,7 @@
 
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
-    marker.setVisible(false);
+    marker.setVisible(true);
     var place = autocomplete.getPlace();
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
