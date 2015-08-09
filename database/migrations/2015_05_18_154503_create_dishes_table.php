@@ -30,7 +30,7 @@ class CreateDishesTable extends Migration {
                   ->onDelete('cascade');
 		});
 
-		/*Dish::create([
+		Dish::create([
 			'user_id' => 1,
 			'price' => 4.0,
 			'name' => 'Mousse au chocolat',
@@ -77,7 +77,7 @@ class CreateDishesTable extends Migration {
 			'price' => 4.0,
 			'name' => 'Soupe aux épinards',
 			'rating' => 4.0
-		]);*/
+		]);
 	}
 
 	/**
