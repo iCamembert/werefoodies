@@ -110,7 +110,7 @@ class CreateUsersTable extends Migration {
 			'name' => 'ChocoChef',
 			'email' => 'chocochef@gmail.com',
 			'password' => Hash::make('123456')
-		]);*/
+		]);
 
 	}
 
