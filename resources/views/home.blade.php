@@ -337,8 +337,8 @@
   var service = new google.maps.places.PlacesService(map);
   var request;
 
-  @foreach ($users as $user)
-    var placeId = {{ $user }};
+  @foreach ($chefsOfTheWeek as $user)
+    var placeId = '{{ $user->google_place_id }}';
     request = {
       placeId: placeId
     };
