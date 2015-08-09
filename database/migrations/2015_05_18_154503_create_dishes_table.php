@@ -30,6 +30,7 @@ class CreateDishesTable extends Migration {
                   ->onDelete('cascade');
 		});
 
+		\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		Dish::create([
 			'user_id' => 1,
 			'price' => 4.0,
@@ -78,6 +79,7 @@ class CreateDishesTable extends Migration {
 			'name' => 'Soupe aux épinards',
 			'rating' => 4.0
 		]);
+		\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 	/**
