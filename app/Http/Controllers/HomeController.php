@@ -43,7 +43,7 @@ class HomeController extends Controller {
 
         $todayDishes = Dish::orderBy('rating', 'desc')->limit(3)->get();
 
-        $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(3)->get();
+        $chefsOfTheWeek = User::orderBy('rating', 'desc')->limit(4)->get();
 
         $location = GeoIPFacade::getLocation();
 

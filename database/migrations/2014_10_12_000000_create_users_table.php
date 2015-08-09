@@ -39,28 +39,32 @@ class CreateUsersTable extends Migration {
 		User::create([
 			'name' => 'Guillaume',
 			'email' => 'guillaume@gmail.com',
-			'password' => Hash::make('123456')
+			'password' => Hash::make('123456'),
+			'google_place_id' => 'ChIJrQbIFN9x5kcRaat6G5YRso8'
 		]);
 
 		User::create([
 			'name' => 'Norah',
 			'email' => 'norah@gmail.com',
-			'password' => Hash::make('123456')
+			'password' => Hash::make('123456'),
+			'google_place_id' => 'ChIJg4GB8YTV4UcRkRT7sLL9epI'
 		]);
 
 		User::create([
 			'name' => 'Camille',
 			'email' => 'camille@gmail.com',
-			'password' => Hash::make('123456')
+			'password' => Hash::make('123456'),
+			'google_place_id' => 'ChIJaw-1XOtx5kcR50EKFS00-DE'
 		]);
 
 		User::create([
 			'name' => 'Henry',
 			'email' => 'henry@gmail.com',
-			'password' => Hash::make('123456')
+			'password' => Hash::make('123456'),
+			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
 		]);
 
-		User::create([
+		/*User::create([
 			'name' => 'Yura',
 			'email' => 'yura@gmail.com',
 			'password' => Hash::make('123456')
@@ -100,8 +104,8 @@ class CreateUsersTable extends Migration {
 			'name' => 'bBob',
 			'email' => 'bbob@gmail.com',
 			'password' => Hash::make('123456')
-		]);
-		
+		]);*/
+
 	}
 
 	/**

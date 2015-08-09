@@ -334,10 +334,31 @@
   autocomplete.bindTo('bounds', map);
 
   var infowindow = new google.maps.InfoWindow();
-  var marker = new google.maps.Marker({
+  var service = new google.maps.places.PlacesService(map);
+  var request;
+
+  @foreach ($users as $user)
+    request = {
+      placeId: '{{ $user->google_place_id }}';
+    };
+    service.getDetails(request, function(place, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      var marker = new google.maps.Marker({
+        map: map,
+        position: place.geometry.location
+      });
+      google.maps.event.addListener(marker, 'click', function() {
+        infowindow.setContent(place.name);
+        infowindow.open(map, this);
+      });
+    }
+  });
+  @endforeach
+
+  /*var marker = new google.maps.Marker({
     map: map,
     anchorPoint: new google.maps.Point(0, -29)
-  });
+  });*/
 
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
@@ -373,6 +394,7 @@
         (place.address_components[2] && place.address_components[2].short_name || '')
       ].join(' ');
     }
+
 
     infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
