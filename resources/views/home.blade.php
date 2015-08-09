@@ -338,7 +338,7 @@
   var request;
 
   @foreach ($users as $user)
-    var placeId = {{ $user->name }};
+    var placeId = {{ $user }};
     request = {
       placeId: placeId
     };
