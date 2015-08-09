@@ -37,7 +37,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $users = User::all();
+        $dishesForMap = Dish::join('users', 'dishes.user_id', '=', 'users.id')->orderBy('dishes.rating', 'desc')->groupBy('dishes.user_id')->select('dishes.*', 'users.google_place_id')->get();
 
         $dishes = Dish::orderBy('rating', 'desc')->limit(12)->get();
 
@@ -47,7 +47,7 @@ class HomeController extends Controller {
 
         $location = GeoIPFacade::getLocation();
 
-		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek', 'location'));
+		return view('home', compact('dishesForMap', 'dishes', 'todayDishes', 'chefsOfTheWeek', 'location'));
 	}
 
 	public function changeLanguage($language)

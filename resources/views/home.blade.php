@@ -337,8 +337,8 @@
   var service = new google.maps.places.PlacesService(map);
   var request;
 
-  @foreach ($users as $user)
-    var placeId = '{{ $user->google_place_id }}';
+  @foreach ($dishesForMap as $dishForMap)
+    var placeId = '{{ $dishForMap->google_place_id }}';
     request = {
       placeId: placeId
     };
@@ -349,7 +349,7 @@
         position: place.geometry.location
       });
       google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent(place.name);
+        infowindow.setContent({{ $dishForMap->name }});
         infowindow.open(map, this);
       });
     }

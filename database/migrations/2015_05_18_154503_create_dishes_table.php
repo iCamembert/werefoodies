@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use App\Dish;
 
 class CreateDishesTable extends Migration {
 
@@ -28,6 +29,55 @@ class CreateDishesTable extends Migration {
                   ->on('users')
                   ->onDelete('cascade');
 		});
+
+		Dish::create([
+			'user_id' => 1,
+			'price' => 4.0,
+			'name' => 'Mousse au chocolat',
+			'rating' => 2.2
+		]);
+
+		Dish::create([
+			'user_id' => 1,
+			'price' => 3.0,
+			'name' => 'Tarte au citron meringuée',
+			'rating' => 4.2
+		]);
+
+		Dish::create([
+			'user_id' => 2,
+			'price' => 5.0,
+			'name' => 'Risotto au poulet',
+			'rating' => 3.2
+		]);
+
+		Dish::create([
+			'user_id' => 3,
+			'price' => 7.0,
+			'name' => 'Filet de dorade sauce citronnelle',
+			'rating' => 4.1
+		]);
+
+		Dish::create([
+			'user_id' => 3,
+			'price' => 6.0,
+			'name' => 'Pizza maison',
+			'rating' => 4.2
+		]);
+
+		Dish::create([
+			'user_id' => 3,
+			'price' => 5.0,
+			'name' => 'Raviolis au calmar',
+			'rating' => 4.8
+		]);
+
+		Dish::create([
+			'user_id' => 4,
+			'price' => 4.0,
+			'name' => 'Soupe aux épinards',
+			'rating' => 4.0
+		]);
 	}
 
 	/**
