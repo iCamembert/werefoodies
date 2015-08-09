@@ -338,7 +338,7 @@
   var request;
 
   @foreach ($users as $user)
-    var placeId = '{{ $user->google_place_id }}';
+    var placeId = {{ $user->name }};
     request = {
       placeId: placeId
     };
