@@ -339,7 +339,7 @@
 
   @foreach ($users as $user)
     request = {
-      placeId: '{{ $user->google_place_id }}';
+      placeId: 'dfgsd';
     };
     service.getDetails(request, function(place, status) {
     if (status == google.maps.places.PlacesServiceStatus.OK) {
