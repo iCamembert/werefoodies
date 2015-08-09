@@ -37,7 +37,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $users = User::all()->get();
+        $users = User::all();
 
         $dishes = Dish::orderBy('rating', 'desc')->limit(12)->get();
 
