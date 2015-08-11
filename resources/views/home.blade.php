@@ -397,7 +397,7 @@
     }
 
 
-    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
+    //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
     infowindow.open(map, marker);
   });
 
