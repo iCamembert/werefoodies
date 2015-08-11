@@ -349,7 +349,7 @@
         position: place.geometry.location
       });
       google.maps.event.addListener(marker, 'click', function() {
-        infowindow.setContent({{ $dishForMap->name }});
+        infowindow.setContent('{{ $dishForMap->name }}');
         infowindow.open(map, this);
       });
     }
