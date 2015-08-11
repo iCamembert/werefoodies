@@ -36,7 +36,7 @@ class CreateUsersTable extends Migration {
 			$table->timestamps();
 		});
 
-		User::create([
+		/*User::create([
 			'name' => 'guigui',
 			'email' => 'guigui@gmail.com',
 			'password' => Hash::make('123456'),
@@ -110,7 +110,7 @@ class CreateUsersTable extends Migration {
 			'name' => 'ChocoChef',
 			'email' => 'chocochef@gmail.com',
 			'password' => Hash::make('123456')
-		]);
+		]);*/
 
 	}
 
