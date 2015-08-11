@@ -41,13 +41,7 @@ class CreateUsersTable extends Migration {
 			'email' => 'guigui@gmail.com',
 			'password' => Hash::make('123456'),
 			'google_place_id' => 'ChIJrQbIFN9x5kcRaat6G5YRso8'
-		])
-		->dishes()->create([
-				'user_id' => 1,
-				'price' => 4.0,
-				'name' => 'Mousse au chocolat',
-				'rating' => 2.2
-			]);
+		]);
 
 		User::create([
 			'name' => 'Norah',
@@ -127,9 +121,9 @@ class CreateUsersTable extends Migration {
 	 */
 	public function down()
 	{
-		\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
+		//\DB::statement('SET FOREIGN_KEY_CHECKS = 0');
 		Schema::drop('users');
-		\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
+		//\DB::statement('SET FOREIGN_KEY_CHECKS = 1');
 	}
 
 }

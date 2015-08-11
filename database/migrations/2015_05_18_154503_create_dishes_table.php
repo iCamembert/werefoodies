@@ -3,6 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use App\Dish;
+use App\User;
 
 class CreateDishesTable extends Migration {
 
@@ -30,14 +31,14 @@ class CreateDishesTable extends Migration {
                   ->onDelete('cascade');
 		});
 
-		/*Dish::create([
+		User::find(1)->dishes()->create([
 			'user_id' => 1,
 			'price' => 4.0,
 			'name' => 'Mousse au chocolat',
 			'rating' => 2.2
 		]);
 
-		Dish::create([
+		/*Dish::create([
 			'user_id' => 1,
 			'price' => 3.0,
 			'name' => 'Tarte au citron meringuée',
