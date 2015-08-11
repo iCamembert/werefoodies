@@ -41,7 +41,13 @@ class CreateUsersTable extends Migration {
 			'email' => 'guigui@gmail.com',
 			'password' => Hash::make('123456'),
 			'google_place_id' => 'ChIJrQbIFN9x5kcRaat6G5YRso8'
-		]);
+		])
+		->dishes()->create([
+				'user_id' => 1,
+				'price' => 4.0,
+				'name' => 'Mousse au chocolat',
+				'rating' => 2.2
+			]);
 
 		User::create([
 			'name' => 'Norah',
