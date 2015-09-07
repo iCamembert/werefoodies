@@ -100,6 +100,6 @@
     ga('send', 'pageview');
 </script>
 -->
-<script src="http://reactjs.github.io/react-magic/magic-loader.js"></script>
+
 </body>
 </html>
