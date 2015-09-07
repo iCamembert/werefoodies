@@ -68,7 +68,7 @@ class CreateDishesTable extends Migration {
 		]);
 
 		User::find(4)->dishes()->create([
-			'price' => 4.0,
+			'price' => 3.5,
 			'name' => 'Soupe aux épinards',
 			'rating' => 4.7
 		]);
