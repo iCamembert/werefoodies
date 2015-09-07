@@ -34,7 +34,7 @@ class CreateDishesTable extends Migration {
 		User::find(1)->dishes()->create([
 			'price' => 4.0,
 			'name' => 'Mousse au chocolat',
-			'rating' => 2.2
+			'rating' => 4.6
 		]);
 
 		User::find(1)->dishes()->create([
@@ -71,6 +71,84 @@ class CreateDishesTable extends Migration {
 			'price' => 4.0,
 			'name' => 'Soupe aux épinards',
 			'rating' => 4.0
+		]);
+
+		User::find(5)->dishes()->create([
+			'price' => 5.0,
+			'name' => 'Tagliatelles au saumon',
+			'rating' => 3.2
+		]);
+
+		User::find(5)->dishes()->create([
+			'price' => 7.0,
+			'name' => 'Blanquette de veau',
+			'rating' => 4.1
+		]);
+
+		User::find(5)->dishes()->create([
+			'price' => 5.50,
+			'name' => 'Lapin aux pruneaux',
+			'rating' => 4.2
+		]);
+
+		User::find(6)->dishes()->create([
+			'price' => 5.0,
+			'name' => 'Salades de gésiers au roquefort',
+			'rating' => 4.0
+		]);
+
+		User::find(6)->dishes()->create([
+			'price' => 4.0,
+			'name' => 'Fraisier royal',
+			'rating' => 4.2
+		]);
+
+		User::find(7)->dishes()->create([
+			'price' => 5.0,
+			'name' => 'Lasagnes',
+			'rating' => 4.4
+		]);
+
+		User::find(8)->dishes()->create([
+			'price' => 4.50,
+			'name' => 'Tartiflette',
+			'rating' => 4.1
+		]);
+
+		User::find(8)->dishes()->create([
+			'price' => 3.0,
+			'name' => 'Eclair au chocolat',
+			'rating' => 3.8
+		]);
+
+		User::find(9)->dishes()->create([
+			'price' => 4.50,
+			'name' => 'Soupe de poisson',
+			'rating' => 3.7
+		]);
+
+		User::find(9)->dishes()->create([
+			'price' => 4.50,
+			'name' => 'Fromage blanc à la menthe et fruits rouges',
+			'rating' => 2.8
+		]);
+
+		User::find(9)->dishes()->create([
+			'price' => 3.50,
+			'name' => 'Soupe aux oignons et radis',
+			'rating' => 4.0
+		]);
+
+		User::find(10)->dishes()->create([
+			'price' => 5.0,
+			'name' => 'Riz pilaf et fruits de mer',
+			'rating' => 4.2
+		]);
+
+		User::find(10)->dishes()->create([
+			'price' => 4.0,
+			'name' => 'Beignets crevette & fromage de chèvre',
+			'rating' => 4.5
 		]);
 	}
 
