@@ -47,7 +47,7 @@ class CreateUsersTable extends Migration {
 			'name' => 'Norah',
 			'email' => 'norah@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJg4GB8YTV4UcRkRT7sLL9epI'
+			'google_place_id' => 'ChIJXen5Ns5x5kcRWQ2o-QAD7mY'
 		]);
 
 		User::create([
@@ -61,49 +61,49 @@ class CreateUsersTable extends Migration {
 			'name' => 'Henry',
 			'email' => 'henry@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJv2p1v_Nx5kcRbku-M9o1g4U'
 		]);
 
 		User::create([
 			'name' => 'Yura',
 			'email' => 'yura@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJQdHRjOxx5kcRWiw25AfNCvU'
 		]);
 
 		User::create([
 			'name' => 'Yannick',
 			'email' => 'yannick@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJR3LKmZdy5kcR0rfq11MDbZk'
 		]);
 
 		User::create([
 			'name' => 'Nady',
 			'email' => 'nady@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJITqiQj9s5kcRS6Vx0_X-ozg'
 		]);
 
 		User::create([
 			'name' => 'ducj',
 			'email' => 'ducj@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJacwkL0ds5kcRpTD6taNJIRw'
 		]);
 
 		User::create([
 			'name' => 'Victor',
 			'email' => 'victor@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJs9NJTUMN5kcReVQb073KWrw'
 		]);
 
 		User::create([
 			'name' => 'nicolaS',
 			'email' => 'nicolas@gmail.com',
 			'password' => Hash::make('123456'),
-			'google_place_id' => 'ChIJcYZXxLrU4UcRUPG8T0gUDAQ'
+			'google_place_id' => 'ChIJMzwNjRkO5kcREV_s57YhG2c'
 		]);
 
 		User::create([
