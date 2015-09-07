@@ -64,13 +64,13 @@ class CreateDishesTable extends Migration {
 		User::find(3)->dishes()->create([
 			'price' => 5.0,
 			'name' => 'Raviolis au calmar',
-			'rating' => 4.8
+			'rating' => 4.1
 		]);
 
 		User::find(4)->dishes()->create([
 			'price' => 4.0,
 			'name' => 'Soupe aux épinards',
-			'rating' => 4.0
+			'rating' => 4.7
 		]);
 
 		User::find(5)->dishes()->create([
