@@ -138,15 +138,16 @@
                     <div class="col-md-4 col-md-offset-4">
                         <p class="nomargin">{{ trans('strings.homeSearch2') }}</p>
 
-                        <!--<form method="get" action="#" class="input-group">-->
-                        <div class="input-group">
-                            <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
-                            <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
-                            <span class="input-group-btn">
-                                <button class="btn btn-primary"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                        <!--</form>-->
+                        {!! Form::open(['url' => 'reviews']) !!}
+                          <div class="input-group">
+                              <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
+                              <input id="googlePlaceId" name="googlePlaceId" type="hidden" />
+                              <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
+                              <span class="input-group-btn">
+                                  <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                              </span>
+                          </div>
+                        {!! Form::close() !!}
                     </div>
                     <div class="col-md-2 col-md-offset-5">
                         <a id="advancedSearchButton">{{ trans('strings.homeSearch4') }}</a>
@@ -365,6 +366,9 @@
     infowindow.close();
     marker.setVisible(false);
     var place = autocomplete.getPlace();
+    
+    $('#googlePlaceId').val(place.id);
+
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
       return;
