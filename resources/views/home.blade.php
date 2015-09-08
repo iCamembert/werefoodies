@@ -366,8 +366,6 @@
     infowindow.close();
     marker.setVisible(false);
     var place = autocomplete.getPlace();
-    
-    $('#googlePlaceId').val(place.id);
 
     if (!place.geometry) {
       window.alert("Autocomplete's returned place contains no geometry");
@@ -377,6 +375,7 @@
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
+      $('#googlePlaceId').val(place.id);
     } else {
       map.setCenter(place.geometry.location);
       map.setZoom(17);  // Why 17? Because it looks good.
