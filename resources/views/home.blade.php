@@ -138,7 +138,7 @@
                     <div class="col-md-4 col-md-offset-4">
                         <p class="nomargin">{{ trans('strings.homeSearch2') }}</p>
 
-                        {!! Form::open(['url' => 'reviews']) !!}
+                        
                           <div class="input-group">
                               <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
                               <input id="googlePlaceId" name="googlePlaceId" type="hidden" />
@@ -147,7 +147,7 @@
                                   <button class="btn btn-primary"><i class="fa fa-search"></i></button>
                               </span>
                           </div>
-                        {!! Form::close() !!}
+                        
                     </div>
                     <div class="col-md-2 col-md-offset-5">
                         <a id="advancedSearchButton">{{ trans('strings.homeSearch4') }}</a>
