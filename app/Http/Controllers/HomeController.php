@@ -65,4 +65,9 @@ class HomeController extends Controller {
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
 	}
 
+	public function search($googlePlaceId)
+	{
+		return view('search', compact('googlePlaceId'));
+	}
+
 }
