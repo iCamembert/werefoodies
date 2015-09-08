@@ -65,8 +65,10 @@ class HomeController extends Controller {
 		return view('home', compact('users', 'dishes', 'todayDishes', 'chefsOfTheWeek'));
 	}
 
-	public function search($googlePlaceId)
+	public function search()
 	{
+		$googlePlaceId = Input::get('googlePlaceId');
+		
 		return view('search', compact('googlePlaceId'));
 	}
 
