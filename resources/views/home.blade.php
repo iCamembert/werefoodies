@@ -364,7 +364,7 @@
 
   google.maps.event.addListener(autocomplete, 'place_changed', function() {
     infowindow.close();
-    marker.setVisible(false);
+    //marker.setVisible(false);
     var place = autocomplete.getPlace();
 
     if (!place.geometry) {
@@ -381,15 +381,15 @@
       map.setCenter(place.geometry.location);
       map.setZoom(17);  // Why 17? Because it looks good.
     }
-    marker.setIcon(/** @type {google.maps.Icon} */({
-      url: place.icon,
+    //marker.setIcon(/** @type {google.maps.Icon} */({
+    /*  url: place.icon,
       size: new google.maps.Size(71, 71),
       origin: new google.maps.Point(0, 0),
       anchor: new google.maps.Point(17, 34),
       scaledSize: new google.maps.Size(35, 35)
     }));
     marker.setPosition(place.geometry.location);
-    marker.setVisible(true);
+    marker.setVisible(true);*/
 
     var address = '';
     if (place.address_components) {
@@ -402,7 +402,7 @@
 
 
     //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
-    infowindow.open(map, marker);
+    //infowindow.open(map, marker);
   });
 
   // Sets a listener on a radio button to change the filter type on Places
