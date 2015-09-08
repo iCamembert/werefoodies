@@ -371,12 +371,11 @@
       window.alert("Autocomplete's returned place contains no geometry");
       return;
     }
-    alert("sdfgsdfgsdfg");
+    
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
-      //$('#googlePlaceId').val(place.id);
-      alert(place.id);
+      $('#googlePlaceId').val(place.id);
     } else {
       map.setCenter(place.geometry.location);
       map.setZoom(17);  // Why 17? Because it looks good.
