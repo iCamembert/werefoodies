@@ -138,16 +138,16 @@
                     <div class="col-md-4 col-md-offset-4">
                         <p class="nomargin">{{ trans('strings.homeSearch2') }}</p>
 
-                        {!! Form::open(['url' => 'search']) !!}
+                        
                           <div class="input-group">
                               <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
                               <input id="googlePlaceId" name="googlePlaceId" type="hidden" />
                               <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
                               <span class="input-group-btn">
-                                  <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                  <button class="btn btn-primary"><i class="fa fa-search"><a href="{{ action('HomeController@search', array('googlePlaceId' => 'sdfsd')) }}"></a></i></button>
                               </span>
                           </div>
-                        {!! Form::close() !!}
+                        
 
                     </div>
                     <div class="col-md-2 col-md-offset-5">
