@@ -312,8 +312,8 @@
 
         function initialize() {
 
-          var userLat = {{ $location['lat'] }};
-          var userLon = {{ $location['lon'] }};
+          var userLat = "sf";
+          var userLon = "sdf";
 
   var mapOptions = {
     center: new google.maps.LatLng(userLat, userLon),
