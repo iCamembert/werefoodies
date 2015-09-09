@@ -144,7 +144,7 @@
                               <input id="googlePlaceId" name="googlePlaceId" type="hidden" />
                               <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
                               <span class="input-group-btn">
-                                  <button class="btn btn-primary"><i class="fa fa-search"><a href="{{ action('HomeController@search', array('googlePlaceId' => 'sdfsd')) }}"></a></i></button>
+                                  <button href="{{ action('HomeController@search', array('googlePlaceId' => 'sdfsd')) }}" class="btn btn-primary"><i class="fa fa-search"></i></button>
                               </span>
                           </div>
                         
