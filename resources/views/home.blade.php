@@ -138,7 +138,7 @@
                     <div class="col-md-4 col-md-offset-4">
                         <p class="nomargin">{{ trans('strings.homeSearch2') }}</p>
 
-                        {!! Form::open(['url' => 'search', 'method' => 'get']) !!}
+                        {!! Form::open(['url' => 'search']) !!}
                           <div class="input-group">
                               <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
                               <input id="googlePlaceId" name="googlePlaceId" type="hidden" />
@@ -312,8 +312,8 @@
 
         function initialize() {
 
-          var userLat = "sf";
-          var userLon = "sdf";
+          var userLat = {{ $location['lat'] }};
+          var userLon = {{ $location['lon'] }};
 
   var mapOptions = {
     center: new google.maps.LatLng(userLat, userLon),
