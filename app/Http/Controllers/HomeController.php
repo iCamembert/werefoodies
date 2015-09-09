@@ -68,9 +68,8 @@ class HomeController extends Controller {
 	public function search()
 	{
 		$googlePlaceId = Input::get('googlePlaceId');
-		$location = GeoIPFacade::getLocation();
 
-		return view('search', compact('googlePlaceId', 'location'));
+		return redirect()->intended('/search')->with('googlePlaceId', $googlePlaceId);
 	}
 
 }
