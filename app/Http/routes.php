@@ -43,7 +43,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 
 	Route::resource('reviews', 'ReviewsController');
 
-	Route::post('search', 'HomeController@search');
+	Route::get('search/{googlePlaceId}', 'HomeController@search');
 
 	Route::controllers([
 		'auth' => 'Auth\AuthController',
