@@ -141,10 +141,9 @@
                         {!! Form::open(['url' => 'search', 'method' => 'GET']) !!}
                           <div class="input-group">
                               <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
-                              <input id="googlePlaceId" name="googlePlaceId" type="hidden" />
                               <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
                               <span class="input-group-btn">
-                                  <button class="btn btn-primary"><i class="fa fa-search"></i></button>
+                                <a id="searchDishesButton" class="btn btn-primary" href="{{ route('search', []) }}"><i class="fa fa-search"></i></a>
                               </span>
                           </div>
                         {!! Form::close() !!}
@@ -376,7 +375,8 @@
     // If the place has a geometry, then present it on a map.
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
-      $('#googlePlaceId').val(place.id);
+      var _href = $('#searchDishesButton').prop('href');
+      $('#searchDishesButton').prop('href', _href + place.id);
     } else {
       map.setCenter(place.geometry.location);
       map.setZoom(17);  // Why 17? Because it looks good.
