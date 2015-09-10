@@ -14,6 +14,8 @@
 Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 {
 	
+	Route::get('search', array('as' => 'search', 'uses' => 'HomeController@search'));
+	
 	Route::get('/', array('as' => 'home', 'uses' => 'HomeController@index'));
 
 
@@ -42,8 +44,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale()], function()
 	Route::get('orders/{orders}/cancel', 'OrdersController@cancel');
 
 	Route::resource('reviews', 'ReviewsController');
-
-	Route::get('search', array('as' => 'search', 'uses' => 'HomeController@search'));
 
 	Route::controllers([
 		'auth' => 'Auth\AuthController',
