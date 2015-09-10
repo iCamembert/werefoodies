@@ -143,7 +143,7 @@
                               <input id="pac-input" type="text" class="form-control" name="s" id="s" value="" placeholder="{{ trans('strings.homeSearch3') }}" />
                               <!--<div id="map-canvas" style="height: 400px; width: 100%; margin: 0; padding: 0;"></div>-->
                               <span class="input-group-btn">
-                                <a id="searchDishesButton" class="btn btn-primary" href="{{ route('/search', []) }}"><i class="fa fa-search"></i></a>
+                                <a id="searchDishesButton" class="btn btn-primary" href="{{ action('HomeController@search', []) }}"><i class="fa fa-search"></i></a>
                               </span>
                           </div>
                         {!! Form::close() !!}
