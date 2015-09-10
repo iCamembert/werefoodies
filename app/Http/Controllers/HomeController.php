@@ -69,7 +69,7 @@ class HomeController extends Controller {
 	{
 		$googlePlaceId = Input::get('googlePlaceId');
 
-		return redirect('users'); //view('search', compact('googlePlaceId'));
+		return view('search', compact('googlePlaceId'));
 	}
 
 }
