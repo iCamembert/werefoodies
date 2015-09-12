@@ -170,11 +170,24 @@
 
         function initialize() {
 
-          var userLat = {{ $location['lat'] }};
-          var userLon = {{ $location['lon'] }};
+          var geocoder = new google.maps.Geocoder;
+          var centerPlaceId = {{ $dishesForMap->first()->city_google_place_id }};
+
+          geocoder.geocode({'placeId': centerPlaceId}, function(results, status) {
+		    if (status === google.maps.GeocoderStatus.OK) {
+		      if (results[0]) {
+		       var searchLocation = results[0].geometry.location;
+		      } else {
+		        window.alert('No results found');
+		      }
+		    } else {
+		      window.alert('Geocoder failed due to: ' + status);
+		    }
+		  });
+
 
 		  var mapOptions = {
-		    center: new google.maps.LatLng(userLat, userLon),
+		    center: searchLocation,
 		    zoom: 13,
 		  };
 		  var map = new google.maps.Map(document.getElementById('map-canvas'),
