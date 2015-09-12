@@ -6,6 +6,8 @@
 	<h1>blah blah blah</h1>
 	<h1>blah blah blah</h1>
 
-	{{ $dishesForMap }}
+	@foreach ($dishesForMap as $dishForMap)
+		{{ $dishForMap->user->name }}
+	@endforeach
 
 @endsection
