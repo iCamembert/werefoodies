@@ -309,6 +309,7 @@
 
         function initialize() {
 
+          $('#searchDishesButton').prop('href', '/search/');
           var userLat = {{ $location['lat'] }};
           var userLon = {{ $location['lon'] }};
 
