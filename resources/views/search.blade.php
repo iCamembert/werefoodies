@@ -9,5 +9,5 @@
 	@foreach ($dishesForMap as $dishForMap)
 		{{ $dishForMap->name }}
 	@endforeach
-bcxvbxcvbxc
+
 @endsection
