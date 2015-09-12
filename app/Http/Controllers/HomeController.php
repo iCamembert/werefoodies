@@ -37,7 +37,7 @@ class HomeController extends Controller {
 	 */
 	public function index()
 	{
-        $dishesForMap = Dish::join('users', 'dishes.user_id', '=', 'users.id')->orderBy('dishes.rating', 'desc')->groupBy('dishes.user_id')->select('dishes.*', 'users.google_place_id')->get();
+        $dishesForMap = Dish::join('users', 'dishes.user_id', '=', 'users.id')->orderBy('dishes.rating', 'desc')->groupBy('dishes.user_id')->select('dishes.*', 'users.address_google_place_id')->get();
 
         $dishes = Dish::orderBy('rating', 'desc')->limit(12)->get();
 
