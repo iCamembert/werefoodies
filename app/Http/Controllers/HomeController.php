@@ -6,7 +6,6 @@ use App\User;
 use Illuminate\Support\Facades\Auth;
 use Torann\GeoIP\GeoIPFacade;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
-use DB;
 
 class HomeController extends Controller {
 
@@ -68,7 +67,11 @@ class HomeController extends Controller {
 
 	public function search($googlePlaceId)
 	{
-        $dishesForMap = Dish::select(DB::raw('dishes.name, max(dishes.rating) as maxRating, users.address_google_place_id'))->leftJoin('users', 'dishes.user_id', '=', 'users.id')->where('users.city_google_place_id', '=', $googlePlaceId)->groupBy('dishes.user_id')->get();
+        $dishesForMap = Dish::select('d1.*', 'users.address_google_place_id')->from('dishes as d1')
+        	->leftJoin('dishes as d2' function($join) {
+        		$join->on('d1.user_id', '=', 'd2.user_id');
+        		$join->on('d1.rating', '<', 'd2.rating');
+        	})->leftJoin('users', 'd1.user_id', '=', 'users.id')->whereNull('d2.rating')->where('users.city_google_place_id', '=', $googlePlaceId)->get();
 		
 		return view('search', compact('dishesForMap'));
 	}
