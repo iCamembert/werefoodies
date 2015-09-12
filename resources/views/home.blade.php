@@ -374,7 +374,7 @@
     if (place.geometry.viewport) {
       map.fitBounds(place.geometry.viewport);
       var _href = $('#searchDishesButton').prop('href');
-      $('#searchDishesButton').prop('href', _href + place.id);
+      $('#searchDishesButton').prop('href', _href + place.place_id);
     } else {
       map.setCenter(place.geometry.location);
       map.setZoom(17);  // Why 17? Because it looks good.
