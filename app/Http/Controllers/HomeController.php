@@ -68,7 +68,7 @@ class HomeController extends Controller {
 	public function search($googlePlaceId)
 	{
         $dishesForMap = Dish::select('d1.*', 'users.address_google_place_id')->from('dishes as d1')
-        	->leftJoin('dishes as d2' function($join) {
+        	->leftJoin('dishes as d2', function($join) {
         		$join->on('d1.user_id', '=', 'd2.user_id');
         		$join->on('d1.rating', '<', 'd2.rating');
         	})->leftJoin('users', 'd1.user_id', '=', 'users.id')->whereNull('d2.rating')->where('users.city_google_place_id', '=', $googlePlaceId)->get();
