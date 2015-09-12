@@ -67,7 +67,7 @@ class HomeController extends Controller {
 
 	public function search($googlePlaceId)
 	{
-        $dishesForMap = Dish::join('users', 'dishes.user_id', '=', 'users.id')->where('users.city_google_place_id', 'LIKE', '%'.$googlePlaceId.'%')->orderBy('dishes.rating', 'desc')->groupBy('dishes.user_id')->select('dishes.*', 'users.address_google_place_id')->get();
+        $dishesForMap = Dish::join('users', 'dishes.user_id', '=', 'users.id')->where('users.city_google_place_id', 'LIKE', '%C%')->orderBy('dishes.rating', 'desc')->groupBy('dishes.user_id')->select('dishes.*', 'users.address_google_place_id')->get();
 		
 		return view('search', compact('dishesForMap'));
 	}
