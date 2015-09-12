@@ -42,6 +42,7 @@ return [
     "breadMyCart" => "내 카트",
     "breadPlaceOrder" => "주문하기",
     "breadEditOrder" => "주문변경",
+    "breadSearchDishes" => "Search Dishes",
 
     // ******** Home Page ********
 
@@ -249,6 +250,8 @@ return [
     "order8" => "댓글:",
     "order9" => "카트로 돌아가기",
     "order10" => "주문하기",
-    "order11" => "주문 업데이트"
+    "order11" => "주문 업데이트",
+
+    "searchDishes1" => "Search Dishes"
 
 ];

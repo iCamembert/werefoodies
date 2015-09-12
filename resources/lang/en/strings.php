@@ -42,6 +42,7 @@ return [
     "breadMyCart" => "My Cart",
     "breadPlaceOrder" => "Place Order",
     "breadEditOrder" => "Edit Order",
+    "breadSearchDishes" => "Search Dishes",
 
     // ******** Home Page ********
 
@@ -249,6 +250,8 @@ return [
     "order8" => "Comment:",
     "order9" => "Back to Cart",
     "order10" => "Place Order",
-    "order11" => "Update Order"
+    "order11" => "Update Order",
+
+    "searchDishes1" => "Search Dishes"
 
 ];
