@@ -221,20 +221,6 @@
 		    }
 		  });
 		  @endforeach
-		      } else {
-		        window.alert('No results found');
-		      }
-		    } else {
-		      window.alert('Geocoder failed due to: ' + status);
-		    }
-		  });
-
-          
-
-		  
-		  
-
-		  
 
 		  /*var marker = new google.maps.Marker({
 		    map: map,
@@ -297,6 +283,22 @@
 		  setupClickListener('changetype-address', ['address']);
 		  setupClickListener('changetype-establishment', ['establishment']);
 		  setupClickListener('changetype-geocode', ['geocode']);*/
+		      } else {
+		        window.alert('No results found');
+		      }
+		    } else {
+		      window.alert('Geocoder failed due to: ' + status);
+		    }
+		  });
+
+          
+
+		  
+		  
+
+		  
+
+		  
 		}
 
 		google.maps.event.addDomListener(window, 'load', initialize);
