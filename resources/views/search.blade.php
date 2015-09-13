@@ -188,8 +188,8 @@
 		    }
 		  });
 
-          alert(searchLocation);
-          
+          //alert(searchLocation);
+
 		  var mapOptions = {
 		    center: {lat: -33.8688, lng: 151.2195},
 		    zoom: 13,
