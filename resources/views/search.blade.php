@@ -182,7 +182,7 @@
 		       var searchLocation = results[0].geometry.location;
 		       var mapOptions = {
 				    center: searchLocation,
-				    zoom: 13,
+				    zoom: 11,
 				  };
 				var map = new google.maps.Map(document.getElementById('map-canvas'),
 		    mapOptions);
@@ -217,7 +217,7 @@
 		  var request;
 
 		  @foreach ($dishesForMap as $dishForMap)
-		    var placeId = '{{ $dishForMap->google_place_id }}';
+		    var placeId = '{{ $dishForMap->address_google_place_id }}';
 		    request = {
 		      placeId: placeId
 		    };
