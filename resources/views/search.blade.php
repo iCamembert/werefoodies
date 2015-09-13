@@ -174,9 +174,8 @@
         function initialize() {
 
           var geocoder = new google.maps.Geocoder;
-          var centerPlaceId = '{{ $dishesForMap[1]->city_google_place_id }}';
+          var centerPlaceId = '{{ $dishesForMap->first()->city_google_place_id }}';
 
-          alert();
           geocoder.geocode({'placeId': centerPlaceId}, function(results, status) {
 		    if (status === google.maps.GeocoderStatus.OK) {
 		      if (results[0]) {
@@ -189,10 +188,10 @@
 		    }
 		  });
 
-          //alert(searchLocation);
+          alert(searchLocation);
 
 		  var mapOptions = {
-		    center: {lat: -33.8688, lng: 151.2195},
+		    center: searchLocation,
 		    zoom: 13,
 		  };
 		  var map = new google.maps.Map(document.getElementById('map-canvas'),
