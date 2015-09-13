@@ -174,12 +174,13 @@
         function initialize() {
 
           var geocoder = new google.maps.Geocoder;
-          var centerPlaceId = '{{ dd($dishesForMap->first()->city_google_place_id) }}';
+          var centerPlaceId = '{{ $dishesForMap->first()->city_google_place_id }}';
 
           geocoder.geocode({'placeId': centerPlaceId}, function(results, status) {
 		    if (status === google.maps.GeocoderStatus.OK) {
 		      if (results[0]) {
 		       var searchLocation = results[0].geometry.location;
+		       alert(searchLocation);
 		      } else {
 		        window.alert('No results found');
 		      }
@@ -188,7 +189,7 @@
 		    }
 		  });
 
-          alert(searchLocation);
+          
 
 		  var mapOptions = {
 		    center: searchLocation,
