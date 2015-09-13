@@ -176,7 +176,7 @@
           var geocoder = new google.maps.Geocoder;
           var centerPlaceId = '{{ $dishesForMap->first()->city_google_place_id }}';
 
-          /*geocoder.geocode({'placeId': centerPlaceId}, function(results, status) {
+          geocoder.geocode({'placeId': centerPlaceId}, function(results, status) {
 		    if (status === google.maps.GeocoderStatus.OK) {
 		      if (results[0]) {
 		       var searchLocation = results[0].geometry.location;
@@ -186,9 +186,10 @@
 		    } else {
 		      window.alert('Geocoder failed due to: ' + status);
 		    }
-		  });*/
+		  });
 
-
+          alert(searchLocation);
+          
 		  var mapOptions = {
 		    center: {lat: -33.8688, lng: 151.2195},
 		    zoom: 13,
