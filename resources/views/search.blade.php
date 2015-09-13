@@ -186,20 +186,7 @@
 				  };
 				var map = new google.maps.Map(document.getElementById('map-canvas'),
 		    mapOptions);
-		      } else {
-		        window.alert('No results found');
-		      }
-		    } else {
-		      window.alert('Geocoder failed due to: ' + status);
-		    }
-		  });
-
-          
-
-		  
-		  
-
-		  var input = /** @type {HTMLInputElement} */(
+				var input = /** @type {HTMLInputElement} */(
 		      document.getElementById('pac-input'));
 
 		  //var types = document.getElementById('type-selector');
@@ -234,6 +221,20 @@
 		    }
 		  });
 		  @endforeach
+		      } else {
+		        window.alert('No results found');
+		      }
+		    } else {
+		      window.alert('Geocoder failed due to: ' + status);
+		    }
+		  });
+
+          
+
+		  
+		  
+
+		  
 
 		  /*var marker = new google.maps.Marker({
 		    map: map,
