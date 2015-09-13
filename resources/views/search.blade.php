@@ -183,7 +183,9 @@
 		       var mapOptions = {
 				    center: searchLocation,
 				    zoom: 13,
-				  };	
+				  };
+				var map = new google.maps.Map(document.getElementById('map-canvas'),
+		    mapOptions);
 		      } else {
 		        window.alert('No results found');
 		      }
@@ -195,8 +197,7 @@
           
 
 		  
-		  var map = new google.maps.Map(document.getElementById('map-canvas'),
-		    mapOptions);
+		  
 
 		  var input = /** @type {HTMLInputElement} */(
 		      document.getElementById('pac-input'));
