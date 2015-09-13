@@ -261,10 +261,10 @@
                 <div class="col-md-3">
                   <img class="img-responsive" src="{{ asset('img/brocks-paper-plane.png') }}" alt="Eat My Things" />
                 </div>
-                <div class="col-md-6 text-center">
+                <div class="col-md-5 text-center">
                     <h3 class="padding20">{!! trans('strings.homeSubscribe1') !!}</h3>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
 
                     <p class="nomargin">{{ trans('strings.homeSubscribe2') }}</p>
 
