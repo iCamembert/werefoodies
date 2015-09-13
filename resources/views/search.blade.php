@@ -135,6 +135,10 @@
 
                 </div>
 
+                <div class="row">
+                	{!! $dishesForMap->render() !!}
+                </div>
+
 
             </section>
 
