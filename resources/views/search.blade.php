@@ -174,7 +174,7 @@
         function initialize() {
 
           var geocoder = new google.maps.Geocoder;
-          var centerPlaceId = '{{ $dishesForMap->first()->city_google_place_id }}';
+          var centerPlaceId = '{{ dd($dishesForMap->first()->city_google_place_id) }}';
 
           geocoder.geocode({'placeId': centerPlaceId}, function(results, status) {
 		    if (status === google.maps.GeocoderStatus.OK) {
