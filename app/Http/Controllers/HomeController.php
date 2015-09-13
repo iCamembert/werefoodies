@@ -71,7 +71,7 @@ class HomeController extends Controller {
         	->leftJoin('dishes as d2', function($join) {
         		$join->on('d1.user_id', '=', 'd2.user_id');
         		$join->on('d1.rating', '<', 'd2.rating');
-        	})->leftJoin('users', 'd1.user_id', '=', 'users.id')->whereNull('d2.rating')->where('users.city_google_place_id', '=', $googlePlaceId)->simplePaginate(4);
+        	})->leftJoin('users', 'd1.user_id', '=', 'users.id')->whereNull('d2.rating')->where('users.city_google_place_id', '=', $googlePlaceId)->paginate(4);
 
 		return view('search', compact('dishesForMap'));
 	}
