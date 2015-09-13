@@ -180,7 +180,10 @@
 		    if (status === google.maps.GeocoderStatus.OK) {
 		      if (results[0]) {
 		       var searchLocation = results[0].geometry.location;
-		       alert(searchLocation);
+		       var mapOptions = {
+				    center: searchLocation,
+				    zoom: 13,
+				  };	
 		      } else {
 		        window.alert('No results found');
 		      }
@@ -191,10 +194,7 @@
 
           
 
-		  var mapOptions = {
-		    center: searchLocation,
-		    zoom: 13,
-		  };
+		  
 		  var map = new google.maps.Map(document.getElementById('map-canvas'),
 		    mapOptions);
 
