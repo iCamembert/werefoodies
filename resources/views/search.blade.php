@@ -108,9 +108,6 @@
 
                 </div>
 
-                <div id="shop">
-
-            <section class="container">
 
                 <div class="row">
 
@@ -138,9 +135,6 @@
 
                 </div>
 
-            </section>
-
-        </div>
 
             </section>
 
