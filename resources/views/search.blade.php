@@ -150,6 +150,9 @@
 
     @include('partials._footer')
 
+@endsection
+
+@section('afterScripts')
     <script>
         $('#advancedSearch').hide();
         $('#advancedSearchButton').click(function() {
